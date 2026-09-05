@@ -67,6 +67,19 @@
     }
 
       @media (max-width: 47.99rem) { .form-cta { display: none; } }
+  
+    .next-steps {
+      margin: 1rem 0 0; padding: 1rem 1.05rem;
+      background: var(--chip); border: 1px solid color-mix(in srgb, var(--ember) 35%, var(--line));
+      border-radius: 0.85rem;
+    }
+    .next-steps strong {
+      display: block; font-family: Fraunces, Georgia, serif; font-size: 1.05rem; margin: 0 0 0.55rem;
+    }
+    .next-steps ol { margin: 0; padding-left: 1.2rem; color: var(--mute); }
+    .next-steps li { margin: 0.35rem 0; }
+    .sent-lede { color: var(--mute); margin: 0 0 0.85rem; }
+    body.sent .price, body.sent .lede, body.sent .progress, body.sent .pack-note, body.sent .drop { display: none; }
   </style>
 </head>
 <body>
@@ -101,17 +114,28 @@
     <button class="cta" type="submit" form="intake-form">Send patch list $149</button>
   </div>
   <script>
-    if (location.search.indexOf('sent=1') !== -1) {
+    (function () {
+      if (location.search.indexOf('sent=1') === -1) return;
+      document.body.classList.add('sent');
       var h1 = document.querySelector('h1');
-      h1.textContent = 'Got it.';
-      var note = document.createElement('p');
-      note.className = 'hint';
-      note.textContent = 'I’ll send the ranked list same day on weekdays.';
-      h1.insertAdjacentElement('afterend', note);
+      if (h1) h1.textContent = 'Got it.';
+      var form = document.getElementById('intake-form');
+      if (form) form.style.display = 'none';
       var sticky = document.querySelector('.sticky-cta');
       if (sticky) sticky.style.display = 'none';
       document.body.style.paddingBottom = '0';
-    }
+      var box = document.createElement('div');
+      box.className = 'next-steps';
+      box.innerHTML = '<p class="sent-lede">Your site patch intake is in. Here’s what happens next.</p>'
+        + '<strong>Next steps</strong>'
+        + '<ol>'
+        + '<li>I check the public pages only.</li>'
+        + '<li>I email pay + the ranked fix list same day on weekdays.</li>'
+        + '<li>You or your web person do the work. Not a rebuild.</li>'
+        + '<li>$149 once if the list is useful.</li>'
+        + '</ol>';
+      if (h1) h1.insertAdjacentElement('afterend', box);
+    })();
   </script>
 </body>
 </html>

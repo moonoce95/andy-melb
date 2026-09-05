@@ -86,6 +86,19 @@
       .sticky-cta { display:none; }
       .form-cta { width:auto; }
     }
+  
+    .next-steps {
+      margin: 1rem 0 0; padding: 1rem 1.05rem;
+      background: var(--chip); border: 1px solid color-mix(in srgb, var(--ember) 35%, var(--line));
+      border-radius: 0.85rem;
+    }
+    .next-steps strong {
+      display: block; font-family: Fraunces, Georgia, serif; font-size: 1.05rem; margin: 0 0 0.55rem;
+    }
+    .next-steps ol { margin: 0; padding-left: 1.2rem; color: var(--mute); }
+    .next-steps li { margin: 0.35rem 0; }
+    .sent-lede { color: var(--mute); margin: 0 0 0.85rem; }
+    body.sent .price, body.sent .lede, body.sent .progress, body.sent .pack-note, body.sent .drop { display: none; }
   </style>
 </head>
 <body>
@@ -185,20 +198,33 @@
         var b2 = document.getElementById('sticky-btn');
         if (b1) b1.textContent = 'Send pack $999';
         if (b2) b2.textContent = 'Send pack $999';
+        var next = document.querySelector('input[name="_next"]');
+        if (next) next.value = 'https://moonoce95.github.io/andy-melb/intake.html?pack=999&sent=1';
       }
-      if (location.search.indexOf('sent=1') !== -1) {
-        var h2 = document.getElementById('title');
-        if (h2) h2.textContent = 'Got it.';
-        var note = document.createElement('p');
-        note.className = 'hint';
-        note.textContent = 'I’ll reply same day on weekdays. Send photos when you can.';
-        h2.insertAdjacentElement('afterend', note);
-        var sticky = document.querySelector('.sticky-cta');
-        if (sticky) sticky.style.display = 'none';
-        document.body.style.paddingBottom = '0';
-        var form = document.getElementById('intake-form');
-        if (form) form.style.display = 'none';
-      }
+      if (location.search.indexOf('sent=1') === -1) return;
+      document.body.classList.add('sent');
+      var h2 = document.getElementById('title');
+      if (h2) h2.textContent = 'Got it.';
+      var form = document.getElementById('intake-form');
+      if (form) form.style.display = 'none';
+      var sticky = document.querySelector('.sticky-cta');
+      if (sticky) sticky.style.display = 'none';
+      document.body.style.paddingBottom = '0';
+      var price = isPack ? '$999' : '$799';
+      var what = isPack
+        ? 'Website + Google listing pack.'
+        : 'New Melb tradie site.';
+      var box = document.createElement('div');
+      box.className = 'next-steps';
+      box.innerHTML = '<p class="sent-lede">' + what + ' Intake is in. Here’s what happens next.</p>'
+        + '<strong>Next steps</strong>'
+        + '<ol>'
+        + '<li>I reply same day on weekdays with next steps + pay.</li>'
+        + '<li>Send logo + 6–15 job photos when you can (after is fine).</li>'
+        + '<li>I build home, services, about, contact. Mobile. Tap-to-call.</li>'
+        + '<li>You pay ' + price + ' once. You own it. No monthly lock-in.</li>'
+        + '</ol>';
+      if (h2) h2.insertAdjacentElement('afterend', box);
     })();
   </script>
 </body>
