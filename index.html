@@ -125,6 +125,78 @@
     }
     .card p { margin: 0; color: var(--mute); font-size: 0.92rem; }
 
+    .proof-strip { margin-top: 1.1rem; }
+    .proof-pair {
+      display: grid; gap: 0.75rem;
+    }
+    @media (min-width: 40rem) { .proof-pair { grid-template-columns: 1fr 1fr; } }
+    .gmap-mock {
+      background: var(--chip); border: 1px solid var(--line); border-radius: 0.9rem;
+      padding: 0.9rem 0.95rem 1rem; overflow: hidden;
+    }
+    .gmap-mock .g-label {
+      font-size: 0.72rem; font-weight: 650; text-transform: uppercase;
+      letter-spacing: 0.04em; color: var(--mute); margin-bottom: 0.55rem;
+    }
+    .gmap-mock.after-mock { border-color: color-mix(in srgb, var(--ember) 35%, var(--line)); }
+    .g-head {
+      display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.7rem;
+    }
+    .g-avatar {
+      width: 2.4rem; height: 2.4rem; border-radius: 0.45rem; flex-shrink: 0;
+      background: color-mix(in srgb, var(--line) 70%, var(--mute));
+    }
+    .after-mock .g-avatar { background: color-mix(in srgb, var(--ember) 28%, var(--line)); }
+    .g-name {
+      font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 1.02rem;
+      margin: 0 0 0.15rem; line-height: 1.2;
+    }
+    .g-cat { margin: 0; font-size: 0.82rem; color: var(--mute); }
+    .g-cat.wrong { color: #8a4a2a; }
+    .g-cat.right { color: var(--ember); font-weight: 650; }
+    .g-map {
+      position: relative; height: 4.6rem; border-radius: 0.55rem;
+      background:
+        linear-gradient(90deg, transparent 49%, color-mix(in srgb, var(--line) 80%, transparent) 50%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, color-mix(in srgb, var(--line) 80%, transparent) 50%, transparent 51%),
+        color-mix(in srgb, var(--paper) 70%, #dfe8d8);
+      border: 1px solid var(--line); margin-bottom: 0.65rem; overflow: hidden;
+    }
+    .g-blob {
+      position: absolute; left: 18%; top: 12%; width: 64%; height: 76%;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--mute) 22%, transparent);
+      border: 2px dashed color-mix(in srgb, var(--mute) 55%, transparent);
+    }
+    .g-pins { position: absolute; inset: 0; }
+    .g-pin {
+      position: absolute; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+      background: var(--ember); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ember) 25%, transparent);
+    }
+    .g-pin:nth-child(1) { left: 28%; top: 38%; }
+    .g-pin:nth-child(2) { left: 46%; top: 28%; }
+    .g-pin:nth-child(3) { left: 58%; top: 52%; }
+    .g-pin:nth-child(4) { left: 40%; top: 62%; }
+    .g-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .g-btn {
+      font-size: 0.78rem; font-weight: 650; padding: 0.38rem 0.7rem;
+      border-radius: 999px; border: 1px solid var(--line); background: #fff;
+      color: var(--mute);
+    }
+    .g-btn.dead {
+      text-decoration: line-through; opacity: 0.55;
+      border-style: dashed; color: var(--mute);
+    }
+    .g-btn.live {
+      background: var(--ink); color: #fff8ee; border-color: var(--ink);
+    }
+    .g-btn.live-ghost {
+      background: transparent; color: var(--ink); border-color: var(--ink);
+    }
+    .proof-cap {
+      margin: 0.65rem 0 0; color: var(--mute); font-size: 0.88rem;
+    }
+
     .steps { display: grid; gap: 0.75rem; }
     @media (min-width: 48rem) { .steps { grid-template-columns: 1fr 1fr 1fr; } }
     .step {
@@ -273,6 +345,53 @@
         <div class="card"><strong>Service area is a blob</strong><p>A fat circle is a weak signal everywhere. Suburbs you drive beat a giant radius.</p></div>
         <div class="card"><strong>Services are just titles</strong><p>Blocked drains. Switchboard. Painting. Bare titles with nothing under them.</p></div>
         <div class="card"><strong>They can’t enquire</strong><p>Call button dead. Quote page 404. They already chose you and then left.</p></div>
+      </div>
+
+      <div class="proof-strip" aria-label="Anonymised listing schematic">
+        <div class="proof-pair">
+          <div class="gmap-mock">
+            <div class="g-label">Before</div>
+            <div class="g-head">
+              <div class="g-avatar" aria-hidden="true"></div>
+              <div>
+                <p class="g-name">Local trade business</p>
+                <p class="g-cat wrong">Category: General contractor</p>
+              </div>
+            </div>
+            <div class="g-map" aria-hidden="true">
+              <div class="g-blob"></div>
+            </div>
+            <div class="g-actions">
+              <span class="g-btn dead">Call</span>
+              <span class="g-btn dead">Website</span>
+              <span class="g-btn dead">Enquire</span>
+            </div>
+          </div>
+          <div class="gmap-mock after-mock">
+            <div class="g-label">After</div>
+            <div class="g-head">
+              <div class="g-avatar" aria-hidden="true"></div>
+              <div>
+                <p class="g-name">Local trade business</p>
+                <p class="g-cat right">Category: Plumber</p>
+              </div>
+            </div>
+            <div class="g-map" aria-hidden="true">
+              <div class="g-pins">
+                <span class="g-pin"></span>
+                <span class="g-pin"></span>
+                <span class="g-pin"></span>
+                <span class="g-pin"></span>
+              </div>
+            </div>
+            <div class="g-actions">
+              <span class="g-btn live">Call</span>
+              <span class="g-btn live-ghost">Website</span>
+              <span class="g-btn live-ghost">Enquire</span>
+            </div>
+          </div>
+        </div>
+        <p class="proof-cap">Public data only / example of the kind of gaps we fix.</p>
       </div>
     </section>
 
