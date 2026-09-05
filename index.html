@@ -81,8 +81,15 @@
       font-weight: 650;
       border-radius: 999px;
     }
+    .cta.ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 2px solid var(--ink);
+    }
+    .cta.ghost:hover { background: var(--ink); color: #fff8ee; }
     .cta:hover { background: var(--ember); }
     .cta:focus-visible { outline: 3px solid var(--ember); outline-offset: 3px; }
+    .row { display: flex; flex-wrap: wrap; gap: 0.55rem; align-items: center; }
     .after { margin: 0.7rem 0 0; color: var(--mute); font-size: 0.92rem; }
     .block-cta { margin: 1.6rem 0 0; }
     h2 {
@@ -93,12 +100,12 @@
     }
     .why p, .obj p { margin: 0 0 0.75rem; color: var(--mute); }
     .why p:last-child, .obj p:last-child { margin-bottom: 0; }
-    .how, article, .found, .faq, .ben {
+    .how, article, .found, .faq, .ben, .miss {
       padding: 1.05rem 0;
       border-top: 1px solid var(--line);
     }
-    .how:last-of-type, article:last-of-type, .found:last-of-type, .faq:last-of-type, .ben:last-of-type { border-bottom: 1px solid var(--line); }
-    .how strong, article h3, .found strong, .faq strong, .ben strong {
+    .how:last-of-type, article:last-of-type, .found:last-of-type, .faq:last-of-type, .ben:last-of-type, .miss:last-of-type { border-bottom: 1px solid var(--line); }
+    .how strong, article h3, .found strong, .faq strong, .ben strong, .miss strong {
       display: block;
       font-family: Fraunces, Georgia, serif;
       font-size: 1.18rem;
@@ -113,7 +120,7 @@
       color: var(--ember);
       font-size: 1.35rem;
     }
-    article p, .how p, .found p, .faq p, .ben p { margin: 0; color: var(--mute); }
+    article p, .how p, .found p, .faq p, .ben p, .miss p { margin: 0; color: var(--mute); }
     article ul, .sample {
       margin: 0.65rem 0 0;
       padding: 0 0 0 1.15rem;
@@ -157,34 +164,43 @@
     </header>
 
     <h1>They google you before they call. I make sure they can.</h1>
-    <p class="lede">I’m Andy. I help Melb tradies and small businesses get more enquiries from Google and their website. Email me your Google name or site URL. I send one real problem. You choose if you want the rest.</p>
-    <p class="trust">New. No reviews yet. I only look at what’s already public.</p>
+    <p class="lede">I’m Andy. I help Melb tradies and small businesses get more enquiries from Google and their website. Email me your Google name or site URL. I send one real problem, and who is sitting above you. You choose if you want the rest.</p>
+    <p class="trust">New. No reviews yet. I only look at what’s already public. Agencies in this lane charge $497 to $900 for the listing work. I do it for $299.</p>
     <div class="chips">
       <span>Google listing $299</span>
       <span>Site fix list $149</span>
     </div>
-    <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me your listing or site</a>
+    <div class="row">
+      <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a>
+      <a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Fix%20the%20listing%20%24299&amp;body=Google%20name%3A%0A">Skip it. Do the $299.</a>
+    </div>
     <p class="after">One finding, usually same day on weekdays. If I already emailed you, just reply.</p>
 
-    <h2>What they actually do</h2>
+    <h2>Filled in is not the same as showing up</h2>
     <div class="why">
-      <p>Tap’s leaking. Fuse is out. They need someone today. They don’t open the Yellow Pages. They google “electrician near me” or “plumber Brunswick.”</p>
-      <p>The name with a complete listing, real photos, and a call button that works gets the job. The half-finished one doesn’t. You never hear about the ones who scrolled past.</p>
-      <p>I start with one thing you can check yourself in 30 seconds. Then you decide.</p>
+      <p>Tap’s leaking. Fuse is out. They google “electrician near me” or “plumber Brunswick.” They don’t ring around. They tap the name that looks finished.</p>
+      <p>Your listing can have photos, hours, even more reviews than the bloke above you, and still sit nowhere when you search from a job two suburbs over. That’s normal. Complete is the entry ticket. It is not the whole game.</p>
+      <p>The usual misses: category close but wrong, a fat service area, services left as bare titles, a site button that doesn’t work. I send you one of those first. You can check it in 30 seconds.</p>
     </div>
+
+    <h2>Why they pick the other name</h2>
+    <div class="miss"><strong>Wrong category</strong><p>Google thinks you’re a contractor, not a sparkie. The right jobs never see you.</p></div>
+    <div class="miss"><strong>Service area is a blob</strong><p>A 50km circle around the depot is a weak signal everywhere in it. Suburbs you actually drive beat a giant circle.</p></div>
+    <div class="miss"><strong>Services are just titles</strong><p>Switchboard. Lighting. Nothing under them. Wasted fields.</p></div>
+    <div class="miss"><strong>They can’t enquire</strong><p>Call button dead. Quote page 404. They already chose you and then left.</p></div>
 
     <h2>What you get out of it</h2>
     <div class="ben"><strong>You show up when locals search.</strong><p>Name, category, hours, photos, suburbs you actually cover. Enough that they tap you instead of the next bloke.</p></div>
     <div class="ben"><strong>You look like a real business.</strong><p>Not a listing someone started in 2019 and forgot. Description sounds like you. Licence showing if you’ve got one.</p></div>
     <div class="ben"><strong>They can contact you on the spot.</strong><p>Call, website, quote. If those links are dead, the job is gone.</p></div>
-    <div class="ben"><strong>You keep it.</strong><p>You own the listing and the site. I don’t need your password. No monthly unless you later ask.</p></div>
+    <div class="ben"><strong>You keep it.</strong><p>You own the listing and the site. I don’t need your password. After the $299, nothing else happens unless you ask.</p></div>
 
     <h2>How it works</h2>
-    <div class="how"><strong>1. You send the listing or the site.</strong><p>Email the Google name or the URL. I only look at what’s already public. Usually same day on weekdays.</p></div>
-    <div class="how"><strong>2. I send one problem.</strong><p>One thing that’s losing you calls. You can open it and see it. No report. No sales call.</p></div>
+    <div class="how"><strong>1. You send the listing or the site.</strong><p>Email the Google name or the URL. I only look at what’s already public. I also look at who is above you. Usually same day on weekdays.</p></div>
+    <div class="how"><strong>2. I send one problem.</strong><p>One thing that’s losing you calls. You can open it and see it. No report. No sales call. I don’t chase you after.</p></div>
     <div class="how"><strong>3. You pay if it’s useful.</strong><p>$299 and I fix the Google listing. $149 and I send the full site list. I’ll tell you when the paid work will be done before you pay.</p></div>
 
-    <p class="block-cta"><a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me your listing or site</a></p>
+    <p class="block-cta"><a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a></p>
 
     <h2>What a free finding looks like</h2>
     <p style="color:var(--mute);margin:0 0 0.6rem">Real things I already spotted on Melb pages. One problem. You can check it yourself.</p>
@@ -197,29 +213,29 @@
     <article>
       <h3>Google listing</h3>
       <p class="price">$299 once</p>
-      <p>Same work whether you’ve got nothing or a listing you started years ago and ignored.</p>
+      <p>Same work and same price whether you’ve got nothing, or a listing you started years ago and ignored. Other shops ask $497 to $900 plus GST for this.</p>
       <div class="paths">
         <div class="path"><strong>No listing yet</strong><p>I tell you how to claim it. Then I build it out so you’re not guessing.</p></div>
-        <div class="path"><strong>Already have one</strong><p>I audit what’s there, then fix the bits that make you look weaker than the next business.</p></div>
+        <div class="path"><strong>Already have one</strong><p>I look at what’s there and who ranks above you. Then I fix the bits that make you look weaker.</p></div>
       </div>
       <p style="margin-top:0.85rem">What I actually do:</p>
       <ul>
         <li>The right primary category, then the extras. Close-but-wrong is the usual miss.</li>
         <li>Service area = suburbs you actually cover. Not a 50km circle around the depot.</li>
         <li>Every service you quote, with a real description. Bare titles do nothing.</li>
-        <li>Photos, hours, and a description that sounds like you and your area</li>
+        <li>Photos, hours, and a description that sounds like you and your area. Phone photos of real jobs are fine.</li>
         <li>Website and call links that actually work</li>
         <li>Licence showing if you’ve got one</li>
         <li>Old leftover Q&amp;A cleaned up if it’s still sitting there</li>
         <li>A simple way to ask happy customers for a Google review after the job. Real ones. Not bought.</li>
       </ul>
-      <p style="margin-top:0.65rem">You add me as Manager. I don’t need your password. You keep the listing.</p>
+      <p style="margin-top:0.65rem">You add me as Manager. I don’t need your password. You keep the listing. Category and service area changes are usually live in a day or two. Maps movement takes longer. Anyone who promises Friday page one is guessing.</p>
     </article>
     <article>
       <h3>Website enquiries</h3>
       <p class="price">$149 once</p>
       <p>They already picked you. Then the quote page 404s or the call button does nothing. That’s a job walking out the door.</p>
-      <p style="margin-top:0.65rem">One finding for free. Then a short ranked list of what’s stopping calls, and what to change, in order.</p>
+      <p style="margin-top:0.65rem">One finding for free. Then a short ranked list of what’s stopping calls, and what to change, in order. Not a 20 page audit. The top things first.</p>
       <ul>
         <li>Quote buttons, phone links, forms</li>
         <li>The first screen on a phone</li>
@@ -239,14 +255,20 @@
       <p><strong style="color:var(--ink)">Who this is not for.</strong> If you want a new brand, a fancy rebuild, or guaranteed page one, I’m not your guy.</p>
     </div>
 
-    <p class="block-cta"><a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me your listing or site</a></p>
+    <p class="block-cta">
+      <span class="row">
+        <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a>
+        <a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Fix%20the%20listing%20%24299&amp;body=Google%20name%3A%0A">Skip it. Do the $299.</a>
+      </span>
+    </p>
 
     <h2>Common questions</h2>
     <div class="faq"><strong>Do you need my Google password?</strong><p>No. You add me as Manager. You can remove me after.</p></div>
     <div class="faq"><strong>I already have a listing or a site.</strong><p>Good. That’s who this is for. Same $299 either way.</p></div>
     <div class="faq"><strong>I’m a mobile tradie. I don’t have a shop.</strong><p>Fine. We hide the home address and show the suburbs you cover.</p></div>
-    <div class="faq"><strong>Do I own the listing after?</strong><p>Yes. You’re the owner. I was only ever a Manager.</p></div>
-    <div class="faq"><strong>How fast?</strong><p>One finding, usually same day on weekdays. If you buy, I’ll tell you when the paid work will be done before you pay.</p></div>
+    <div class="faq"><strong>Do I own the listing after?</strong><p>Yes. You’re the owner. I was only ever a Manager. Nothing else happens unless you ask.</p></div>
+    <div class="faq"><strong>How fast?</strong><p>One finding, usually same day on weekdays. Listing fields are usually live in a day or two. Showing higher on the map takes weeks, and it depends how busy your trade is in those suburbs.</p></div>
+    <div class="faq"><strong>I don’t have nice photos.</strong><p>Phone photos of real jobs are fine. Stock vans are not.</p></div>
     <div class="faq"><strong>Is the $149 a rebuild?</strong><p>No. It’s a short list. You or your web person do the work.</p></div>
     <div class="faq"><strong>Will I be number one on Google?</strong><p>I don’t promise that. I make the listing or the site something people can actually use.</p></div>
     <div class="faq"><strong>Can you get me fake reviews?</strong><p>No. I’ll show you how to ask people who actually used you.</p></div>
