@@ -12,20 +12,39 @@
   <style>
     :root { --paper:#efe8db; --ink:#161310; --mute:#5a5248; --line:#d4cbb8; --ember:#9e3b14; --chip:#fff8ee; }
     * { box-sizing:border-box; }
-    body { margin:0; background:var(--paper); color:var(--ink); font-family:Outfit,sans-serif; font-size:1.06rem; line-height:1.5; }
-    .wrap { width:min(34rem, calc(100% - 1.75rem)); margin:0 auto; padding:1.2rem 0 3rem; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Outfit,sans-serif; font-size:1.06rem; line-height:1.5; padding-bottom:5.5rem; }
+    .wrap { width:min(34rem, calc(100% - 1.75rem)); margin:0 auto; padding:1.2rem 0 2rem; }
     header { display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--line); padding-bottom:1rem; margin-bottom:1.3rem; }
     .mark a { color:inherit; text-decoration:none; font-family:Fraunces,Georgia,serif; font-weight:650; }
     .back { color:var(--mute); font-weight:650; text-decoration:none; font-size:0.9rem; }
     h1 { font-family:Fraunces,Georgia,serif; font-weight:650; font-size:clamp(1.8rem,5vw,2.3rem); line-height:1.08; margin:0 0 0.5rem; }
-    .lede { color:var(--mute); margin:0 0 1.2rem; }
-    .price { font-family:Fraunces,Georgia,serif; font-weight:650; color:var(--ember); font-size:1.5rem; margin:0 0 1rem; }
+    .lede { color:var(--mute); margin:0 0 1rem; }
+    .price { font-family:Fraunces,Georgia,serif; font-weight:650; color:var(--ember); font-size:1.5rem; margin:0 0 0.75rem; }
+    .progress {
+      display:inline-flex; align-items:center; gap:0.4rem;
+      background:var(--chip); border:1px solid var(--line); border-radius:999px;
+      padding:0.4rem 0.85rem; font-size:0.88rem; font-weight:650; color:var(--mute);
+      margin:0 0 1.1rem;
+    }
     label { display:block; font-weight:650; font-size:0.92rem; margin:0.9rem 0 0.35rem; }
     input, textarea { width:100%; border:1px solid var(--line); background:#fff; border-radius:0.65rem; padding:0.75rem 0.85rem; font:inherit; }
     .hint { color:var(--mute); font-size:0.85rem; margin:0.3rem 0 0; }
     .cta { display:inline-flex; min-height:48px; align-items:center; margin-top:1.2rem; padding:0.8rem 1.2rem; background:var(--ink); color:#fff8ee; border:none; border-radius:999px; font:inherit; font-weight:650; cursor:pointer; }
     .cta:hover { background:var(--ember); }
+    .form-cta { width:100%; justify-content:center; }
     .honeypot { position:absolute; left:-9999px; height:0; overflow:hidden; }
+    .sticky-cta {
+      position:fixed; left:0; right:0; bottom:0; z-index:30;
+      padding:0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
+      background:color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter:blur(10px);
+      border-top:1px solid var(--line);
+    }
+    .sticky-cta .cta { width:100%; justify-content:center; margin:0; }
+    @media (min-width:48rem) {
+      body { padding-bottom:0; }
+      .sticky-cta { display:none; }
+      .form-cta { width:auto; }
+    }
   </style>
 </head>
 <body>
@@ -37,7 +56,8 @@
     <h1>Site patch list. Four fields.</h1>
     <p class="price">$149 once</p>
     <p class="lede">I look at the public site. You get a ranked list of what’s stopping calls after they already picked you. You or your web person do the work. Not a rebuild.</p>
-    <form action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
+    <div class="progress" aria-label="Form length">4 fields · about 2 min</div>
+    <form id="intake-form" action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="Andy Melb site patch intake $149">
       <input type="hidden" name="_next" value="https://moonoce95.github.io/andy-melb/patch-intake.html?sent=1">
       <input type="hidden" name="_captcha" value="false">
@@ -51,12 +71,18 @@
       <label for="email">Email for the list</label>
       <input id="email" name="email" type="email" required placeholder="you@business.com.au">
       <p class="hint">I reply with pay + the next step. Public pages only.</p>
-      <button class="cta" type="submit">Send. I’ll reply with pay + next step.</button>
+      <button class="cta form-cta" type="submit">Send. I’ll reply with pay + next step.</button>
     </form>
+  </div>
+  <div class="sticky-cta" aria-label="Submit">
+    <button class="cta" type="submit" form="intake-form">Send. I’ll reply with pay + next step.</button>
   </div>
   <script>
     if (location.search.indexOf('sent=1') !== -1) {
       document.querySelector('h1').textContent = 'Got it. I’ll reply shortly.';
+      var sticky = document.querySelector('.sticky-cta');
+      if (sticky) sticky.style.display = 'none';
+      document.body.style.paddingBottom = '0';
     }
   </script>
 </body>
