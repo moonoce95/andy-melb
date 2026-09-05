@@ -216,6 +216,14 @@
       min-height: 100%;
     }
     .product.featured { border-color: color-mix(in srgb, var(--ember) 45%, var(--line)); box-shadow: 0 0 0 1px color-mix(in srgb, var(--ember) 20%, transparent); }
+    .product.start {
+      border-color: color-mix(in srgb, var(--ember) 55%, var(--line));
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--ember) 22%, transparent);
+    }
+    .product.start .tag { color: var(--ember); }
+    .product.quiet { opacity: 0.82; }
+    .product.quiet:hover { opacity: 1; }
+
     .product .tag {
       font-size: 0.72rem; font-weight: 650; text-transform: uppercase; letter-spacing: 0.04em; color: var(--mute);
     }
@@ -430,8 +438,8 @@
       <h2 class="sec">What you can buy</h2>
       <p class="prose">Simple. On the page. Pay once.</p>
       <div class="products">
-        <article class="product" id="sku-listing">
-          <span class="tag">Google listing</span>
+        <article class="product start" id="sku-listing">
+          <span class="tag">Start here</span>
           <h3>Make the listing usable</h3>
           <p class="price">$299<small>once</small></p>
           <p>Category, suburbs you drive, services, photos, working enquire links. You add me as Manager. No password.</p>
@@ -456,7 +464,7 @@
           </ul>
           <a class="cta" href="patch-intake.html">Start patch intake</a>
         </article>
-        <article class="product" id="sku-website">
+        <article class="product quiet" id="sku-website">
           <span class="tag">Easy entry</span>
           <h3>Tradie website</h3>
           <p class="price">$799<small>once</small></p>
@@ -469,7 +477,7 @@
           </ul>
           <a class="cta" href="intake.html">Start website $799</a>
         </article>
-        <article class="product featured" id="pack-detail">
+        <article class="product quiet" id="pack-detail">
           <span class="tag">Best money</span>
           <h3>Website + listing pack</h3>
           <p class="price">$999<small>once · save $99</small></p>
