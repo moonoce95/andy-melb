@@ -215,6 +215,7 @@
       border-top: 1px solid var(--line);
     }
     .thumbbar .cta { flex: 1; min-height: 46px; font-size: 0.92rem; padding: 0.55rem 0.6rem; }
+    @media (max-width: 47.99rem) { .nav-cta { display: none; } }
     @media (min-width: 48rem) { .thumbbar { display: none; } body { padding-bottom: 0; } }
 
     .modal-backdrop {
@@ -438,9 +439,8 @@
     </footer>
   </main>
 
-  <div class="thumbbar" aria-label="Quick actions">
+  <div class="thumbbar" aria-label="Quick action">
     <a class="cta" href="listing-intake.html">Start listing $299</a>
-    <a class="cta ghost" href="#products">See prices</a>
   </div>
 
   <div class="modal-backdrop" id="exit-modal" role="dialog" aria-modal="true" aria-labelledby="exit-title" hidden>
