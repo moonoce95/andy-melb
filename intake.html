@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tradie website intake. Easy. Andy Melbourne.</title>
-  <meta name="description" content="Short questionnaire for your $799 Melb tradie website. Photos and logo after. No long call.">
+  <title>Tradie website intake. 5 fields. Andy Melbourne.</title>
+  <meta name="description" content="Five fields for your $799 Melb tradie website. Photos after. No long call.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://moonoce95.github.io/andy-melb/intake.html">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23161310' width='32' height='32' rx='8'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23efe8db' font-size='16' font-family='Georgia'%3EA%3C/text%3E%3C/svg%3E">
@@ -13,54 +13,65 @@
   <style>
     :root { --paper:#efe8db; --ink:#161310; --mute:#5a5248; --line:#d4cbb8; --ember:#9e3b14; --chip:#fff8ee; }
     * { box-sizing: border-box; }
-    body { margin:0; background:var(--paper); color:var(--ink); font-family:Outfit,"Segoe UI",sans-serif; font-size:1.06rem; line-height:1.5; }
-    .wrap { width:min(36rem, calc(100% - 1.75rem)); margin:0 auto; padding:1.2rem 0 3.2rem; }
-    header { display:flex; justify-content:space-between; align-items:baseline; padding-bottom:1rem; border-bottom:1px solid var(--line); margin-bottom:1.4rem; }
-    .mark { font-family:Fraunces,Georgia,serif; font-weight:650; }
-    .mark a { color:inherit; text-decoration:none; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Outfit,"Segoe UI",sans-serif; font-size:1.06rem; line-height:1.5; padding-bottom:5.5rem; }
+    .wrap { width:min(34rem, calc(100% - 1.75rem)); margin:0 auto; padding:1.2rem 0 2rem; }
+    header { display:flex; justify-content:space-between; align-items:baseline; padding-bottom:1rem; border-bottom:1px solid var(--line); margin-bottom:1.3rem; }
+    .mark a { color:inherit; text-decoration:none; font-family:Fraunces,Georgia,serif; font-weight:650; }
     .back { color:var(--mute); font-size:0.9rem; font-weight:650; text-decoration:none; }
-    h1 { font-family:Fraunces,Georgia,serif; font-weight:650; font-size:clamp(1.85rem,5vw,2.4rem); line-height:1.08; letter-spacing:-0.02em; margin:0 0 0.55rem; }
-    .lede { color:var(--mute); margin:0 0 1.2rem; }
-    .steps { display:grid; gap:0.55rem; margin:0 0 1.4rem; }
-    .steps div { background:var(--chip); border:1px solid var(--line); border-radius:0.75rem; padding:0.75rem 0.9rem; color:var(--mute); font-size:0.95rem; }
-    .steps strong { display:block; color:var(--ink); font-family:Fraunces,Georgia,serif; margin-bottom:0.15rem; }
-    label { display:block; font-weight:650; font-size:0.92rem; margin:0.95rem 0 0.35rem; }
-    input, textarea, select {
+    h1 { font-family:Fraunces,Georgia,serif; font-weight:650; font-size:clamp(1.8rem,5vw,2.3rem); line-height:1.08; letter-spacing:-0.02em; margin:0 0 0.5rem; }
+    .price { font-family:Fraunces,Georgia,serif; font-weight:650; color:var(--ember); font-size:1.5rem; margin:0 0 0.75rem; }
+    .lede { color:var(--mute); margin:0 0 0.9rem; }
+    .progress {
+      display:inline-flex; align-items:center; gap:0.4rem;
+      background:var(--chip); border:1px solid var(--line); border-radius:999px;
+      padding:0.4rem 0.85rem; font-size:0.88rem; font-weight:650; color:var(--mute);
+      margin:0 0 1.1rem;
+    }
+    .pack-note { color:var(--ember); font-weight:650; margin:0 0 1rem; font-size:0.95rem; }
+    label { display:block; font-weight:650; font-size:0.92rem; margin:0.9rem 0 0.35rem; }
+    input, textarea {
       width:100%; border:1px solid var(--line); background:#fff; border-radius:0.65rem;
       padding:0.75rem 0.85rem; font:inherit; color:var(--ink);
     }
-    textarea { min-height:5.5rem; resize:vertical; }
-    .hint { color:var(--mute); font-size:0.85rem; margin:0.35rem 0 0; }
+    textarea { min-height:4.5rem; resize:vertical; }
+    .hint { color:var(--mute); font-size:0.85rem; margin:0.3rem 0 0; }
     .cta {
       display:inline-flex; align-items:center; justify-content:center; min-height:48px;
       margin-top:1.2rem; padding:0.8rem 1.2rem; background:var(--ink); color:#fff8ee;
       text-decoration:none; font-weight:650; border:none; border-radius:999px; cursor:pointer; font:inherit;
     }
     .cta:hover { background:var(--ember); }
+    .form-cta { width:100%; justify-content:center; }
+    .more {
+      margin-top:1.35rem; border:1px solid var(--line); border-radius:0.85rem; background:var(--chip); padding:0.15rem 0.9rem 0.9rem;
+    }
+    .more summary {
+      cursor:pointer; font-weight:650; font-family:Fraunces,Georgia,serif; padding:0.75rem 0.1rem; list-style:none;
+    }
+    .more summary::-webkit-details-marker { display:none; }
+    .more summary::after { content:" +"; color:var(--mute); font-family:Outfit,sans-serif; }
+    .more[open] summary::after { content:" −"; }
     .drop {
       margin-top:1.4rem; padding:1rem 1.05rem; background:var(--chip); border:1px dashed var(--line); border-radius:0.85rem;
     }
     .drop strong { display:block; font-family:Fraunces,Georgia,serif; margin-bottom:0.3rem; }
     .drop p { margin:0; color:var(--mute); font-size:0.95rem; }
     .honeypot { position:absolute; left:-9999px; height:0; overflow:hidden; }
-    .pack-note { color:var(--ember); font-weight:650; margin:0 0 1rem; font-size:0.95rem; }
-  
-    .sticky-submit {
-      position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
-      display: none; padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
-      background: color-mix(in srgb, var(--paper, #efe8db) 94%, transparent);
-      backdrop-filter: blur(10px); border-top: 1px solid var(--line, #d4cbb8);
+    .sticky-cta {
+      position:fixed; left:0; right:0; bottom:0; z-index:30;
+      padding:0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
+      background:color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter:blur(10px);
+      border-top:1px solid var(--line);
     }
-    .sticky-submit .cta { width: 100%; }
+    .sticky-cta .cta { width:100%; justify-content:center; margin:0; }
     @media (max-width: 47.99rem) {
-      .sticky-submit { display: block; }
-      form .cta, form button.cta, .form-cta { display: none; }
-      body { padding-bottom: 5rem; }
+      form .cta, form button.cta, .form-cta { display:none; }
     }
     @media (min-width: 48rem) {
-      .sticky-submit { display: none !important; }
+      body { padding-bottom:0; }
+      .sticky-cta { display:none; }
+      .form-cta { width:auto; }
     }
-
   </style>
 </head>
 <body>
@@ -70,34 +81,27 @@
       <a class="back" href="./">Back</a>
     </header>
 
-    <h1>Website intake. Five minutes.</h1>
-    <p class="lede">For the $799 Melb tradie site, or the <strong>$999 website + Google listing pack</strong>. Answer these. Then send photos and your logo. No long call.</p>
+    <h1 id="title">Website. Five fields.</h1>
+    <p class="price" id="price-line">$799 once</p>
+    <p class="lede" id="lede">New Melb tradie site. Home, services, about, contact. Mobile. Tap-to-call. Photos after. No long call.</p>
     <p class="pack-note" id="pack-note" hidden>Pack selected: website + Google listing $999.</p>
-
-    <div class="steps">
-      <div><strong>1. This form</strong> Business basics. Suburbs. What you want on the site.</div>
-      <div><strong>2. Photos + logo</strong> Email them, or paste a Google Drive / Dropbox link below. Phone photos of real jobs are fine.</div>
-      <div><strong>3. I build</strong> Usually a few days once I’ve got what I need. You get a link to check before it goes live.</div>
-    </div>
+    <div class="progress" aria-label="Form length">5 fields · about 3 min</div>
 
     <form id="intake-form" action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Andy Melb website intake $799">
+      <input type="hidden" name="_subject" id="subject-field" value="Andy Melb website intake $799">
       <input type="hidden" name="_next" value="https://moonoce95.github.io/andy-melb/intake.html?sent=1">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="offer" id="offer-field" value="website-799">
       <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-      <label for="name">Your name</label>
-      <input id="name" name="name" required autocomplete="name">
-
-      <label for="business">Business name</label>
-      <input id="business" name="business" required>
-
       <label for="trade">Trade</label>
       <input id="trade" name="trade" required placeholder="Plumber, electrician, painter…">
 
-      <label for="phone">Phone (for the tap-to-call button)</label>
+      <label for="business">Business name</label>
+      <input id="business" name="business" required autocomplete="organization">
+
+      <label for="phone">Phone (tap-to-call on the site)</label>
       <input id="phone" name="phone" type="tel" required autocomplete="tel">
 
       <label for="email">Email</label>
@@ -107,51 +111,81 @@
       <textarea id="suburbs" name="suburbs" required placeholder="Brunswick, Coburg, Preston…"></textarea>
       <p class="hint">Not a fat 50km circle. The places you drive.</p>
 
-      <label for="services">Services to list</label>
-      <textarea id="services" name="services" required placeholder="Blocked drains, hot water, tap repairs…"></textarea>
+      <details class="more">
+        <summary>More if you’ve got it (optional)</summary>
+        <label for="name">Your name</label>
+        <input id="name" name="name" autocomplete="name">
 
-      <label for="about">One or two lines about you</label>
-      <textarea id="about" name="about" placeholder="Family run. Licence numbers. How long you’ve been at it."></textarea>
+        <label for="services">Services to list</label>
+        <textarea id="services" name="services" placeholder="Blocked drains, hot water, tap repairs…"></textarea>
+        <p class="hint">Blank is fine. I’ll draft a first list from your trade.</p>
 
-      <label for="licence">Licence number (if you’ve got one)</label>
-      <input id="licence" name="licence" placeholder="Optional">
+        <label for="about">One or two lines about you</label>
+        <textarea id="about" name="about" placeholder="Family run. How long you’ve been at it."></textarea>
 
-      <label for="domain">Domain you want</label>
-      <input id="domain" name="domain" placeholder="yoursite.com.au or blank">
+        <label for="licence">Licence number</label>
+        <input id="licence" name="licence" placeholder="Optional">
 
-      <label for="photos">Photo / logo link</label>
-      <input id="photos" name="photos" placeholder="Google Drive or Dropbox link">
-      <p class="hint">Or email files to andy.ng199507@gmail.com with subject: website photos.</p>
+        <label for="domain">Domain you want</label>
+        <input id="domain" name="domain" placeholder="yoursite.com.au or blank">
 
-      <label for="notes">Anything else</label>
-      <textarea id="notes" name="notes" placeholder="Colours you like. Pages you need. Old site URL."></textarea>
+        <label for="photos">Photo / logo link</label>
+        <input id="photos" name="photos" placeholder="Google Drive or Dropbox link">
+        <p class="hint">Or email files to andy.ng199507@gmail.com with subject: website photos.</p>
 
-      <button class="cta form-cta" type="submit">Send intake</button>
+        <label for="notes">Anything else</label>
+        <textarea id="notes" name="notes" placeholder="Colours you like. Pages you need. Old site URL."></textarea>
+      </details>
+
+      <button class="cta form-cta" type="submit" id="submit-btn">Send website $799</button>
+      <p class="hint">I’ll reply same day on weekdays with next steps. Photos can come after.</p>
     </form>
 
     <div class="drop">
-      <strong>What I need in the photos</strong>
+      <strong>Photos after this form</strong>
       <p>Logo if you have one. 6–15 job photos from your phone. Van or team optional. No stock images.</p>
     </div>
   </div>
-  <script>
-    if (location.search.indexOf('pack=999') !== -1) {
-      var o = document.getElementById('offer-field');
-      if (o) o.value = 'website-listing-999';
-      var n = document.getElementById('pack-note');
-      if (n) n.hidden = false;
-      var h = document.querySelector('h1');
-      if (h) h.textContent = 'Pack intake. Five minutes.';
-    }
-    if (location.search.indexOf('sent=1') !== -1) {
-      var h2 = document.querySelector('h1');
-      if (h2) h2.textContent = 'Got it. Send photos if you haven’t.';
-    }
-  </script>
 
-  <div class="sticky-submit" aria-label="Submit">
-    <button class="cta" type="submit" form="intake-form">Send intake</button>
+  <div class="sticky-cta" aria-label="Submit">
+    <button class="cta" type="submit" form="intake-form" id="sticky-btn">Send website $799</button>
   </div>
 
+  <script>
+    (function () {
+      var isPack = location.search.indexOf('pack=999') !== -1;
+      if (isPack) {
+        var o = document.getElementById('offer-field');
+        if (o) o.value = 'website-listing-999';
+        var s = document.getElementById('subject-field');
+        if (s) s.value = 'Andy Melb pack intake $999';
+        var n = document.getElementById('pack-note');
+        if (n) n.hidden = false;
+        var h = document.getElementById('title');
+        if (h) h.textContent = 'Pack. Five fields.';
+        var p = document.getElementById('price-line');
+        if (p) p.textContent = '$999 once · save $99';
+        var l = document.getElementById('lede');
+        if (l) l.textContent = 'Website + Google listing together. Same short form. Photos after. No long call.';
+        var b1 = document.getElementById('submit-btn');
+        var b2 = document.getElementById('sticky-btn');
+        if (b1) b1.textContent = 'Send pack $999';
+        if (b2) b2.textContent = 'Send pack $999';
+      }
+      if (location.search.indexOf('sent=1') !== -1) {
+        var h2 = document.getElementById('title');
+        if (h2) h2.textContent = 'Got it.';
+        var note = document.createElement('p');
+        note.className = 'hint';
+        note.textContent = 'I’ll reply same day on weekdays. Send photos when you can.';
+        h2.insertAdjacentElement('afterend', note);
+        var sticky = document.querySelector('.sticky-cta');
+        if (sticky) sticky.style.display = 'none';
+        document.body.style.paddingBottom = '0';
+        var form = document.getElementById('intake-form');
+        if (form) form.style.display = 'none';
+      }
+    })();
+  </script>
 </body>
 </html>
