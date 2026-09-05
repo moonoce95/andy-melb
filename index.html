@@ -273,6 +273,39 @@
       margin: 0 0 0.2rem;
     }
     .menu-item span { color: var(--mute); font-size: 0.85rem; }
+    .trades {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin: 0.85rem 0 0;
+    }
+    .trades span {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.28rem 0.72rem;
+      font-size: 0.82rem;
+      color: var(--mute);
+    }
+    .compare {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 0;
+      font-size: 0.95rem;
+    }
+    .compare th, .compare td {
+      border-top: 1px solid var(--line);
+      padding: 0.7rem 0.55rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .compare th:first-child, .compare td:first-child { padding-left: 0; }
+    .compare th {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650;
+      color: var(--ink);
+    }
+    .compare .pop { color: var(--ember); }
+    .compare .yes { color: var(--ink); font-weight: 650; }
+    .compare .no { color: var(--mute); }
 
     .steps {
       display: grid;
@@ -628,10 +661,34 @@
       </div>
     </div>
 
+
+    <section>
+      <h2 class="sec">Who I help</h2>
+      <p class="prose">Melbourne tradies. Not one trade. If locals google you for the job, you’re in.</p>
+      <div class="trades">
+        <span>Plumbers</span>
+        <span>Electricians</span>
+        <span>Painters</span>
+        <span>Landscapers</span>
+        <span>Roofers</span>
+        <span>Carpenters</span>
+        <span>Concreters</span>
+        <span>Handymen</span>
+        <span>Air con</span>
+        <span>Pest control</span>
+        <span>Cleaners</span>
+        <span>Builders</span>
+        <span>Locksmiths</span>
+        <span>Tilers</span>
+        <span>Fencers</span>
+        <span>More trades</span>
+      </div>
+    </section>
+
     <section>
       <h2 class="sec">Filled in is not the same as showing up</h2>
       <div class="wrap-narrow">
-        <p class="prose">Tap’s leaking. Fuse is out. They google “electrician near me” or “plumber Brunswick.” They don’t ring around. They tap the name that looks finished.</p>
+        <p class="prose">Tap’s leaking. Fuse is out. Fence is down. They google “plumber near me,” “electrician Brunswick,” “painter Melbourne.” They don’t ring around. They tap the name that looks finished.</p>
         <p class="prose">Your listing can have photos, hours, even more reviews than the bloke above you, and still sit nowhere when you search from a job two suburbs over. That’s normal. Complete is the entry ticket. It is not the whole game.</p>
       </div>
     </section>
@@ -656,9 +713,9 @@
     <section>
       <h2 class="sec">Why they pick the other name</h2>
       <div class="grid-4">
-        <div class="card"><strong>Wrong category</strong><p>Google thinks you’re a contractor, not a sparkie. The right jobs never see you.</p></div>
+        <div class="card"><strong>Wrong category</strong><p>Google thinks you’re a contractor, not a plumber or sparkie. The right jobs never see you.</p></div>
         <div class="card"><strong>Service area is a blob</strong><p>A fat circle is a weak signal everywhere in it. Suburbs you drive beat a giant radius.</p></div>
-        <div class="card"><strong>Services are just titles</strong><p>Switchboard. Lighting. Nothing under them. Wasted fields.</p></div>
+        <div class="card"><strong>Services are just titles</strong><p>Blocked drains. Switchboard. Painting. Bare titles with nothing under them. Wasted fields.</p></div>
         <div class="card"><strong>They can’t enquire</strong><p>Call button dead. Quote page 404. They already chose you and then left.</p></div>
       </div>
     </section>
@@ -690,6 +747,48 @@
 
     <section id="products">
       <h2 class="sec">What you can buy</h2>
+      <p class="prose">Simple. On the page. Pay once.</p>
+      <table class="compare" aria-label="Offer comparison">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Google listing</th>
+            <th class="pop">Site patch list ★</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Price</td>
+            <td class="yes">$299 once</td>
+            <td class="yes">$149 once</td>
+          </tr>
+          <tr>
+            <td>Free look first</td>
+            <td class="yes">One finding</td>
+            <td class="yes">One finding</td>
+          </tr>
+          <tr>
+            <td>What you get</td>
+            <td>Listing fixed for you</td>
+            <td>Ranked list of site fixes</td>
+          </tr>
+          <tr>
+            <td>You keep ownership</td>
+            <td class="yes">Yes. Manager only.</td>
+            <td class="yes">Yes. You keep the list.</td>
+          </tr>
+          <tr>
+            <td>Rebuild / brand</td>
+            <td class="no">No</td>
+            <td class="no">No</td>
+          </tr>
+          <tr>
+            <td>Page one promise</td>
+            <td class="no">No</td>
+            <td class="no">No</td>
+          </tr>
+        </tbody>
+      </table>
       <div class="detail-shelf">
         <article class="detail">
           <span class="badge">Same price either way</span>
@@ -814,7 +913,7 @@
 
     <footer>
       <p class="sig">Andy</p>
-      <p>Melbourne. Tradies and small businesses.</p>
+      <p>Melbourne. All trades. Small local businesses.</p>
       <p><a href="mailto:andy.ng199507@gmail.com">andy.ng199507@gmail.com</a></p>
       <p style="margin-top:1rem;font-size:0.85rem">I don’t promise Google page one.</p>
     </footer>
