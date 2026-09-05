@@ -365,7 +365,9 @@
     footer a { color: var(--ink); font-weight: 650; }
     footer p { margin: 0.2rem 0; }
 
+    .thumbbar.is-hidden { transform: translateY(110%); opacity: 0; pointer-events: none; }
     .thumbbar {
+      transition: transform 0.2s ease, opacity 0.2s ease;
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 35;
       display: flex; gap: 0.5rem; padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
       background: color-mix(in srgb, var(--navy) 94%, transparent); backdrop-filter: blur(10px);
@@ -683,7 +685,7 @@
     </div>
   </div>
 
-  <div class="thumbbar" aria-label="Quick action">
+  <div class="thumbbar" id="thumbbar" aria-label="Quick action">
     <a class="cta" href="listing-intake.html">Start listing $299</a>
   </div>
 
@@ -742,5 +744,21 @@
       });
     })();
   </script>
+
+  <script>
+    (function () {
+      var bar = document.getElementById("thumbbar");
+      var products = document.getElementById("products");
+      if (!bar || !products || !("IntersectionObserver" in window)) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) bar.classList.add("is-hidden");
+          else bar.classList.remove("is-hidden");
+        });
+      }, { root: null, threshold: 0.08 });
+      obs.observe(products);
+    })();
+  </script>
+
 </body>
 </html>
