@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Andy in Melbourne. More calls from Google and your site.</title>
-  <meta name="description" content="I’m Andy. I help Melbourne tradies and small businesses get more enquiries. Email me your Google name or site URL. I send one real problem. Then you decide.">
+  <title>Andy in Melbourne. They google you before they call.</title>
+  <meta name="description" content="I’m Andy. I help Melbourne tradies and small businesses get more enquiries. Email me your Google name or site URL. One real problem first. Then you decide.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://moonoce95.github.io/andy-melb/">
-  <meta property="og:title" content="Andy in Melbourne. More people calling.">
-  <meta property="og:description" content="Google listing $299 and a $149 site fix list for Melbourne. One free finding first. New, no reviews yet.">
+  <meta property="og:title" content="Andy in Melbourne. They google you before they call.">
+  <meta property="og:description" content="Google listing $299 and a $149 site fix list. One free finding first. Melbourne.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://moonoce95.github.io/andy-melb/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23161310' width='32' height='32' rx='8'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23efe8db' font-size='16' font-family='Georgia'%3EA%3C/text%3E%3C/svg%3E">
@@ -50,7 +50,7 @@
       letter-spacing: -0.03em;
       margin: 12vh 0 0.85rem;
     }
-    .lede { color: var(--mute); font-size: 1.12rem; margin: 0 0 1rem; max-width: 32rem; }
+    .lede { color: var(--mute); font-size: 1.12rem; margin: 0 0 1rem; max-width: 34rem; }
     .trust {
       background: var(--chip);
       border: 1px solid var(--line);
@@ -93,12 +93,12 @@
     }
     .why p, .obj p { margin: 0 0 0.75rem; color: var(--mute); }
     .why p:last-child, .obj p:last-child { margin-bottom: 0; }
-    .how, article, .found, .faq {
+    .how, article, .found, .faq, .ben {
       padding: 1.05rem 0;
       border-top: 1px solid var(--line);
     }
-    .how:last-of-type, article:last-of-type, .found:last-of-type, .faq:last-of-type { border-bottom: 1px solid var(--line); }
-    .how strong, article h3, .found strong, .faq strong {
+    .how:last-of-type, article:last-of-type, .found:last-of-type, .faq:last-of-type, .ben:last-of-type { border-bottom: 1px solid var(--line); }
+    .how strong, article h3, .found strong, .faq strong, .ben strong {
       display: block;
       font-family: Fraunces, Georgia, serif;
       font-size: 1.18rem;
@@ -111,14 +111,25 @@
       margin: 0.45rem 0 0.35rem;
       font-weight: 650;
       color: var(--ember);
+      font-size: 1.35rem;
     }
-    article p, .how p, .found p, .faq p { margin: 0; color: var(--mute); }
+    article p, .how p, .found p, .faq p, .ben p { margin: 0; color: var(--mute); }
     article ul, .sample {
       margin: 0.65rem 0 0;
       padding: 0 0 0 1.15rem;
       color: var(--mute);
     }
-    article li, .sample li { margin: 0.28rem 0; }
+    article li, .sample li { margin: 0.32rem 0; }
+    .paths { display: grid; gap: 0.75rem; margin: 0.9rem 0 0; }
+    @media (min-width: 36rem) { .paths { grid-template-columns: 1fr 1fr; } }
+    .path {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      padding: 0.85rem 0.95rem;
+    }
+    .path strong { font-family: Fraunces, Georgia, serif; display: block; margin: 0 0 0.25rem; }
+    .path p { margin: 0; color: var(--mute); font-size: 0.95rem; }
     .sample {
       background: var(--chip);
       border: 1px solid var(--line);
@@ -135,9 +146,7 @@
     .obj { margin: 1.6rem 0 0; }
     footer { padding: 2.4rem 0 3.2rem; color: var(--mute); font-size: 0.95rem; }
     footer a { color: var(--ink); font-weight: 650; }
-    @media (max-width: 40rem) {
-      h1 { margin-top: 8vh; }
-    }
+    @media (max-width: 40rem) { h1 { margin-top: 8vh; } }
   </style>
 </head>
 <body>
@@ -147,7 +156,7 @@
       <div class="where">Melbourne</div>
     </header>
 
-    <h1>Your phone should ring more. I find why it doesn’t.</h1>
+    <h1>They google you before they call. I make sure they can.</h1>
     <p class="lede">I’m Andy. I help Melb tradies and small businesses get more enquiries from Google and their website. Email me your Google name or site URL. I send one real problem. You choose if you want the rest.</p>
     <p class="trust">New. No reviews yet. I only look at what’s already public.</p>
     <div class="chips">
@@ -157,12 +166,18 @@
     <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me your listing or site</a>
     <p class="after">One finding, usually same day on weekdays. If I already emailed you, just reply.</p>
 
-    <h2>Why this matters</h2>
+    <h2>What they actually do</h2>
     <div class="why">
-      <p>Someone in Melbourne needs a job done. They google it on their phone. They tap the listing that looks real. Then they hit call or get a quote.</p>
-      <p>If your Google listing looks messy, they tap the next name. If your site’s call button is dead, they leave. You never hear about it. You just have a quiet week.</p>
+      <p>Tap’s leaking. Fuse is out. They need someone today. They don’t open the Yellow Pages. They google “electrician near me” or “plumber Brunswick.”</p>
+      <p>The name with a complete listing, real photos, and a call button that works gets the job. The half-finished one doesn’t. You never hear about the ones who scrolled past.</p>
       <p>I start with one thing you can check yourself in 30 seconds. Then you decide.</p>
     </div>
+
+    <h2>What you get out of it</h2>
+    <div class="ben"><strong>You show up when locals search.</strong><p>Name, category, hours, photos, suburbs you actually cover. Enough that they tap you instead of the next bloke.</p></div>
+    <div class="ben"><strong>You look like a real business.</strong><p>Not a listing someone started in 2019 and forgot. Description sounds like you. Licence showing if you’ve got one.</p></div>
+    <div class="ben"><strong>They can contact you on the spot.</strong><p>Call, website, quote. If those links are dead, the job is gone.</p></div>
+    <div class="ben"><strong>You keep it.</strong><p>You own the listing and the site. I don’t need your password. No monthly unless you later ask.</p></div>
 
     <h2>How it works</h2>
     <div class="how"><strong>1. You send the listing or the site.</strong><p>Email the Google name or the URL. I only look at what’s already public. Usually same day on weekdays.</p></div>
@@ -172,7 +187,7 @@
     <p class="block-cta"><a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me your listing or site</a></p>
 
     <h2>What a free finding looks like</h2>
-    <p style="color:var(--mute);margin:0 0 0.6rem">These are real things I already spotted on Melb pages. That’s the style. One problem. You can check it yourself.</p>
+    <p style="color:var(--mute);margin:0 0 0.6rem">Real things I already spotted on Melb pages. One problem. You can check it yourself.</p>
     <div class="found"><strong>Trust counters stuck at 0</strong><p>A dentist homepage in Melbourne showed “happy patients” as zero. Looks unfinished. People bounce.</p></div>
     <div class="found"><strong>Reviews split across two names</strong><p>An electrician had reviews sitting on more than one Google listing. Searchers pick the louder one.</p></div>
     <div class="found"><strong>Quote page 404s</strong><p>A plumber’s “get a quote” link opened a missing page. That’s a call that never starts.</p></div>
@@ -181,22 +196,28 @@
     <h2>What you can buy</h2>
     <article>
       <h3>Google listing</h3>
-      <p class="price">$299</p>
-      <p>When someone googles a tradie near them, they tap the listing that looks legit. Wrong category, no photos, hours missing, they skip you.</p>
-      <p style="margin-top:0.65rem">One free look first. Then I go through the listing and fix what’s making you look weaker than the next business.</p>
+      <p class="price">$299 once</p>
+      <p>Same work whether you’ve got nothing or a listing you started years ago and ignored.</p>
+      <div class="paths">
+        <div class="path"><strong>No listing yet</strong><p>I tell you how to claim it. Then I build it out so you’re not guessing.</p></div>
+        <div class="path"><strong>Already have one</strong><p>I audit what’s there, then fix the bits that make you look weaker than the next business.</p></div>
+      </div>
+      <p style="margin-top:0.85rem">What I actually do:</p>
       <ul>
-        <li>The right categories, not just the ABN trade name</li>
-        <li>Service area = suburbs you actually cover</li>
-        <li>Services listed with a real description</li>
-        <li>Photos, hours, and a description that sounds like you</li>
+        <li>The right primary category, then the extras. Close-but-wrong is the usual miss.</li>
+        <li>Service area = suburbs you actually cover. Not a 50km circle around the depot.</li>
+        <li>Every service you quote, with a real description. Bare titles do nothing.</li>
+        <li>Photos, hours, and a description that sounds like you and your area</li>
         <li>Website and call links that actually work</li>
         <li>Licence showing if you’ve got one</li>
+        <li>Old leftover Q&amp;A cleaned up if it’s still sitting there</li>
+        <li>A simple way to ask happy customers for a Google review after the job. Real ones. Not bought.</li>
       </ul>
       <p style="margin-top:0.65rem">You add me as Manager. I don’t need your password. You keep the listing.</p>
     </article>
     <article>
       <h3>Website enquiries</h3>
-      <p class="price">$149</p>
+      <p class="price">$149 once</p>
       <p>They already picked you. Then the quote page 404s or the call button does nothing. That’s a job walking out the door.</p>
       <p style="margin-top:0.65rem">One finding for free. Then a short ranked list of what’s stopping calls, and what to change, in order.</p>
       <ul>
@@ -222,10 +243,13 @@
 
     <h2>Common questions</h2>
     <div class="faq"><strong>Do you need my Google password?</strong><p>No. You add me as Manager. You can remove me after.</p></div>
-    <div class="faq"><strong>I already have a listing or a site.</strong><p>Good. That’s who this is for.</p></div>
+    <div class="faq"><strong>I already have a listing or a site.</strong><p>Good. That’s who this is for. Same $299 either way.</p></div>
+    <div class="faq"><strong>I’m a mobile tradie. I don’t have a shop.</strong><p>Fine. We hide the home address and show the suburbs you cover.</p></div>
+    <div class="faq"><strong>Do I own the listing after?</strong><p>Yes. You’re the owner. I was only ever a Manager.</p></div>
     <div class="faq"><strong>How fast?</strong><p>One finding, usually same day on weekdays. If you buy, I’ll tell you when the paid work will be done before you pay.</p></div>
     <div class="faq"><strong>Is the $149 a rebuild?</strong><p>No. It’s a short list. You or your web person do the work.</p></div>
     <div class="faq"><strong>Will I be number one on Google?</strong><p>I don’t promise that. I make the listing or the site something people can actually use.</p></div>
+    <div class="faq"><strong>Can you get me fake reviews?</strong><p>No. I’ll show you how to ask people who actually used you.</p></div>
 
     <footer>
       <p>Andy. Melbourne.</p>
