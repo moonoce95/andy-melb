@@ -80,15 +80,21 @@
       <label for="email">Email for the list</label>
       <input id="email" name="email" type="email" required placeholder="you@business.com.au">
       <p class="hint">I reply with pay + the next step. Public pages only.</p>
-      <button class="cta form-cta" type="submit">Send. I’ll reply with pay + next step.</button>
+      <button class="cta form-cta" type="submit">Send patch list $149</button>
+      <p class="hint">I’ll send the ranked list same day on weekdays.</p>
     </form>
   </div>
   <div class="sticky-cta" aria-label="Submit">
-    <button class="cta" type="submit" form="intake-form">Send. I’ll reply with pay + next step.</button>
+    <button class="cta" type="submit" form="intake-form">Send patch list $149</button>
   </div>
   <script>
     if (location.search.indexOf('sent=1') !== -1) {
-      document.querySelector('h1').textContent = 'Got it. I’ll reply shortly.';
+      var h1 = document.querySelector('h1');
+      h1.textContent = 'Got it.';
+      var note = document.createElement('p');
+      note.className = 'hint';
+      note.textContent = 'I’ll send the ranked list same day on weekdays.';
+      h1.insertAdjacentElement('afterend', note);
       var sticky = document.querySelector('.sticky-cta');
       if (sticky) sticky.style.display = 'none';
       document.body.style.paddingBottom = '0';
