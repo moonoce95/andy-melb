@@ -44,6 +44,23 @@
     .drop p { margin:0; color:var(--mute); font-size:0.95rem; }
     .honeypot { position:absolute; left:-9999px; height:0; overflow:hidden; }
     .pack-note { color:var(--ember); font-weight:650; margin:0 0 1rem; font-size:0.95rem; }
+  
+    .sticky-submit {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+      display: none; padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
+      background: color-mix(in srgb, var(--paper, #efe8db) 94%, transparent);
+      backdrop-filter: blur(10px); border-top: 1px solid var(--line, #d4cbb8);
+    }
+    .sticky-submit .cta { width: 100%; }
+    @media (max-width: 47.99rem) {
+      .sticky-submit { display: block; }
+      form .cta, form button.cta, .form-cta { display: none; }
+      body { padding-bottom: 5rem; }
+    }
+    @media (min-width: 48rem) {
+      .sticky-submit { display: none !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -63,7 +80,7 @@
       <div><strong>3. I build</strong> Usually a few days once I’ve got what I need. You get a link to check before it goes live.</div>
     </div>
 
-    <form action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
+    <form id="intake-form" action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="Andy Melb website intake $799">
       <input type="hidden" name="_next" value="https://moonoce95.github.io/andy-melb/intake.html?sent=1">
       <input type="hidden" name="_captcha" value="false">
@@ -100,16 +117,16 @@
       <input id="licence" name="licence" placeholder="Optional">
 
       <label for="domain">Domain you want</label>
-      <input id="domain" name="domain" placeholder="yoursite.com.au or leave blank and I’ll suggest">
+      <input id="domain" name="domain" placeholder="yoursite.com.au or blank">
 
       <label for="photos">Photo / logo link</label>
       <input id="photos" name="photos" placeholder="Google Drive or Dropbox link">
       <p class="hint">Or email files to andy.ng199507@gmail.com with subject: website photos.</p>
 
       <label for="notes">Anything else</label>
-      <textarea id="notes" name="notes" placeholder="Colours you like. Pages you need. Old site URL."></textarea>
+      <textarea id="notes" name="notes" placeholder="yoursite.com.au or blank"></textarea>
 
-      <button class="cta" type="submit">Send intake</button>
+      <button class="cta form-cta" type="submit">Send intake</button>
     </form>
 
     <div class="drop">
@@ -131,5 +148,10 @@
       if (h2) h2.textContent = 'Got it. Send photos if you haven’t.';
     }
   </script>
+
+  <div class="sticky-submit" aria-label="Submit">
+    <button class="cta" type="submit" form="intake-form">Send intake</button>
+  </div>
+
 </body>
 </html>
