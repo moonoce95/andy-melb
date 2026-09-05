@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Andy in Melbourne. They google you before they call.</title>
-  <meta name="description" content="I’m Andy. I help Melbourne tradies and small businesses get more enquiries. Email me your Google name or site URL. One real problem first. Then you decide.">
+  <meta name="description" content="Andy helps Melbourne tradies and small businesses get more enquiries. Free Google listing finding, then $299 listing fix or $149 site patch list.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://moonoce95.github.io/andy-melb/">
   <meta property="og:title" content="Andy in Melbourne. They google you before they call.">
@@ -24,259 +24,866 @@
       --chip: #fff8ee;
     }
     * { box-sizing: border-box; }
-    html { color-scheme: light; }
+    html { color-scheme: light; scroll-behavior: smooth; }
     body {
       margin: 0;
       background: var(--paper);
       color: var(--ink);
       font-family: Outfit, "Segoe UI", sans-serif;
-      font-size: 1.08rem;
+      font-size: 1.06rem;
       line-height: 1.5;
+      padding-bottom: 5.5rem;
     }
-    .wrap { width: min(40rem, calc(100% - 1.75rem)); margin: 0 auto; }
-    header {
-      padding: 1.1rem 0 0;
+    .wrap { width: min(68rem, calc(100% - 2rem)); margin: 0 auto; }
+    .wrap-narrow { width: min(42rem, 100%); }
+
+    /* Sticky shop bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: color-mix(in srgb, var(--paper) 92%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
       justify-content: space-between;
-      align-items: baseline;
+      gap: 0.55rem 1rem;
+      padding: 0.7rem 0;
     }
-    .mark { font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 1.2rem; }
-    .where { color: var(--mute); font-size: 0.88rem; }
-    h1 {
-      font-family: Fraunces, Georgia, serif;
-      font-weight: 650;
-      font-size: clamp(2.15rem, 8.4vw, 3.4rem);
-      line-height: 1.04;
-      letter-spacing: -0.03em;
-      margin: 12vh 0 0.85rem;
-    }
-    .lede { color: var(--mute); font-size: 1.12rem; margin: 0 0 1rem; max-width: 34rem; }
-    .trust {
-      background: var(--chip);
-      border: 1px solid var(--line);
-      border-radius: 0.75rem;
-      padding: 0.75rem 0.95rem;
-      margin: 0 0 1.15rem;
-      color: var(--ink);
-      font-size: 0.98rem;
-    }
-    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.5rem; }
-    .chips span {
+    .mark { font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 1.15rem; }
+    .mark span { color: var(--mute); font-weight: 500; font-size: 0.88rem; margin-left: 0.35rem; font-family: Outfit, sans-serif; }
+    .price-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+    .price-chips a {
+      text-decoration: none;
       background: var(--chip);
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 0.28rem 0.7rem;
+      padding: 0.28rem 0.72rem;
       font-size: 0.82rem;
-      color: var(--mute);
+      color: var(--ink);
+      font-weight: 650;
     }
+    .price-chips a:hover { border-color: var(--ember); color: var(--ember); }
+    .price-chips .ember-chip {
+      background: var(--ember);
+      border-color: var(--ember);
+      color: #fff8ee;
+    }
+    .price-chips .ember-chip:hover { filter: brightness(1.05); color: #fff8ee; }
+
+    /* Hero */
+    .hero { padding: 2.4rem 0 1.2rem; display: grid; gap: 1.5rem; }
+    @media (min-width: 56rem) {
+      .hero { grid-template-columns: 1.15fr 0.85fr; align-items: end; padding-top: 3rem; }
+    }
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650;
+      font-size: clamp(2.05rem, 5.5vw, 3.15rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.85rem;
+    }
+    .lede { color: var(--mute); font-size: 1.08rem; margin: 0 0 1.1rem; max-width: 36rem; }
+    .trust {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 0.85rem;
+      padding: 0.8rem 0.95rem;
+      margin: 0 0 1.1rem;
+      font-size: 0.95rem;
+      max-width: 36rem;
+    }
+    .trust strong { color: var(--ink); }
+    .row { display: flex; flex-wrap: wrap; gap: 0.55rem; align-items: center; }
+    .after { margin: 0.7rem 0 0; color: var(--mute); font-size: 0.9rem; }
+
     .cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 48px;
-      padding: 0.8rem 1.2rem;
-      background: var(--ink);
+      padding: 0.75rem 1.15rem;
+      background: var(--ember);
       color: #fff8ee;
       text-decoration: none;
       font-weight: 650;
       border-radius: 999px;
+      border: 2px solid var(--ember);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
     }
+    .cta:hover { filter: brightness(1.06); }
+    .cta:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
     .cta.ghost {
       background: transparent;
       color: var(--ink);
-      border: 2px solid var(--ink);
+      border-color: var(--ink);
     }
-    .cta.ghost:hover { background: var(--ink); color: #fff8ee; }
-    .cta:hover { background: var(--ember); }
-    .cta:focus-visible { outline: 3px solid var(--ember); outline-offset: 3px; }
-    .row { display: flex; flex-wrap: wrap; gap: 0.55rem; align-items: center; }
-    .after { margin: 0.7rem 0 0; color: var(--mute); font-size: 0.92rem; }
-    .block-cta { margin: 1.6rem 0 0; }
-    h2 {
+    .cta.ghost:hover { background: var(--ink); color: #fff8ee; filter: none; }
+    .cta.ink {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #fff8ee;
+    }
+    .cta.ink:hover { background: var(--ember); border-color: var(--ember); }
+
+    /* Shelf product cards */
+    .shelf-label {
       font-family: Fraunces, Georgia, serif;
       font-weight: 650;
-      font-size: 1.55rem;
-      margin: 3.1rem 0 0.85rem;
+      font-size: 0.95rem;
+      margin: 0 0 0.55rem;
+      color: var(--mute);
+      letter-spacing: 0.02em;
     }
-    .why p, .obj p { margin: 0 0 0.75rem; color: var(--mute); }
-    .why p:last-child, .obj p:last-child { margin-bottom: 0; }
-    .how, article, .found, .faq, .ben, .miss {
-      padding: 1.05rem 0;
-      border-top: 1px solid var(--line);
+    .shelf {
+      display: grid;
+      gap: 0.75rem;
     }
-    .how:last-of-type, article:last-of-type, .found:last-of-type, .faq:last-of-type, .ben:last-of-type, .miss:last-of-type { border-bottom: 1px solid var(--line); }
-    .how strong, article h3, .found strong, .faq strong, .ben strong, .miss strong {
+    @media (min-width: 40rem) { .shelf { grid-template-columns: 1fr 1fr; } }
+    .product {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      padding: 1.15rem 1.2rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      box-shadow: 0 1px 0 rgba(22,19,16,0.04);
+    }
+    .product .tag {
+      font-size: 0.75rem;
+      font-weight: 650;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--mute);
+    }
+    .product h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650;
+      font-size: 1.35rem;
+      margin: 0;
+    }
+    .product .price {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650;
+      font-size: 1.85rem;
+      color: var(--ember);
+      margin: 0.15rem 0;
+    }
+    .product .price small {
+      font-family: Outfit, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--mute);
+      margin-left: 0.25rem;
+    }
+    .product p { margin: 0; color: var(--mute); font-size: 0.95rem; flex: 1; }
+    .product .cta { margin-top: 0.85rem; align-self: flex-start; }
+
+    /* Sections */
+    section { padding: 2.4rem 0 0; }
+    h2.sec {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650;
+      font-size: clamp(1.45rem, 3vw, 1.85rem);
+      margin: 0 0 0.9rem;
+    }
+    .prose { color: var(--mute); margin: 0 0 0.75rem; max-width: 42rem; }
+    .prose:last-child { margin-bottom: 0; }
+
+    .grid-4 {
+      display: grid;
+      gap: 0.7rem;
+    }
+    @media (min-width: 48rem) { .grid-4 { grid-template-columns: repeat(4, 1fr); } }
+    @media (min-width: 36rem) and (max-width: 47.98rem) { .grid-4 { grid-template-columns: 1fr 1fr; } }
+
+    .card {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 0.85rem;
+      padding: 0.95rem 1rem;
+    }
+    .card strong, .card h3 {
       display: block;
       font-family: Fraunces, Georgia, serif;
-      font-size: 1.18rem;
+      font-size: 1.08rem;
       font-weight: 650;
       margin: 0 0 0.3rem;
     }
-    article h3 { font-size: 1.28rem; }
-    .price {
-      display: inline-block;
-      margin: 0.45rem 0 0.35rem;
-      font-weight: 650;
-      color: var(--ember);
-      font-size: 1.35rem;
+    .card p { margin: 0; color: var(--mute); font-size: 0.92rem; }
+
+    /* Pin vs blob callout */
+    .callout {
+      display: grid;
+      gap: 0.75rem;
+      margin: 1rem 0 0;
     }
-    article p, .how p, .found p, .faq p, .ben p, .miss p { margin: 0; color: var(--mute); }
-    article ul, .sample {
-      margin: 0.65rem 0 0;
-      padding: 0 0 0 1.15rem;
+    @media (min-width: 40rem) { .callout { grid-template-columns: 1fr 1fr; } }
+    .callout .bad, .callout .good {
+      border-radius: 0.85rem;
+      padding: 1rem 1.05rem;
+      border: 1px solid var(--line);
+    }
+    .callout .bad { background: #f3ebe0; }
+    .callout .good { background: var(--chip); border-color: color-mix(in srgb, var(--ember) 35%, var(--line)); }
+    .callout .label {
+      font-size: 0.75rem;
+      font-weight: 650;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+    }
+    .callout .bad .label { color: var(--mute); }
+    .callout .good .label { color: var(--ember); }
+    .callout strong {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.15rem;
+      margin: 0 0 0.3rem;
+    }
+    .callout p { margin: 0; color: var(--mute); font-size: 0.92rem; }
+
+    /* Finding menu */
+    .menu-grid {
+      display: grid;
+      gap: 0.55rem;
+      margin: 0.85rem 0 0;
+    }
+    @media (min-width: 40rem) { .menu-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 56rem) { .menu-grid { grid-template-columns: repeat(5, 1fr); } }
+    .menu-item {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      padding: 0.75rem 0.85rem;
+      font-size: 0.9rem;
+    }
+    .menu-item strong {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1rem;
+      margin: 0 0 0.2rem;
+    }
+    .menu-item span { color: var(--mute); font-size: 0.85rem; }
+
+    .steps {
+      display: grid;
+      gap: 0.7rem;
+      counter-reset: step;
+    }
+    @media (min-width: 48rem) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 0.85rem;
+      padding: 1rem 1.05rem;
+      counter-increment: step;
+    }
+    .step::before {
+      content: counter(step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--chip);
+      font-size: 0.8rem;
+      font-weight: 650;
+      margin-bottom: 0.45rem;
+    }
+    .step strong {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.08rem;
+      margin: 0 0 0.3rem;
+    }
+    .step p { margin: 0; color: var(--mute); font-size: 0.92rem; }
+
+    /* Will / won't */
+    .willwont {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 0.5rem;
+    }
+    @media (min-width: 40rem) { .willwont { grid-template-columns: 1fr 1fr; } }
+    .will, .wont {
+      border-radius: 0.85rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      background: var(--chip);
+    }
+    .will h3, .wont h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.1rem;
+      margin: 0 0 0.5rem;
+    }
+    .will ul, .wont ul {
+      margin: 0;
+      padding: 0 0 0 1.1rem;
+      color: var(--mute);
+      font-size: 0.92rem;
+    }
+    .will li, .wont li { margin: 0.28rem 0; }
+    .own-line {
+      margin: 1rem 0 0;
+      padding: 0.75rem 0.95rem;
+      background: var(--chip);
+      border: 1px dashed var(--line);
+      border-radius: 0.75rem;
+      color: var(--mute);
+      font-size: 0.95rem;
+    }
+    .own-line strong { color: var(--ink); }
+
+    /* Product detail shelf */
+    .detail-shelf {
+      display: grid;
+      gap: 0.9rem;
+    }
+    @media (min-width: 52rem) { .detail-shelf { grid-template-columns: 1.15fr 0.85fr; } }
+    .detail {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      padding: 1.25rem 1.3rem 1.35rem;
+    }
+    .detail h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.4rem;
+      margin: 0;
+    }
+    .detail .price {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650;
+      font-size: 1.7rem;
+      color: var(--ember);
+      margin: 0.35rem 0 0.5rem;
+    }
+    .detail .price small {
+      font-family: Outfit, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
       color: var(--mute);
     }
-    article li, .sample li { margin: 0.32rem 0; }
-    .paths { display: grid; gap: 0.75rem; margin: 0.9rem 0 0; }
+    .detail p { margin: 0 0 0.65rem; color: var(--mute); font-size: 0.95rem; }
+    .detail ul {
+      margin: 0.4rem 0 0;
+      padding: 0 0 0 1.15rem;
+      color: var(--mute);
+      font-size: 0.92rem;
+    }
+    .detail li { margin: 0.3rem 0; }
+    .badge {
+      display: inline-block;
+      background: color-mix(in srgb, var(--ember) 12%, var(--chip));
+      color: var(--ember);
+      border: 1px solid color-mix(in srgb, var(--ember) 28%, var(--line));
+      border-radius: 999px;
+      padding: 0.2rem 0.65rem;
+      font-size: 0.78rem;
+      font-weight: 650;
+      margin-bottom: 0.45rem;
+    }
+    .paths { display: grid; gap: 0.55rem; margin: 0.7rem 0; }
     @media (min-width: 36rem) { .paths { grid-template-columns: 1fr 1fr; } }
     .path {
-      background: var(--chip);
+      background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 0.75rem;
-      padding: 0.85rem 0.95rem;
+      border-radius: 0.65rem;
+      padding: 0.7rem 0.8rem;
     }
-    .path strong { font-family: Fraunces, Georgia, serif; display: block; margin: 0 0 0.25rem; }
-    .path p { margin: 0; color: var(--mute); font-size: 0.95rem; }
+    .path strong { display: block; font-family: Fraunces, Georgia, serif; margin: 0 0 0.2rem; font-size: 1rem; }
+    .path p { margin: 0; font-size: 0.88rem; color: var(--mute); }
     .sample {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 0.65rem;
+      padding: 0.75rem 0.85rem 0.75rem 1.9rem;
+      margin: 0.55rem 0 0;
+      color: var(--mute);
+      font-size: 0.9rem;
+    }
+    .sample li { margin: 0.25rem 0; }
+
+    .faq-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .faq {
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .faq strong {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.08rem;
+      margin: 0 0 0.25rem;
+    }
+    .faq p { margin: 0; color: var(--mute); font-size: 0.95rem; }
+
+    /* Capture band */
+    .capture {
+      margin-top: 2.6rem;
       background: var(--chip);
       border: 1px solid var(--line);
-      border-radius: 0.75rem;
-      padding: 0.85rem 1rem 0.85rem 2rem;
-      list-style: decimal;
+      border-radius: 1rem;
+      padding: 1.35rem 1.35rem 1.45rem;
     }
-    .sample-label {
-      display: block;
-      margin: 0.9rem 0 0.35rem;
+    .capture h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.45rem;
+      margin: 0 0 0.4rem;
+    }
+    .capture .benefit { color: var(--mute); margin: 0 0 0.85rem; max-width: 36rem; }
+    .ticks { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 0.35rem; }
+    .ticks li {
+      position: relative;
+      padding-left: 1.45rem;
       color: var(--ink);
-      font-weight: 650;
+      font-size: 0.95rem;
     }
-    .obj { margin: 1.6rem 0 0; }
-    footer { padding: 2.4rem 0 3.2rem; color: var(--mute); font-size: 0.95rem; }
-    footer a { color: var(--ink); font-weight: 650; }
-    @media (max-width: 40rem) { h1 { margin-top: 8vh; } }
+    .ticks li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.35rem;
+      width: 0.85rem;
+      height: 0.85rem;
+      border-radius: 999px;
+      background: var(--ember);
+      box-shadow: inset 0 0 0 2px var(--chip), inset 0 0 0 3.5px var(--ember);
+    }
+    .capture-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: stretch;
+      max-width: 32rem;
+    }
+    .capture-form input[type="email"] {
+      flex: 1 1 14rem;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.65rem 1rem;
+      font: inherit;
+      background: #fff;
+      color: var(--ink);
+    }
+    .capture-form input[type="email"]:focus {
+      outline: 3px solid color-mix(in srgb, var(--ember) 45%, transparent);
+      outline-offset: 1px;
+      border-color: var(--ember);
+    }
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+    }
+    .fine { margin: 0.65rem 0 0; font-size: 0.82rem; color: var(--mute); }
+
+    footer {
+      padding: 2.6rem 0 1.5rem;
+      color: var(--mute);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--line);
+      margin-top: 2.8rem;
+    }
+    footer a { color: var(--ink); font-weight: 650; text-decoration: none; }
+    footer a:hover { color: var(--ember); }
+    .sig {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650;
+      color: var(--ink);
+      font-size: 1.1rem;
+      margin: 0 0 0.25rem;
+    }
+
+    /* Mobile thumb CTA bar */
+    .thumbbar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      display: none;
+      gap: 0.45rem;
+      padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
+      background: color-mix(in srgb, var(--paper) 94%, transparent);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--line);
+    }
+    .thumbbar .cta { flex: 1; min-height: 46px; font-size: 0.92rem; padding: 0.55rem 0.6rem; }
+    @media (max-width: 52rem) {
+      .thumbbar { display: flex; }
+      body { padding-bottom: 5.2rem; }
+    }
+
+    /* Exit modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(22, 19, 16, 0.45);
+      z-index: 80;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      padding: 1.35rem 1.35rem 1.45rem;
+      width: min(26rem, 100%);
+      box-shadow: 0 18px 50px rgba(22,19,16,0.18);
+      position: relative;
+    }
+    .modal h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.4rem;
+      margin: 0 0 0.4rem;
+    }
+    .modal .benefit { color: var(--mute); margin: 0 0 0.85rem; font-size: 0.95rem; }
+    .modal-close {
+      position: absolute;
+      top: 0.65rem;
+      right: 0.75rem;
+      background: transparent;
+      border: none;
+      font-size: 1.35rem;
+      line-height: 1;
+      color: var(--mute);
+      cursor: pointer;
+      padding: 0.35rem;
+    }
+    .modal-close:hover { color: var(--ink); }
+    .modal .ticks { margin-bottom: 0.9rem; }
+    .modal .capture-form { max-width: none; }
+    .modal .capture-form .cta { width: 100%; }
+    @media (min-width: 28rem) {
+      .modal .capture-form .cta { width: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="mark">Andy</div>
-      <div class="where">Melbourne</div>
-    </header>
-
-    <h1>They google you before they call. I make sure they can.</h1>
-    <p class="lede">I’m Andy. I help Melb tradies and small businesses get more enquiries from Google and their website. Email me your Google name or site URL. I send one real problem, and who is sitting above you. You choose if you want the rest.</p>
-    <div class="chips">
-      <span>Google listing $299</span>
-      <span>Site fix list $149</span>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="mark">Andy<span>Melbourne</span></div>
+      <div class="price-chips">
+        <a href="#products">Listing $299</a>
+        <a href="#products">Site list $149</a>
+        <a class="ember-chip" href="#free">Free finding</a>
+      </div>
     </div>
-    <div class="row">
+  </div>
+
+  <main class="wrap">
+    <div class="hero">
+      <div>
+        <h1>They google you before they call.</h1>
+        <p class="lede">I’m Andy. I help Melbourne tradies and small businesses get more enquiries from Google and their site. You send the listing name or URL. I send one real problem, and who sits above you. Then you decide.</p>
+        <div class="trust" id="free">
+          <strong>Public data only.</strong> I look at what’s already out there. If it’s already fine, I say so. No chase after.
+        </div>
+        <div class="row">
+          <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a>
+          <a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Fix%20the%20listing%20%24299&amp;body=Google%20name%3A%0A">Skip it. Do the $299.</a>
+        </div>
+        <p class="after">One finding, usually same day on weekdays. If I already emailed you, just reply.</p>
+      </div>
+      <div>
+        <p class="shelf-label">On the shelf</p>
+        <div class="shelf">
+          <article class="product" id="sku-listing">
+            <span class="tag">Google listing</span>
+            <h2>Make the listing usable</h2>
+            <p class="price">$299<small>once</small></p>
+            <p>Category, suburbs you drive, services, photos, working enquire links. Manager access. No password.</p>
+            <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Fix%20the%20listing%20%24299&amp;body=Google%20name%3A%0A">Get the $299</a>
+          </article>
+          <article class="product" id="sku-site">
+            <span class="tag">Site enquiries</span>
+            <h2>Patch list, not a rebuild</h2>
+            <p class="price">$149<small>once</small></p>
+            <p>Ranked list of what’s stopping calls after they already picked you. You or your web person do the work.</p>
+            <a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Site%20fix%20list%20%24149&amp;body=Site%20URL%3A%0A">Get the $149 list</a>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <h2 class="sec">Filled in is not the same as showing up</h2>
+      <div class="wrap-narrow">
+        <p class="prose">Tap’s leaking. Fuse is out. They google “electrician near me” or “plumber Brunswick.” They don’t ring around. They tap the name that looks finished.</p>
+        <p class="prose">Your listing can have photos, hours, even more reviews than the bloke above you, and still sit nowhere when you search from a job two suburbs over. That’s normal. Complete is the entry ticket. It is not the whole game.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec">Pin the suburbs. Don’t draw a fat circle.</h2>
+      <p class="prose">Service area is where this goes wrong most often. Make it unmistakable.</p>
+      <div class="callout">
+        <div class="bad">
+          <div class="label">Weak signal</div>
+          <strong>Fat 50km blob</strong>
+          <p>A giant circle around the depot tells Google you’re everywhere and nowhere. You get a weak signal in every suburb inside it.</p>
+        </div>
+        <div class="good">
+          <div class="label">Stronger signal</div>
+          <strong>Pins for suburbs you drive</strong>
+          <p>List the suburbs you actually take jobs in. That’s the map shape that matches how you work in Melbourne.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec">Why they pick the other name</h2>
+      <div class="grid-4">
+        <div class="card"><strong>Wrong category</strong><p>Google thinks you’re a contractor, not a sparkie. The right jobs never see you.</p></div>
+        <div class="card"><strong>Service area is a blob</strong><p>A fat circle is a weak signal everywhere in it. Suburbs you drive beat a giant radius.</p></div>
+        <div class="card"><strong>Services are just titles</strong><p>Switchboard. Lighting. Nothing under them. Wasted fields.</p></div>
+        <div class="card"><strong>They can’t enquire</strong><p>Call button dead. Quote page 404. They already chose you and then left.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec">What one free finding can be</h2>
+      <p class="prose">I still send <strong style="color:var(--ink)">one</strong> problem you can check in 30 seconds. Here’s the menu it can come from.</p>
+      <div class="menu-grid">
+        <div class="menu-item"><strong>Category</strong><span>Primary or extras off by a notch</span></div>
+        <div class="menu-item"><strong>Service area</strong><span>Blob vs suburbs you drive</span></div>
+        <div class="menu-item"><strong>Links</strong><span>Call, website, quote that fail</span></div>
+        <div class="menu-item"><strong>Photos</strong><span>Missing, stale, or stock-looking</span></div>
+        <div class="menu-item"><strong>Who sits above</strong><span>What the louder names are doing</span></div>
+      </div>
+      <p class="after" style="margin-top:0.9rem">Plus real examples I’ve already spotted on Melbourne pages: trust counters stuck at 0, reviews split across two names, quote page 404s, call buttons that don’t dial.</p>
+    </section>
+
+    <section>
+      <h2 class="sec">How it works</h2>
+      <div class="steps">
+        <div class="step"><strong>You send the listing or the site</strong><p>Email the Google name or the URL. Public data only. I also look at who is above you. Usually same day on weekdays.</p></div>
+        <div class="step"><strong>I send one problem</strong><p>One thing that’s losing you calls. You can open it and see it. No report pack. No sales call. I don’t chase you after.</p></div>
+        <div class="step"><strong>You pay if it’s useful</strong><p>$299 and I fix the Google listing. $149 and I send the full site patch list. I’ll tell you when the paid work will be done before you pay.</p></div>
+      </div>
+      <p class="row" style="margin-top:1.1rem">
+        <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a>
+      </p>
+    </section>
+
+    <section id="products">
+      <h2 class="sec">What you can buy</h2>
+      <div class="detail-shelf">
+        <article class="detail">
+          <span class="badge">Same price either way</span>
+          <h3>Google listing</h3>
+          <p class="price">$299 <small>once</small></p>
+          <p>Same work and same price whether you’ve got nothing, or a listing you started years ago and ignored.</p>
+          <div class="paths">
+            <div class="path"><strong>No listing yet</strong><p>I tell you how to claim and verify it (postcard if Google sends one). Then I build it out so you’re not guessing.</p></div>
+            <div class="path"><strong>Already have one</strong><p>I look at what’s there and who ranks above you. Then I fix the bits that make you look weaker.</p></div>
+          </div>
+          <p>What I actually do:</p>
+          <ul>
+            <li>The right primary category, then the extras. Close-but-wrong is the usual miss.</li>
+            <li>Service area = suburbs you actually cover. Not a 50km circle around the depot.</li>
+            <li>Every service you quote, with a real description. Bare titles do nothing.</li>
+            <li>Photos, hours, and a description that sounds like you and your area. Phone photos of real jobs are fine.</li>
+            <li>Website and call links that actually work</li>
+            <li>Licence showing if you’ve got one</li>
+            <li>Old leftover Q&amp;A cleaned up if it’s still sitting there</li>
+            <li>A simple way to ask happy customers for a Google review after the job. Real ones. Not bought.</li>
+          </ul>
+          <p style="margin-top:0.75rem">You add me as Manager. I don’t need your password. You keep the listing. Category and service area changes are usually live in a day or two. Maps movement takes longer.</p>
+          <p class="row" style="margin-top:0.9rem"><a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Fix%20the%20listing%20%24299&amp;body=Google%20name%3A%0A">Do the $299</a></p>
+        </article>
+        <article class="detail">
+          <span class="badge">Patch list, not a rebuild</span>
+          <h3>Website enquiries</h3>
+          <p class="price">$149 <small>once</small></p>
+          <p>They already picked you. Then the quote page 404s or the call button does nothing. That’s a job walking out the door.</p>
+          <p><strong style="color:var(--ink)">This is a short ranked patch list.</strong> Not a redesign. Not a rebuild. Not me taking over your site. You or your web person do the work. You keep the list.</p>
+          <ul>
+            <li>Quote buttons, phone links, forms</li>
+            <li>The first screen on a phone</li>
+            <li>What to change, in order</li>
+          </ul>
+          <p style="margin-top:0.65rem;color:var(--ink);font-weight:650;font-size:0.92rem">The list looks like this</p>
+          <ol class="sample">
+            <li>Call button on a phone does nothing</li>
+            <li>Get a quote opens a missing page</li>
+            <li>The form asks for 9 fields before they can send</li>
+          </ol>
+          <p class="row" style="margin-top:1rem"><a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Site%20fix%20list%20%24149&amp;body=Site%20URL%3A%0A">Get the $149 list</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec">What you get out of it</h2>
+      <div class="grid-4">
+        <div class="card"><strong>You show up when locals search</strong><p>Name, category, hours, photos, suburbs you actually cover. Enough that they tap you instead of the next bloke.</p></div>
+        <div class="card"><strong>You look like a real business</strong><p>Not a listing someone started in 2019 and forgot. Description sounds like you. Licence showing if you’ve got one.</p></div>
+        <div class="card"><strong>They can contact you on the spot</strong><p>Call, website, quote. If those links are dead, the job is gone.</p></div>
+        <div class="card"><strong>You keep it</strong><p>You own the listing and the site. I don’t need your password. After the $299, nothing else happens unless you ask.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec">Will / won’t</h2>
+      <div class="willwont">
+        <div class="will">
+          <h3>I will</h3>
+          <ul>
+            <li>Fix or build out the Google listing</li>
+            <li>Make the enquire path work (call, site, quote)</li>
+            <li>Tell you if it’s already fine</li>
+            <li>Work from public data for the free finding</li>
+          </ul>
+        </div>
+        <div class="wont">
+          <h3>I won’t</h3>
+          <ul>
+            <li>Do a brand or fancy rebuild</li>
+            <li>Promise Google page one</li>
+            <li>Buy or fake reviews</li>
+            <li>Sell you a retainer as the main thing</li>
+          </ul>
+        </div>
+      </div>
+      <p class="own-line"><strong>You rent directory leads.</strong> You own the Google listing.</p>
+    </section>
+
+    <section>
+      <h2 class="sec">Common questions</h2>
+      <div class="faq-list">
+        <div class="faq"><strong>Do you need my Google password?</strong><p>No. You add me as Manager. You can remove me after.</p></div>
+        <div class="faq"><strong>I don’t have a listing yet. How does verification work?</strong><p>Google usually asks you to verify. Often that’s a postcard to the business address, sometimes a phone or video option. If you have no listing yet, I walk you through claim and verification first, then build it out. Same $299.</p></div>
+        <div class="faq"><strong>I already have a listing or a site.</strong><p>Good. That’s who this is for. Same $299 either way.</p></div>
+        <div class="faq"><strong>I’m a mobile tradie. I don’t have a shop.</strong><p>Fine. We hide the home address and show the suburbs you cover.</p></div>
+        <div class="faq"><strong>Do I own the listing after?</strong><p>Yes. You’re the owner. I was only ever a Manager. Nothing else happens unless you ask.</p></div>
+        <div class="faq"><strong>How fast?</strong><p>One finding, usually same day on weekdays. Listing fields are usually live in a day or two. Showing higher on the map takes weeks, and it depends how busy your trade is in those suburbs.</p></div>
+        <div class="faq"><strong>I don’t have nice photos.</strong><p>Phone photos of real jobs are fine. Stock vans are not.</p></div>
+        <div class="faq"><strong>Is the $149 a rebuild?</strong><p>No. It’s a short patch list. You or your web person do the work. Unmistakable: list, not rebuild.</p></div>
+        <div class="faq"><strong>Will I be number one on Google?</strong><p>I don’t promise that. I make the listing or the site something people can actually use.</p></div>
+        <div class="faq"><strong>Can you get me fake reviews?</strong><p>No. I’ll show you how to ask people who actually used you.</p></div>
+      </div>
+    </section>
+
+    <section class="capture" id="checklist" aria-labelledby="capture-title">
+      <h2 id="capture-title">Free Melb Google listing checklist</h2>
+      <p class="benefit">One scannable checklist for your listing and enquire path. Useful whether you buy anything or not.</p>
+      <ul class="ticks">
+        <li>Category, suburbs, services, photos, links</li>
+        <li>Pin vs fat circle called out clearly</li>
+        <li>Enquire path checks before they bounce</li>
+      </ul>
+      <form class="capture-form" action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Andy Melb checklist">
+        <input type="hidden" name="_next" value="https://moonoce95.github.io/andy-melb/checklist.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="honeypot" for="email-bottom">Email</label>
+        <input id="email-bottom" type="email" name="email" required placeholder="Your email" autocomplete="email">
+        <button class="cta" type="submit">Send the checklist</button>
+      </form>
+      <p class="fine">Goes to Andy. No newsletter spam. Checklist opens next.</p>
+    </section>
+
+    <p class="row" style="margin-top:1.8rem">
       <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a>
       <a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Fix%20the%20listing%20%24299&amp;body=Google%20name%3A%0A">Skip it. Do the $299.</a>
-    </div>
-    <p class="after">One finding, usually same day on weekdays. If I already emailed you, just reply.</p>
-
-    <h2>Filled in is not the same as showing up</h2>
-    <div class="why">
-      <p>Tap’s leaking. Fuse is out. They google “electrician near me” or “plumber Brunswick.” They don’t ring around. They tap the name that looks finished.</p>
-      <p>Your listing can have photos, hours, even more reviews than the bloke above you, and still sit nowhere when you search from a job two suburbs over. That’s normal. Complete is the entry ticket. It is not the whole game.</p>
-      <p>The usual misses: category close but wrong, a fat service area, services left as bare titles, a site button that doesn’t work. I send you one of those first. You can check it in 30 seconds.</p>
-    </div>
-
-    <h2>Why they pick the other name</h2>
-    <div class="miss"><strong>Wrong category</strong><p>Google thinks you’re a contractor, not a sparkie. The right jobs never see you.</p></div>
-    <div class="miss"><strong>Service area is a blob</strong><p>A 50km circle around the depot is a weak signal everywhere in it. Suburbs you actually drive beat a giant circle.</p></div>
-    <div class="miss"><strong>Services are just titles</strong><p>Switchboard. Lighting. Nothing under them. Wasted fields.</p></div>
-    <div class="miss"><strong>They can’t enquire</strong><p>Call button dead. Quote page 404. They already chose you and then left.</p></div>
-
-    <h2>What you get out of it</h2>
-    <div class="ben"><strong>You show up when locals search.</strong><p>Name, category, hours, photos, suburbs you actually cover. Enough that they tap you instead of the next bloke.</p></div>
-    <div class="ben"><strong>You look like a real business.</strong><p>Not a listing someone started in 2019 and forgot. Description sounds like you. Licence showing if you’ve got one.</p></div>
-    <div class="ben"><strong>They can contact you on the spot.</strong><p>Call, website, quote. If those links are dead, the job is gone.</p></div>
-    <div class="ben"><strong>You keep it.</strong><p>You own the listing and the site. I don’t need your password. After the $299, nothing else happens unless you ask.</p></div>
-
-    <h2>How it works</h2>
-    <div class="how"><strong>1. You send the listing or the site.</strong><p>Email the Google name or the URL. I only look at what’s already public. I also look at who is above you. Usually same day on weekdays.</p></div>
-    <div class="how"><strong>2. I send one problem.</strong><p>One thing that’s losing you calls. You can open it and see it. No report. No sales call. I don’t chase you after.</p></div>
-    <div class="how"><strong>3. You pay if it’s useful.</strong><p>$299 and I fix the Google listing. $149 and I send the full site list. I’ll tell you when the paid work will be done before you pay.</p></div>
-
-    <p class="block-cta"><a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a></p>
-
-    <h2>What a free finding looks like</h2>
-    <p style="color:var(--mute);margin:0 0 0.6rem">Real things I already spotted on Melb pages. One problem. You can check it yourself.</p>
-    <div class="found"><strong>Trust counters stuck at 0</strong><p>A dentist homepage in Melbourne showed “happy patients” as zero. Looks unfinished. People bounce.</p></div>
-    <div class="found"><strong>Reviews split across two names</strong><p>An electrician had reviews sitting on more than one Google listing. Searchers pick the louder one.</p></div>
-    <div class="found"><strong>Quote page 404s</strong><p>A plumber’s “get a quote” link opened a missing page. That’s a call that never starts.</p></div>
-    <div class="found"><strong>Call button that doesn’t dial</strong><p>A PT site had a call button that looked fine and did nothing on a phone.</p></div>
-
-    <h2>What you can buy</h2>
-    <article>
-      <h3>Google listing</h3>
-      <p class="price">$299 once</p>
-      <p>Same work and same price whether you’ve got nothing, or a listing you started years ago and ignored.</p>
-      <div class="paths">
-        <div class="path"><strong>No listing yet</strong><p>I tell you how to claim it. Then I build it out so you’re not guessing.</p></div>
-        <div class="path"><strong>Already have one</strong><p>I look at what’s there and who ranks above you. Then I fix the bits that make you look weaker.</p></div>
-      </div>
-      <p style="margin-top:0.85rem">What I actually do:</p>
-      <ul>
-        <li>The right primary category, then the extras. Close-but-wrong is the usual miss.</li>
-        <li>Service area = suburbs you actually cover. Not a 50km circle around the depot.</li>
-        <li>Every service you quote, with a real description. Bare titles do nothing.</li>
-        <li>Photos, hours, and a description that sounds like you and your area. Phone photos of real jobs are fine.</li>
-        <li>Website and call links that actually work</li>
-        <li>Licence showing if you’ve got one</li>
-        <li>Old leftover Q&amp;A cleaned up if it’s still sitting there</li>
-        <li>A simple way to ask happy customers for a Google review after the job. Real ones. Not bought.</li>
-      </ul>
-      <p style="margin-top:0.65rem">You add me as Manager. I don’t need your password. You keep the listing. Category and service area changes are usually live in a day or two. Maps movement takes longer. Anyone who promises Friday page one is guessing.</p>
-    </article>
-    <article>
-      <h3>Website enquiries</h3>
-      <p class="price">$149 once</p>
-      <p>They already picked you. Then the quote page 404s or the call button does nothing. That’s a job walking out the door.</p>
-      <p style="margin-top:0.65rem">One finding for free. Then a short ranked list of what’s stopping calls, and what to change, in order. Not a 20 page audit. The top things first.</p>
-      <ul>
-        <li>Quote buttons, phone links, forms</li>
-        <li>The first screen on a phone</li>
-        <li>What to change, in order</li>
-      </ul>
-      <span class="sample-label">The list looks like this</span>
-      <ol class="sample">
-        <li>Call button on a phone does nothing</li>
-        <li>Get a quote opens a missing page</li>
-        <li>The form asks for 9 fields before they can send</li>
-      </ol>
-      <p style="margin-top:0.65rem">I don’t rebuild the site. You or your web person do the work. You keep the list.</p>
-    </article>
-
-    <div class="obj">
-      <p><strong style="color:var(--ink)">Who this is for.</strong> Melb tradies and small businesses who already have a listing or a site, and still feel quiet.</p>
-      <p><strong style="color:var(--ink)">Who this is not for.</strong> If you want a new brand, a fancy rebuild, or guaranteed page one, I’m not your guy.</p>
-    </div>
-
-    <p class="block-cta">
-      <span class="row">
-        <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a>
-        <a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Fix%20the%20listing%20%24299&amp;body=Google%20name%3A%0A">Skip it. Do the $299.</a>
-      </span>
     </p>
 
-    <h2>Common questions</h2>
-    <div class="faq"><strong>Do you need my Google password?</strong><p>No. You add me as Manager. You can remove me after.</p></div>
-    <div class="faq"><strong>I already have a listing or a site.</strong><p>Good. That’s who this is for. Same $299 either way.</p></div>
-    <div class="faq"><strong>I’m a mobile tradie. I don’t have a shop.</strong><p>Fine. We hide the home address and show the suburbs you cover.</p></div>
-    <div class="faq"><strong>Do I own the listing after?</strong><p>Yes. You’re the owner. I was only ever a Manager. Nothing else happens unless you ask.</p></div>
-    <div class="faq"><strong>How fast?</strong><p>One finding, usually same day on weekdays. Listing fields are usually live in a day or two. Showing higher on the map takes weeks, and it depends how busy your trade is in those suburbs.</p></div>
-    <div class="faq"><strong>I don’t have nice photos.</strong><p>Phone photos of real jobs are fine. Stock vans are not.</p></div>
-    <div class="faq"><strong>Is the $149 a rebuild?</strong><p>No. It’s a short list. You or your web person do the work.</p></div>
-    <div class="faq"><strong>Will I be number one on Google?</strong><p>I don’t promise that. I make the listing or the site something people can actually use.</p></div>
-    <div class="faq"><strong>Can you get me fake reviews?</strong><p>No. I’ll show you how to ask people who actually used you.</p></div>
-
     <footer>
-      <p>Andy. Melbourne.</p>
+      <p class="sig">Andy</p>
+      <p>Melbourne. Tradies and small businesses.</p>
       <p><a href="mailto:andy.ng199507@gmail.com">andy.ng199507@gmail.com</a></p>
       <p style="margin-top:1rem;font-size:0.85rem">I don’t promise Google page one.</p>
     </footer>
+  </main>
+
+  <div class="thumbbar" aria-label="Quick actions">
+    <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Free finding</a>
+    <a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Fix%20the%20listing%20%24299&amp;body=Google%20name%3A%0A">$299 listing</a>
   </div>
+
+  <div class="modal-backdrop" id="exit-modal" role="dialog" aria-modal="true" aria-labelledby="exit-title" hidden>
+    <div class="modal">
+      <button type="button" class="modal-close" id="exit-close" aria-label="Close">&times;</button>
+      <h2 id="exit-title">Free Melb Google listing checklist</h2>
+      <p class="benefit">Before you go. One scannable checklist for category, suburbs, and enquire path.</p>
+      <ul class="ticks">
+        <li>What to fix on the listing first</li>
+        <li>Pin suburbs, not a 50km blob</li>
+        <li>Call and quote links that work</li>
+      </ul>
+      <form class="capture-form" action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Andy Melb checklist">
+        <input type="hidden" name="_next" value="https://moonoce95.github.io/andy-melb/checklist.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="honeypot" for="email-exit">Email</label>
+        <input id="email-exit" type="email" name="email" required placeholder="Your email" autocomplete="email">
+        <button class="cta" type="submit">Send the checklist</button>
+      </form>
+      <p class="fine">Plain Melb checklist. No spam theatre.</p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var KEY = "andyMelbExitShown";
+      var modal = document.getElementById("exit-modal");
+      var closeBtn = document.getElementById("exit-close");
+      if (!modal) return;
+
+      function openModal() {
+        if (sessionStorage.getItem(KEY)) return;
+        sessionStorage.setItem(KEY, "1");
+        modal.hidden = false;
+        modal.classList.add("open");
+        var input = document.getElementById("email-exit");
+        if (input) setTimeout(function () { input.focus(); }, 50);
+      }
+
+      function closeModal() {
+        modal.classList.remove("open");
+        modal.hidden = true;
+      }
+
+      closeBtn && closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+      });
+
+      // Soft desktop exit-intent: mouse leaves viewport at top
+      document.addEventListener("mouseout", function (e) {
+        if (e.clientY > 0) return;
+        if (e.relatedTarget || e.toElement) return;
+        openModal();
+      });
+    })();
+  </script>
 </body>
 </html>
