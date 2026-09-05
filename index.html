@@ -445,6 +445,30 @@
       .closer .cta { justify-self: end; width: auto; }
     }
 
+  
+    .compare-grid {
+      display: grid; gap: 0.85rem; margin: 0.75rem 0 0.25rem;
+    }
+    @media (min-width: 48rem) {
+      .compare-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+    }
+    .compare-card {
+      border-radius: 1rem; padding: 1.2rem 1.15rem 1.25rem;
+      border: 1px solid var(--line); background: var(--chip);
+    }
+    .compare-card h3 {
+      margin: 0 0 0.55rem; font-family: Fraunces, Georgia, serif;
+      font-weight: 650; font-size: 1.25rem;
+    }
+    .compare-card ul { margin: 0; padding-left: 1.1rem; color: var(--mute); }
+    .compare-card li { margin: 0.3rem 0; }
+    .compare-card.before { opacity: 0.92; }
+    .compare-card.after {
+      border-color: color-mix(in srgb, var(--ember) 45%, var(--line));
+      box-shadow: 0 14px 32px color-mix(in srgb, var(--ember) 14%, transparent);
+    }
+    .compare-card.after h3 { color: var(--ember); }
+
   </style>
 </head>
 <body>
@@ -648,9 +672,30 @@
       </div>
     </section>
 
-    <section>
-      <h2 class="sec">Will / won’t</h2>
-      <div class="willwont">
+    <section class="compare" id="compare">
+      <h2 class="sec">Without this. With this.</h2>
+      <p class="prose">Same trade. Same suburb. Different listing and enquire path.</p>
+      <div class="compare-grid">
+        <div class="compare-card before">
+          <h3>Without the fix</h3>
+          <ul>
+            <li>Wrong category or a fat service blob</li>
+            <li>Dead call button or quote 404</li>
+            <li>Paying directories for tyre-kickers</li>
+            <li>Site that looks soft on a phone</li>
+          </ul>
+        </div>
+        <div class="compare-card after">
+          <h3>With Andy</h3>
+          <ul>
+            <li>Listing cleaned: category, suburbs, services, photos</li>
+            <li>Enquire path that works</li>
+            <li>You own the listing. Manager access. No password</li>
+            <li>Optional new site or a ranked $149 patch list</li>
+          </ul>
+        </div>
+      </div>
+      <div class="willwont" style="margin-top:1rem">
         <div class="will">
           <h3>I will</h3>
           <ul>
