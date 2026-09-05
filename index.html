@@ -344,6 +344,65 @@
       }
     }
 
+  
+    /* M4T-structure desktop columns — our cream look */
+    .eyebrow {
+      margin: 0 0 0.65rem; font-size: 0.82rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--ember);
+    }
+    .hero {
+      display: grid; gap: 1.5rem; align-items: stretch;
+      padding: 2.75rem 0 1.25rem;
+    }
+    .hero-copy { min-width: 0; }
+    .hero-panel {
+      background: var(--chip);
+      border: 1px solid color-mix(in srgb, var(--ember) 40%, var(--line));
+      border-radius: 1.15rem;
+      padding: 1.35rem 1.3rem 1.4rem;
+      box-shadow: 0 18px 40px color-mix(in srgb, var(--ember) 16%, transparent);
+      display: flex; flex-direction: column; gap: 0.55rem;
+    }
+    .panel-kicker {
+      margin: 0; font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--ember);
+    }
+    .panel-title {
+      margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 650;
+      font-size: 1.45rem; line-height: 1.15;
+    }
+    .panel-price {
+      margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 650;
+      font-size: 2rem; color: var(--ember); line-height: 1;
+    }
+    .panel-price small { font-size: 0.95rem; color: var(--mute); font-family: Outfit, sans-serif; font-weight: 600; }
+    .panel-ticks { margin: 0.2rem 0 0.4rem; padding-left: 1.1rem; color: var(--mute); }
+    .panel-ticks li { margin: 0.25rem 0; }
+    .panel-note { margin: 0.35rem 0 0; color: var(--mute); font-size: 0.9rem; }
+    .products {
+      display: grid; gap: 1rem; margin-top: 0.75rem;
+    }
+    .steps {
+      display: grid; gap: 0.85rem;
+    }
+    @media (min-width: 48rem) {
+      .hero {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 2rem; padding: 4.5rem 0 2rem;
+        align-items: center;
+      }
+      .products { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+      .steps { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .hero-panel .cta { width: 100%; }
+      .wrap-wide { width: min(74rem, calc(100% - 3.5rem)); }
+    }
+    @media (min-width: 64rem) {
+      .wrap-wide { width: min(74rem, calc(100% - 3.5rem)); }
+      .products { gap: 1.25rem; }
+      .product { padding: 1.45rem 1.35rem 1.5rem; }
+      .panel-title { font-size: 1.65rem; }
+    }
+
   </style>
 </head>
 <body>
