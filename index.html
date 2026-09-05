@@ -156,12 +156,15 @@
     .product .price small {
       font-family: Outfit, sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--mute); margin-left: 0.25rem;
     }
-    .product p { margin: 0; color: var(--mute); font-size: 0.95rem; flex: 1; }
+    .product p { margin: 0; color: var(--mute); font-size: 0.95rem; min-height: 3.2em; }
     .product ul {
       margin: 0.35rem 0 0; padding: 0 0 0 1.1rem; color: var(--mute); font-size: 0.9rem;
+      flex: 1;
     }
-    .product li { margin: 0.2rem 0; }
+    .product li { margin: 0.22rem 0; }
     .product .cta { margin-top: 0.9rem; align-self: flex-start; }
+    .row .cta { min-width: 12.5rem; }
+    .row .cta.ghost { min-width: 11rem; }
 
     .willwont { display: grid; gap: 0.75rem; }
     @media (min-width: 40rem) { .willwont { grid-template-columns: 1fr 1fr; } }
@@ -242,13 +245,13 @@
   <main class="wrap">
     <div class="hero" id="free">
       <h1>They google you before they call.</h1>
-      <p class="lede">I’m Andy. I help Melbourne tradies get more enquiries from Google and their site. You send the listing name or URL. I send one real problem. Then you decide.</p>
+      <p class="lede">I’m Andy. I help Melbourne tradies get more enquiries from Google and their site. Send your listing or URL. I send one real problem. You decide.</p>
       <div class="trust"><strong>Public data only.</strong> If it’s already fine, I say so. No chase after.</div>
       <div class="row">
-        <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a>
-        <a class="cta ghost" href="listing-intake.html">Or start the $299</a>
+        <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Get one free finding</a>
+        <a class="cta ghost" href="listing-intake.html">Start $299 listing</a>
       </div>
-      <p class="after">Usually same day on weekdays. If I already emailed you, just reply.</p>
+      <p class="after">Free finding first. Usually same day on weekdays. If I already emailed you, just reply.</p>
     </div>
 
     <section>
@@ -308,9 +311,9 @@
           <p>Category, suburbs you drive, services, photos, working enquire links. You add me as Manager. No password.</p>
           <ul>
             <li>Right primary category + extras</li>
-            <li>Suburbs you cover, not a 50km circle</li>
+            <li>Suburbs you drive, not a blob</li>
             <li>Services with real descriptions</li>
-            <li>Photos, hours, working call/site links</li>
+            <li>Photos, hours, working links</li>
           </ul>
           <a class="cta" href="listing-intake.html">Start listing intake</a>
         </article>
@@ -323,6 +326,7 @@
             <li>Call buttons, quote links, forms</li>
             <li>First screen on a phone</li>
             <li>What to change, in order</li>
+            <li>You or your web person fix it</li>
           </ul>
           <a class="cta" href="patch-intake.html">Start patch intake</a>
         </article>
@@ -334,19 +338,21 @@
           <ul>
             <li>Looks sharp on a phone</li>
             <li>Enquiry form to your inbox</li>
-            <li>You own it. No monthly lock-in.</li>
+            <li>Home, services, about, contact</li>
+            <li>You own it. No monthly lock-in</li>
           </ul>
-          <a class="cta" href="intake.html">Start intake</a>
+          <a class="cta" href="intake.html">Start website intake</a>
         </article>
         <article class="product featured" id="pack-detail">
           <span class="tag">Best money</span>
           <h3>Website + listing pack</h3>
           <p class="price">$999<small>once · save $99</small></p>
-          <p>New tradie site and a fixed Google listing together. One intake. Photos. Done.</p>
+          <p>New tradie site plus a fixed Google listing. One intake, your photos, both done. You own them.</p>
           <ul>
             <li>Everything in the $799 website</li>
             <li>Everything in the $299 listing</li>
-            <li>You own both</li>
+            <li>One intake and photo handoff</li>
+            <li>You own both. No retainer</li>
           </ul>
           <a class="cta" href="intake.html?pack=999">Start $999 pack intake</a>
         </article>
@@ -412,8 +418,8 @@
     </section>
 
     <p class="row" style="margin-top:2rem">
-      <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a>
-      <a class="cta ghost" href="listing-intake.html">Or start the $299</a>
+      <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Get one free finding</a>
+      <a class="cta ghost" href="listing-intake.html">Start $299 listing</a>
     </p>
 
     <footer>
@@ -426,8 +432,8 @@
 
   <div class="thumbbar" aria-label="Quick actions">
     <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Free finding</a>
-    <a class="cta ghost" href="patch-intake.html">$149 patch</a>
     <a class="cta ghost" href="listing-intake.html">$299 listing</a>
+    <a class="cta ghost" href="patch-intake.html">$149 patch</a>
   </div>
 
   <div class="modal-backdrop" id="exit-modal" role="dialog" aria-modal="true" aria-labelledby="exit-title" hidden>
