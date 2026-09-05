@@ -11,73 +11,121 @@
   <meta property="og:description" content="Google listing $299 and a $149 site fix list. Melbourne.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://moonoce95.github.io/andy-melb/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23161310' width='32' height='32' rx='8'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23efe8db' font-size='16' font-family='Georgia'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%230c1222' width='32' height='32' rx='8'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23efe8db' font-size='16' font-family='Georgia'%3EA%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=fraunces:560,650|outfit:400,500,650" rel="stylesheet">
   <style>
     :root {
       --paper: #f3ead8;
-      --ink: #1a120c;
+      --ink: #0c1222;
       --mute: #5c4f42;
       --line: #d7c4a8;
-      --ember: #c2410c;
-      --ember-deep: #9a3412;
+      --ember: #e04a1a;
+      --ember-deep: #b83812;
       --chip: #fffaf2;
       --leaf: #2f6b4f;
       --sky: #2b5f7a;
       --glow: #f0c27a;
+      --navy: #0c1222;
+      --navy-mid: #152038;
+      --hero-text: #f7f1e6;
+      --hero-mute: #c8c0b0;
       --space: 3.75rem;
     }
     * { box-sizing: border-box; }
     html { color-scheme: light; scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
     body {
       margin: 0;
-      background:
-        radial-gradient(900px 420px at 12% -8%, color-mix(in srgb, var(--glow) 55%, transparent), transparent 60%),
-        radial-gradient(700px 380px at 92% 8%, color-mix(in srgb, var(--ember) 14%, transparent), transparent 55%),
-        radial-gradient(600px 360px at 70% 100%, color-mix(in srgb, var(--leaf) 10%, transparent), transparent 50%),
-        var(--paper);
+      background: var(--paper);
       color: var(--ink);
-      font-family: Outfit, "Segoe UI", sans-serif;
+      font-family: Outfit, "Segoe UI", system-ui, sans-serif;
       font-size: 1.12rem;
       line-height: 1.55;
       padding-bottom: 5rem;
     }
     .wrap { width: min(48rem, calc(100% - 2rem)); margin: 0 auto; }
-    .wrap-wide { width: min(64rem, calc(100% - 2rem)); margin: 0 auto; }
+    .wrap-wide { width: min(72rem, calc(100% - 2rem)); margin: 0 auto; }
 
     .topbar {
       position: sticky; top: 0; z-index: 40;
-      background: color-mix(in srgb, var(--paper) 94%, transparent);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--navy) 92%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid color-mix(in srgb, #fff 10%, transparent);
     }
     .topbar-inner {
       display: flex; align-items: center; justify-content: space-between;
       gap: 0.75rem; padding: 0.85rem 0;
     }
-    .mark { font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 1.15rem; }
-    .mark span { color: var(--mute); font-weight: 500; font-size: 0.88rem; margin-left: 0.35rem; font-family: Outfit, sans-serif; }
+    .mark { font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 1.15rem; color: var(--hero-text); }
+    .mark span { color: var(--hero-mute); font-weight: 500; font-size: 0.88rem; margin-left: 0.35rem; font-family: Outfit, sans-serif; }
     .nav-cta {
       text-decoration: none; font-weight: 650; font-size: 0.9rem;
-      color: #fff8ee; background: var(--ink); border-radius: 999px;
+      color: #fff8ee; background: var(--ember); border-radius: 999px;
       padding: 0.5rem 0.95rem; white-space: nowrap;
+      border: 1px solid var(--ember-deep);
+      box-shadow: 0 6px 16px color-mix(in srgb, var(--ember) 35%, transparent);
     }
-    .nav-cta:hover { background: var(--ember); }
+    .nav-cta:hover { filter: brightness(1.08); }
 
-    /* hero layout in block below */
+    .hero-band {
+      background:
+        radial-gradient(900px 420px at 10% -10%, color-mix(in srgb, var(--ember) 22%, transparent), transparent 55%),
+        radial-gradient(700px 380px at 95% 20%, color-mix(in srgb, var(--sky) 28%, transparent), transparent 50%),
+        linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: var(--hero-text);
+      padding: 0 0 2.5rem;
+    }
+    .hero {
+      display: grid; gap: 1.5rem; align-items: center;
+      padding: 2.5rem 0 0.5rem;
+    }
+    .hero-copy { min-width: 0; }
+    .eyebrow {
+      margin: 0 0 0.65rem; font-size: 0.82rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; color: #f0a070;
+    }
     h1 {
       font-family: Fraunces, Georgia, serif; font-weight: 650;
       font-size: clamp(2.35rem, 5.2vw, 3.55rem); line-height: 1.06;
       letter-spacing: -0.03em; margin: 0 0 1.1rem; max-width: 16ch;
+      color: var(--hero-text);
     }
-    .lede { color: var(--mute); font-size: 1.18rem; margin: 0 0 1.35rem; max-width: 38rem; }
+    .lede { color: var(--hero-mute); font-size: 1.18rem; margin: 0 0 1.1rem; max-width: 38rem; }
     .trust {
-      background: var(--chip); border: 1px solid var(--line); border-radius: 0.85rem;
-      padding: 0.9rem 1rem; margin: 0 0 1.35rem; font-size: 0.95rem; max-width: 36rem;
+      background: color-mix(in srgb, #fff 8%, transparent);
+      border: 1px solid color-mix(in srgb, #fff 14%, transparent);
+      border-radius: 0.85rem;
+      padding: 0.9rem 1rem; margin: 0 0 1rem; font-size: 0.95rem; max-width: 36rem;
+      color: var(--hero-mute);
     }
-    .row { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
-    .after { margin: 0.85rem 0 0; color: var(--mute); font-size: 0.9rem; }
+    .trust strong { color: var(--hero-text); }
+    .fud { margin: 0 0 1.25rem; font-size: 1rem; color: var(--hero-mute); max-width: 36rem; font-weight: 600; }
+
+    .hero-panel {
+      background: var(--chip);
+      color: var(--ink);
+      border: 1px solid color-mix(in srgb, var(--ember) 40%, var(--line));
+      border-radius: 1.15rem;
+      padding: 1.35rem 1.3rem 1.4rem;
+      box-shadow: 0 22px 48px color-mix(in srgb, #000 35%, transparent);
+      display: flex; flex-direction: column; gap: 0.55rem;
+    }
+    .panel-kicker {
+      margin: 0; font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--ember);
+    }
+    .panel-title {
+      margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 650;
+      font-size: 1.45rem; line-height: 1.15; color: var(--ink);
+    }
+    .panel-price {
+      margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 650;
+      font-size: 2rem; color: var(--ember); line-height: 1;
+    }
+    .panel-price small { font-size: 0.95rem; color: var(--mute); font-family: Outfit, sans-serif; font-weight: 600; }
+    .panel-ticks { margin: 0.2rem 0 0.4rem; padding-left: 1.1rem; color: var(--mute); }
+    .panel-ticks li { margin: 0.25rem 0; }
+    .panel-note { margin: 0.35rem 0 0; color: var(--mute); font-size: 0.9rem; }
 
     .cta {
       display: inline-flex; align-items: center; justify-content: center;
@@ -89,322 +137,94 @@
       box-shadow: 0 10px 24px color-mix(in srgb, var(--ember) 28%, transparent);
     }
     .cta:hover { filter: brightness(1.05); transform: translateY(-1px); }
-    .cta:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
-    .cta.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+    .cta:focus-visible { outline: 3px solid var(--glow); outline-offset: 3px; }
+    .cta.ghost { background: transparent; color: var(--ink); border-color: var(--ink); box-shadow: none; }
     .cta.ghost:hover { background: var(--ink); color: #fff8ee; filter: none; }
     .cta.ink { background: var(--ink); border-color: var(--ink); color: #fff8ee; }
     .cta.ink:hover { background: var(--ember); border-color: var(--ember); }
 
+    .page-body {
+      background:
+        radial-gradient(900px 420px at 12% -8%, color-mix(in srgb, var(--glow) 40%, transparent), transparent 60%),
+        radial-gradient(700px 380px at 92% 8%, color-mix(in srgb, var(--ember) 10%, transparent), transparent 55%),
+        var(--paper);
+    }
+
     section { padding: var(--space) 0 0.25rem; }
     h2.sec {
       font-family: Fraunces, Georgia, serif; font-weight: 650;
-      font-size: clamp(1.4rem, 3vw, 1.75rem); margin: 0 0 0.85rem; line-height: 1.15;
+      font-size: clamp(1.55rem, 3vw, 2rem); margin: 0 0 0.85rem; line-height: 1.15;
     }
     .prose { color: var(--mute); margin: 0 0 0.85rem; max-width: 40rem; }
-
-    .trades { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 0.5rem; }
-    .trades span {
-      background: var(--chip); border: 1px solid var(--line); border-radius: 999px;
-      padding: 0.5rem 1rem; font-size: 0.95rem; font-weight: 650;
-      box-shadow: 0 1px 0 color-mix(in srgb, #fff 70%, transparent);
-    }
-    .trades span:nth-child(3n) { border-color: color-mix(in srgb, var(--leaf) 35%, var(--line)); }
-    .trades span:nth-child(3n+1) { border-color: color-mix(in srgb, var(--ember) 28%, var(--line)); }
-    .trades span:nth-child(3n+2) { border-color: color-mix(in srgb, var(--sky) 30%, var(--line)); }
-
-    .callout {
-      display: grid; gap: 0.75rem; margin-top: 0.35rem;
-    }
-    @media (min-width: 40rem) { .callout { grid-template-columns: 1fr 1fr; } }
-    .bad, .good {
-      background: var(--chip); border: 1px solid var(--line); border-radius: 0.9rem;
-      padding: 1rem 1.05rem;
-    }
-    .good { border-color: color-mix(in srgb, var(--ember) 35%, var(--line)); }
-    .label { font-size: 0.75rem; font-weight: 650; text-transform: uppercase; letter-spacing: 0.04em; color: var(--mute); margin-bottom: 0.35rem; }
-    .bad strong, .good strong { display: block; font-family: Fraunces, Georgia, serif; font-size: 1.1rem; margin-bottom: 0.35rem; }
-    .bad p, .good p { margin: 0; color: var(--mute); font-size: 0.92rem; }
-
-    .grid-2, .grid-3 {
-      display: grid; gap: 0.75rem;
-    }
-    @media (min-width: 36rem) { .grid-2 { grid-template-columns: 1fr 1fr; } }
-    @media (min-width: 48rem) { .grid-3 { grid-template-columns: 1fr 1fr 1fr; } }
-    .card {
-      background: var(--chip); border: 1px solid var(--line); border-radius: 0.9rem;
-      padding: 1rem 1.05rem;
-    }
-    .card strong {
-      display: block; font-family: Fraunces, Georgia, serif; font-size: 1.05rem; margin-bottom: 0.3rem;
-    }
-    .card p { margin: 0; color: var(--mute); font-size: 0.92rem; }
-
-    .proof-strip { margin-top: 1.1rem; }
-    .proof-pair {
-      display: grid; gap: 0.75rem;
-    }
-    @media (min-width: 40rem) { .proof-pair { grid-template-columns: 1fr 1fr; } }
-    .gmap-mock {
-      background: var(--chip); border: 1px solid var(--line); border-radius: 0.9rem;
-      padding: 0.9rem 0.95rem 1rem; overflow: hidden;
-    }
-    .gmap-mock .g-label {
-      font-size: 0.72rem; font-weight: 650; text-transform: uppercase;
-      letter-spacing: 0.04em; color: var(--mute); margin-bottom: 0.55rem;
-    }
-    .gmap-mock.after-mock { border-color: color-mix(in srgb, var(--ember) 35%, var(--line)); }
-    .g-head {
-      display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.7rem;
-    }
-    .g-avatar {
-      width: 2.4rem; height: 2.4rem; border-radius: 0.45rem; flex-shrink: 0;
-      background: color-mix(in srgb, var(--line) 70%, var(--mute));
-    }
-    .after-mock .g-avatar { background: color-mix(in srgb, var(--ember) 28%, var(--line)); }
-    .g-name {
-      font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 1.02rem;
-      margin: 0 0 0.15rem; line-height: 1.2;
-    }
-    .g-cat { margin: 0; font-size: 0.82rem; color: var(--mute); }
-    .g-cat.wrong { color: #8a4a2a; }
-    .g-cat.right { color: var(--ember); font-weight: 650; }
-    .g-map {
-      position: relative; height: 4.6rem; border-radius: 0.55rem;
-      background:
-        linear-gradient(90deg, transparent 49%, color-mix(in srgb, var(--line) 80%, transparent) 50%, transparent 51%),
-        linear-gradient(0deg, transparent 49%, color-mix(in srgb, var(--line) 80%, transparent) 50%, transparent 51%),
-        color-mix(in srgb, var(--paper) 70%, #dfe8d8);
-      border: 1px solid var(--line); margin-bottom: 0.65rem; overflow: hidden;
-    }
-    .g-blob {
-      position: absolute; left: 18%; top: 12%; width: 64%; height: 76%;
-      border-radius: 50%;
-      background: color-mix(in srgb, var(--mute) 22%, transparent);
-      border: 2px dashed color-mix(in srgb, var(--mute) 55%, transparent);
-    }
-    .g-pins { position: absolute; inset: 0; }
-    .g-pin {
-      position: absolute; width: 0.55rem; height: 0.55rem; border-radius: 50%;
-      background: var(--ember); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ember) 25%, transparent);
-    }
-    .g-pin:nth-child(1) { left: 28%; top: 38%; }
-    .g-pin:nth-child(2) { left: 46%; top: 28%; }
-    .g-pin:nth-child(3) { left: 58%; top: 52%; }
-    .g-pin:nth-child(4) { left: 40%; top: 62%; }
-    .g-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-    .g-btn {
-      font-size: 0.78rem; font-weight: 650; padding: 0.38rem 0.7rem;
-      border-radius: 999px; border: 1px solid var(--line); background: #fff;
-      color: var(--mute);
-    }
-    .g-btn.dead {
-      text-decoration: line-through; opacity: 0.55;
-      border-style: dashed; color: var(--mute);
-    }
-    .g-btn.live {
-      background: var(--ink); color: #fff8ee; border-color: var(--ink);
-    }
-    .g-btn.live-ghost {
-      background: transparent; color: var(--ink); border-color: var(--ink);
-    }
-    .proof-cap {
-      margin: 0.65rem 0 0; color: var(--mute); font-size: 0.88rem;
-    }
-
-    /* steps grid in layout block */
-    @media (min-width: 48rem) { .steps { grid-template-columns: 1fr 1fr 1fr; } }
-    .step {
-      background: var(--chip); border: 1px solid var(--line); border-radius: 0.9rem;
-      padding: 1rem 1.05rem;
-    }
-    .step strong { display: block; font-family: Fraunces, Georgia, serif; margin-bottom: 0.3rem; }
-    .step p { margin: 0; color: var(--mute); font-size: 0.92rem; }
-
-    /* products grid in layout block */
-    @media (min-width: 40rem) { .products { grid-template-columns: 1fr 1fr; } }
-    .product {
-      background: var(--chip); border: 1px solid var(--line); border-radius: 1rem;
-      padding: 1.25rem 1.2rem 1.3rem; display: flex; flex-direction: column; gap: 0.4rem;
-      min-height: 100%;
-    }
-    .product.featured { border-color: color-mix(in srgb, var(--ember) 45%, var(--line)); box-shadow: 0 0 0 1px color-mix(in srgb, var(--ember) 20%, transparent); }
-    .product.start {
-      border-color: color-mix(in srgb, var(--ember) 55%, var(--line));
-      box-shadow: 0 0 0 2px color-mix(in srgb, var(--ember) 22%, transparent);
-    }
-    .product.start .tag { color: var(--ember); }
-    .product.quiet { opacity: 0.82; }
-    .product.quiet:hover { opacity: 1; }
-
-    .product .tag {
-      font-size: 0.72rem; font-weight: 650; text-transform: uppercase; letter-spacing: 0.04em; color: var(--mute);
-    }
-    .product h3 {
-      font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 1.35rem; margin: 0; line-height: 1.15;
-    }
-    .product .price {
-      font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 1.75rem; color: var(--ember); margin: 0.1rem 0;
-    }
-    .product .price small {
-      font-family: Outfit, sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--mute); margin-left: 0.25rem;
-    }
-    .product p { margin: 0; color: var(--mute); font-size: 0.95rem; }
-    .product ul {
-      margin: 0.35rem 0 0; padding: 0 0 0 1.1rem; color: var(--mute); font-size: 0.9rem;
-      flex: 1;
-    }
-    .product li { margin: 0.22rem 0; }
-    .product .cta { margin-top: 0.9rem; align-self: flex-start; }
-    .row .cta { min-width: 12.5rem; }
-    .row .cta.ghost { min-width: 11rem; }
-
-    .willwont { display: grid; gap: 0.75rem; }
-    @media (min-width: 40rem) { .willwont { grid-template-columns: 1fr 1fr; } }
-    .will, .wont {
-      background: var(--chip); border: 1px solid var(--line); border-radius: 0.9rem; padding: 1.05rem 1.1rem;
-    }
-    .will h3, .wont h3 { font-family: Fraunces, Georgia, serif; margin: 0 0 0.5rem; font-size: 1.15rem; }
-    .will ul, .wont ul { margin: 0; padding: 0 0 0 1.1rem; color: var(--mute); }
-    .will li, .wont li { margin: 0.28rem 0; }
-    .own-line {
-      margin: 1rem 0 0; background: var(--chip); border: 1px solid var(--line);
-      border-radius: 0.85rem; padding: 0.85rem 1rem; font-size: 0.95rem;
-    }
-
-    .faq-list { border-top: 1px solid var(--line); }
-    .faq { padding: 0.95rem 0; border-bottom: 1px solid var(--line); }
-    .faq strong { display: block; margin: 0 0 0.25rem; }
-    .faq p { margin: 0; color: var(--mute); font-size: 0.95rem; }
-
-    .capture {
-      margin-top: var(--space); background: var(--chip); border: 1px solid var(--line);
-      border-radius: 1rem; padding: 1.35rem 1.25rem 1.4rem;
-    }
-    .capture h2 { font-family: Fraunces, Georgia, serif; font-size: 1.45rem; margin: 0 0 0.4rem; }
-    .capture .benefit { color: var(--mute); margin: 0 0 0.85rem; }
-    .ticks { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 0.35rem; color: var(--mute); font-size: 0.95rem; }
-    .ticks li::before { content: "✓ "; color: var(--ember); font-weight: 650; }
-    .capture-form { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .capture-form input[type=email] {
-      flex: 1 1 12rem; min-height: 48px; border: 1px solid var(--line); border-radius: 999px;
-      padding: 0.65rem 1rem; font: inherit; background: #fff;
-    }
-    .honeypot { position: absolute; left: -9999px; height: 0; overflow: hidden; }
-    .fine { margin: 0.65rem 0 0; font-size: 0.82rem; color: var(--mute); }
-
-    footer {
-      padding: 2.4rem 0 1.5rem; border-top: 1px solid var(--line); margin-top: var(--space);
-      color: var(--mute); font-size: 0.95rem;
-    }
-    footer .sig { font-family: Fraunces, Georgia, serif; font-weight: 650; color: var(--ink); font-size: 1.25rem; margin: 0 0 0.25rem; }
-    footer a { color: var(--ink); font-weight: 650; }
-    footer p { margin: 0.2rem 0; }
-
-    .thumbbar {
-      position: fixed; left: 0; right: 0; bottom: 0; z-index: 35;
-      display: flex; gap: 0.5rem; padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
-      background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(10px);
-      border-top: 1px solid var(--line);
-    }
-    .thumbbar .cta { flex: 1; min-height: 46px; font-size: 0.92rem; padding: 0.55rem 0.6rem; }
-    @media (max-width: 47.99rem) { .nav-cta { display: none; } .topbar { position: static; } }
-    @media (min-width: 48rem) { .thumbbar { display: none; } body { padding-bottom: 0; } }
-
-    .modal-backdrop {
-      position: fixed; inset: 0; background: rgba(22,19,16,0.45); z-index: 60;
-      display: none; align-items: center; justify-content: center; padding: 1rem;
-    }
-    .modal-backdrop.open { display: flex; }
-    .modal {
-      position: relative; width: min(26rem, 100%); background: var(--paper);
-      border: 1px solid var(--line); border-radius: 1rem; padding: 1.35rem 1.25rem 1.4rem;
-    }
-    .modal-close {
-      position: absolute; top: 0.55rem; right: 0.7rem; border: 0; background: transparent;
-      font-size: 1.5rem; cursor: pointer; color: var(--mute); line-height: 1;
-    }
-    .modal h2 { font-family: Fraunces, Georgia, serif; font-size: 1.35rem; margin: 0 0 0.4rem; }
-    .modal .benefit { color: var(--mute); margin: 0 0 0.85rem; font-size: 0.95rem; }
-      .fud{margin:.65rem 0 0;font-size:1rem;color:var(--mute);max-width:36rem;font-weight:600}
-  
-    @media (min-width: 48rem) {
-      body { font-size: 1.2rem; }
-      .wrap { width: min(54rem, calc(100% - 3rem)); }
-      .wrap-wide { width: min(72rem, calc(100% - 3rem)); }
-      .hero { padding: 4.25rem 0 1.5rem; }
-      h1 { font-size: clamp(3rem, 4.2vw, 3.85rem); max-width: 15ch; }
-      .lede { font-size: 1.28rem; max-width: 40rem; }
-      h2.sec { font-size: clamp(1.7rem, 2.4vw, 2.05rem); }
-      .product, .card, .trust, .gmap-mock {
-        box-shadow: 0 12px 28px color-mix(in srgb, var(--ink) 6%, transparent);
-      }
-      .product.start {
-        border-color: color-mix(in srgb, var(--ember) 55%, var(--line));
-        box-shadow: 0 16px 36px color-mix(in srgb, var(--ember) 18%, transparent);
-      }
-    }
-
-  
-    /* M4T-structure desktop columns — our cream look */
-    .eyebrow {
-      margin: 0 0 0.65rem; font-size: 0.82rem; font-weight: 700;
+    .sec-kicker {
+      margin: 0 0 0.45rem; font-size: 0.78rem; font-weight: 700;
       letter-spacing: 0.06em; text-transform: uppercase; color: var(--ember);
     }
-    .hero {
-      display: grid; gap: 1.5rem; align-items: stretch;
-      padding: 2.75rem 0 1.25rem;
-    }
-    .hero-copy { min-width: 0; }
-    .hero-panel {
-      background: var(--chip);
-      border: 1px solid color-mix(in srgb, var(--ember) 40%, var(--line));
-      border-radius: 1.15rem;
-      padding: 1.35rem 1.3rem 1.4rem;
-      box-shadow: 0 18px 40px color-mix(in srgb, var(--ember) 16%, transparent);
-      display: flex; flex-direction: column; gap: 0.55rem;
-    }
-    .panel-kicker {
-      margin: 0; font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.05em; color: var(--ember);
-    }
-    .panel-title {
-      margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 650;
-      font-size: 1.45rem; line-height: 1.15;
-    }
-    .panel-price {
-      margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 650;
-      font-size: 2rem; color: var(--ember); line-height: 1;
-    }
-    .panel-price small { font-size: 0.95rem; color: var(--mute); font-family: Outfit, sans-serif; font-weight: 600; }
-    .panel-ticks { margin: 0.2rem 0 0.4rem; padding-left: 1.1rem; color: var(--mute); }
-    .panel-ticks li { margin: 0.25rem 0; }
-    .panel-note { margin: 0.35rem 0 0; color: var(--mute); font-size: 0.9rem; }
-    .products {
-      display: grid; gap: 1rem; margin-top: 0.75rem;
-    }
-    .steps {
-      display: grid; gap: 0.85rem;
-    }
-    @media (min-width: 48rem) {
-      .hero {
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 2rem; padding: 4.5rem 0 2rem;
-        align-items: center;
-      }
-      .products { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
-      .steps { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-      .hero-panel .cta { width: 100%; }
-      .wrap-wide { width: min(74rem, calc(100% - 3.5rem)); }
-    }
-    @media (min-width: 64rem) {
-      .wrap-wide { width: min(74rem, calc(100% - 3.5rem)); }
-      .products { gap: 1.25rem; }
-      .product { padding: 1.45rem 1.35rem 1.5rem; }
-      .panel-title { font-size: 1.65rem; }
+
+    .trades { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 0.85rem 0 0; }
+    .trades span {
+      background: var(--chip); border: 1px solid var(--line); border-radius: 999px;
+      padding: 0.4rem 0.85rem; font-size: 0.88rem; font-weight: 650; color: var(--mute);
     }
 
-  
-    /* M4T pricing-card rhythm on our cream */
+    .grid-2, .grid-3 { display: grid; gap: 0.85rem; }
+    @media (min-width: 36rem) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+    .card {
+      background: var(--chip); border: 1px solid var(--line); border-radius: 1rem;
+      padding: 1.15rem 1.15rem 1.2rem;
+      box-shadow: 0 8px 22px color-mix(in srgb, var(--ink) 5%, transparent);
+    }
+    .card strong {
+      display: block; font-family: Fraunces, Georgia, serif; font-size: 1.1rem; margin-bottom: 0.35rem;
+    }
+    .card p { margin: 0; color: var(--mute); font-size: 0.95rem; }
+
+    .steps { display: grid; gap: 0.85rem; }
+    .step {
+      background: var(--chip); border: 1px solid var(--line); border-radius: 1rem;
+      padding: 1.15rem 1.15rem 1.25rem;
+      box-shadow: 0 8px 22px color-mix(in srgb, var(--ink) 5%, transparent);
+    }
+    .step-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 1.85rem; height: 1.85rem; border-radius: 999px;
+      background: var(--ink); color: #fff8ee; font-weight: 700; font-size: 0.9rem;
+      margin-bottom: 0.55rem;
+    }
+    .step strong { display: block; font-family: Fraunces, Georgia, serif; margin-bottom: 0.35rem; font-size: 1.1rem; }
+    .step p { margin: 0; color: var(--mute); font-size: 0.95rem; }
+    .step a { color: var(--ink); font-weight: 650; }
+
+    .products { display: grid; gap: 1rem; margin-top: 0.75rem; }
+    .product {
+      background: var(--chip); border: 1px solid var(--line); border-radius: 1.1rem;
+      padding: 1.35rem 1.25rem 1.4rem; display: flex; flex-direction: column; gap: 0.4rem;
+      min-height: 100%;
+      box-shadow: 0 10px 26px color-mix(in srgb, var(--ink) 6%, transparent);
+    }
+    .product.start {
+      border-color: color-mix(in srgb, var(--ember) 55%, var(--line));
+      box-shadow: 0 16px 36px color-mix(in srgb, var(--ember) 16%, transparent);
+    }
+    .product.popular {
+      border-color: color-mix(in srgb, var(--ink) 35%, var(--line));
+      box-shadow: 0 16px 36px color-mix(in srgb, var(--ink) 10%, transparent);
+    }
+    .product .tag {
+      display: inline-flex; align-self: flex-start;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--ember);
+      background: color-mix(in srgb, var(--ember) 12%, var(--chip));
+      border: 1px solid color-mix(in srgb, var(--ember) 28%, var(--line));
+      border-radius: 999px; padding: 0.28rem 0.65rem; margin-bottom: 0.15rem;
+    }
+    .product.popular .tag {
+      color: #fff8ee; background: var(--ink); border-color: var(--ink);
+    }
+    .product h3 {
+      font-family: Fraunces, Georgia, serif; font-weight: 650;
+      font-size: 1.35rem; margin: 0.15rem 0; line-height: 1.2;
+    }
     .product .price {
       font-family: Fraunces, Georgia, serif; font-weight: 650;
       font-size: clamp(1.85rem, 3vw, 2.35rem); color: var(--ember);
@@ -414,46 +234,16 @@
       font-size: 0.95rem; color: var(--mute); font-family: Outfit, sans-serif; font-weight: 600;
       margin-left: 0.25rem;
     }
-    .product h3 {
-      font-family: Fraunces, Georgia, serif; font-weight: 650;
-      font-size: 1.35rem; margin: 0.15rem 0; line-height: 1.2;
-    }
-    .product .tag {
-      display: inline-flex; align-self: flex-start;
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
-      text-transform: uppercase; color: var(--ember);
-      background: color-mix(in srgb, var(--ember) 12%, var(--chip));
-      border: 1px solid color-mix(in srgb, var(--ember) 28%, var(--line));
-      border-radius: 999px; padding: 0.28rem 0.65rem; margin-bottom: 0.25rem;
-    }
+    .product > p { margin: 0; color: var(--mute); font-size: 0.95rem; }
     .product ul { margin: 0.35rem 0 0.75rem; padding-left: 1.1rem; color: var(--mute); flex: 1; }
     .product ul li { margin: 0.28rem 0; }
     .product .cta { margin-top: auto; width: 100%; justify-content: center; }
-    .closer {
-      margin: 2.5rem 0 0.5rem; padding: 1.75rem 1.4rem;
-      background: var(--ink); color: #fff8ee; border-radius: 1.15rem;
-      display: grid; gap: 0.85rem;
-    }
-    .closer h2 {
-      font-family: Fraunces, Georgia, serif; font-weight: 650;
-      font-size: clamp(1.6rem, 3vw, 2.1rem); margin: 0; line-height: 1.15; color: #fff8ee;
-    }
-    .closer p { margin: 0; color: color-mix(in srgb, #fff8ee 78%, transparent); max-width: 36rem; }
-    .closer .cta { background: var(--ember); border-color: var(--ember-deep, #9a3412); width: fit-content; }
-    @media (min-width: 48rem) {
-      .closer { padding: 2.25rem 2rem; grid-template-columns: 1.4fr 0.6fr; align-items: center; }
-      .closer .cta { justify-self: end; width: auto; }
-    }
 
-  
     .compare-grid {
       display: grid; gap: 0.85rem; margin: 0.75rem 0 0.25rem;
     }
-    @media (min-width: 48rem) {
-      .compare-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
-    }
     .compare-card {
-      border-radius: 1rem; padding: 1.2rem 1.15rem 1.25rem;
+      border-radius: 1rem; padding: 1.25rem 1.2rem 1.3rem;
       border: 1px solid var(--line); background: var(--chip);
     }
     .compare-card h3 {
@@ -469,27 +259,150 @@
     }
     .compare-card.after h3 { color: var(--ember); }
 
+    .willwont { display: grid; gap: 0.75rem; margin-top: 1rem; }
+    .will, .wont {
+      background: var(--chip); border: 1px solid var(--line); border-radius: 0.9rem; padding: 1.05rem 1.1rem;
+    }
+    .will h3, .wont h3 { font-family: Fraunces, Georgia, serif; margin: 0 0 0.5rem; font-size: 1.15rem; }
+    .will ul, .wont ul { margin: 0; padding: 0 0 0 1.1rem; color: var(--mute); }
+    .will li, .wont li { margin: 0.28rem 0; }
+    .own-line {
+      margin: 1rem 0 0; background: var(--chip); border: 1px solid var(--line);
+      border-radius: 0.85rem; padding: 0.85rem 1rem; font-size: 0.95rem;
+    }
+
+    .faq-list { border-top: 1px solid var(--line); }
+    details.faq {
+      padding: 0; border-bottom: 1px solid var(--line);
+    }
+    details.faq summary {
+      cursor: pointer; list-style: none; padding: 1rem 0;
+      font-weight: 650; font-family: Fraunces, Georgia, serif; font-size: 1.08rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq summary::after {
+      content: "+"; color: var(--ember); font-family: Outfit, sans-serif;
+      font-weight: 700; font-size: 1.35rem; line-height: 1; flex-shrink: 0;
+    }
+    details.faq[open] summary::after { content: "−"; }
+    details.faq p {
+      margin: 0 0 1rem; color: var(--mute); font-size: 0.98rem; max-width: 40rem;
+    }
+    details.faq a { color: var(--ink); font-weight: 650; }
+
+    .closer-band {
+      margin-top: var(--space);
+      background:
+        radial-gradient(700px 280px at 15% 0%, color-mix(in srgb, var(--ember) 20%, transparent), transparent 55%),
+        linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: var(--hero-text);
+      padding: 2.75rem 0;
+    }
+    .closer {
+      display: grid; gap: 1rem; align-items: center;
+    }
+    .closer h2 {
+      font-family: Fraunces, Georgia, serif; font-weight: 650;
+      font-size: clamp(1.7rem, 3vw, 2.25rem); margin: 0 0 0.5rem; line-height: 1.15; color: var(--hero-text);
+    }
+    .closer p { margin: 0; color: var(--hero-mute); max-width: 36rem; }
+
+    .capture {
+      margin-top: 2rem; background: var(--chip); border: 1px solid var(--line);
+      border-radius: 1rem; padding: 1.35rem 1.25rem 1.4rem;
+    }
+    .capture h2 { font-family: Fraunces, Georgia, serif; font-size: 1.45rem; margin: 0 0 0.4rem; }
+    .capture .benefit { color: var(--mute); margin: 0 0 0.85rem; }
+    .ticks { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 0.35rem; color: var(--mute); font-size: 0.95rem; }
+    .ticks li::before { content: "✓ "; color: var(--ember); font-weight: 650; }
+    .capture-form { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .capture-form input[type=email] {
+      flex: 1 1 12rem; min-height: 48px; border: 1px solid var(--line); border-radius: 999px;
+      padding: 0.65rem 1rem; font: inherit; background: #fff;
+    }
+    .honeypot { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+    .fine { margin: 0.65rem 0 0; font-size: 0.82rem; color: var(--mute); }
+    .row { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+
+    .after-closer { padding: 2rem 0 0.5rem; opacity: 0.95; }
+    .after-closer .capture { margin-top: 1.25rem; }
+
+    footer {
+      padding: 2.4rem 0 1.5rem; border-top: 1px solid var(--line); margin-top: 2.5rem;
+      color: var(--mute); font-size: 0.95rem;
+    }
+    footer .sig { font-family: Fraunces, Georgia, serif; font-weight: 650; color: var(--ink); font-size: 1.25rem; margin: 0 0 0.25rem; }
+    footer a { color: var(--ink); font-weight: 650; }
+    footer p { margin: 0.2rem 0; }
+
+    .thumbbar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 35;
+      display: flex; gap: 0.5rem; padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
+      background: color-mix(in srgb, var(--navy) 94%, transparent); backdrop-filter: blur(10px);
+      border-top: 1px solid color-mix(in srgb, #fff 10%, transparent);
+    }
+    .thumbbar .cta { flex: 1; min-height: 46px; font-size: 0.92rem; padding: 0.55rem 0.6rem; }
+    @media (max-width: 47.99rem) { .nav-cta { display: none; } }
+    @media (min-width: 48rem) { .thumbbar { display: none; } body { padding-bottom: 0; } }
+
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(12,18,34,0.55); z-index: 60;
+      display: none; align-items: center; justify-content: center; padding: 1rem;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      position: relative; width: min(26rem, 100%); background: var(--paper);
+      border: 1px solid var(--line); border-radius: 1rem; padding: 1.35rem 1.25rem 1.4rem;
+    }
+    .modal-close {
+      position: absolute; top: 0.55rem; right: 0.7rem; border: 0; background: transparent;
+      font-size: 1.5rem; cursor: pointer; color: var(--mute); line-height: 1;
+    }
+    .modal h2 { font-family: Fraunces, Georgia, serif; font-size: 1.35rem; margin: 0 0 0.4rem; }
+    .modal .benefit { color: var(--mute); margin: 0 0 0.85rem; font-size: 0.95rem; }
+
+    @media (min-width: 48rem) {
+      body { font-size: 1.2rem; }
+      .wrap { width: min(54rem, calc(100% - 3rem)); }
+      .wrap-wide { width: min(72rem, calc(100% - 3rem)); }
+      .hero {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 2.25rem; padding: 3.75rem 0 1rem;
+      }
+      h1 { font-size: clamp(3rem, 4.2vw, 3.85rem); max-width: 15ch; }
+      .lede { font-size: 1.28rem; max-width: 40rem; }
+      .hero-panel .cta { width: 100%; }
+      .products { grid-template-columns: 1fr 1fr; gap: 1.15rem; }
+      .steps { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .compare-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+      .willwont { grid-template-columns: 1fr 1fr; }
+      .closer { grid-template-columns: 1.4fr 0.6fr; }
+      .closer .cta { justify-self: end; }
+      .panel-title { font-size: 1.65rem; }
+    }
   </style>
 </head>
 <body>
   <div class="topbar">
-    <div class="wrap topbar-inner">
+    <div class="wrap-wide topbar-inner">
       <div class="mark">Andy<span>Melbourne</span></div>
       <a class="nav-cta" href="listing-intake.html">Start listing $299</a>
     </div>
   </div>
 
-  <main class="wrap-wide">
-    <div class="hero" id="free">
+  <header class="hero-band">
+    <div class="wrap-wide hero" id="top">
       <div class="hero-copy">
         <p class="eyebrow">Melbourne tradies · Google + site</p>
         <h1>They google you before they call.</h1>
         <p class="lede">I’m Andy. I help Melbourne tradies get more enquiries from Google and their site. You send the listing name or URL. I fix what stops the phone.</p>
         <div class="trust"><strong>Public data only.</strong> If it’s already fine, I say so. No chase after.</div>
         <p class="fud">No Google password. You add me as Manager.</p>
+        <a class="cta" href="listing-intake.html">Start listing $299</a>
       </div>
-      <aside class="hero-panel" aria-label="Start here">
-        <p class="panel-kicker">Most start here</p>
+      <aside class="hero-panel" aria-label="Start here pricing">
+        <p class="panel-kicker">Start here</p>
         <h2 class="panel-title">Google listing cleanup</h2>
         <p class="panel-price">$299 <small>once</small></p>
         <ul class="panel-ticks">
@@ -497,274 +410,233 @@
           <li>Services, photos, working enquire links</li>
           <li>Manager access. No password</li>
         </ul>
-        <a class="cta" href="listing-intake.html">Start listing $299</a>
-        <p class="panel-note">Or scroll for the $149 patch and websites</p>
+        <p class="panel-note">Also: site patch $149 · website $799 · pack $999</p>
       </aside>
     </div>
+  </header>
 
-    <section>
-      <h2 class="sec">Who I help</h2>
-      <p class="prose">Melbourne tradies. Not one trade. If locals google you for the job, you’re in.</p>
-      <div class="trades">
-        <span>Plumbers</span>
-        <span>Electricians</span>
-        <span>Painters</span>
-        <span>Landscapers</span>
-        <span>Roofers</span>
-        <span>Carpenters</span>
-        <span>Builders</span>
-        <span>More trades</span>
-      </div>
-    </section>
+  <div class="page-body">
+    <main class="wrap-wide">
+      <section id="pain">
+        <p class="sec-kicker">Sound familiar</p>
+        <h2 class="sec">Sound familiar, mate?</h2>
+        <p class="prose">They pick the other name on Google. Same trade. Same suburb. Your listing looks soft next to theirs.</p>
+        <div class="grid-2">
+          <div class="card"><strong>Wrong category</strong><p>Google thinks you’re a contractor, not a plumber or sparkie. The right jobs never see you.</p></div>
+          <div class="card"><strong>Service area is a blob</strong><p>A fat circle is a weak signal everywhere. Suburbs you drive beat a giant radius.</p></div>
+          <div class="card"><strong>Services are just titles</strong><p>Blocked drains. Switchboard. Painting. Bare titles with nothing under them.</p></div>
+          <div class="card"><strong>They can’t enquire</strong><p>Call button dead. Quote page 404. They already chose you and then left.</p></div>
+        </div>
+        <div class="trades" aria-label="Trades">
+          <span>Plumbers</span>
+          <span>Electricians</span>
+          <span>Painters</span>
+          <span>Landscapers</span>
+          <span>Roofers</span>
+          <span>Carpenters</span>
+          <span>Builders</span>
+          <span>More trades</span>
+        </div>
+      </section>
 
-    <section>
-      <h2 class="sec">Sound familiar?</h2>
-      <p class="prose">They pick the other name on Google. Same trade. Same suburb. Your listing looks soft next to theirs.</p>
-      <div class="grid-2">
-        <div class="card"><strong>Wrong category</strong><p>Google thinks you’re a contractor, not a plumber or sparkie. The right jobs never see you.</p></div>
-        <div class="card"><strong>Service area is a blob</strong><p>A fat circle is a weak signal everywhere. Suburbs you drive beat a giant radius.</p></div>
-        <div class="card"><strong>Services are just titles</strong><p>Blocked drains. Switchboard. Painting. Bare titles with nothing under them.</p></div>
-        <div class="card"><strong>They can’t enquire</strong><p>Call button dead. Quote page 404. They already chose you and then left.</p></div>
-      </div>
-
-      <div class="proof-strip" aria-label="Anonymised listing schematic">
-        <div class="proof-pair">
-          <div class="gmap-mock">
-            <div class="g-label">Before</div>
-            <div class="g-head">
-              <div class="g-avatar" aria-hidden="true"></div>
-              <div>
-                <p class="g-name">Local trade business</p>
-                <p class="g-cat wrong">Category: General contractor</p>
-              </div>
-            </div>
-            <div class="g-map" aria-hidden="true">
-              <div class="g-blob"></div>
-            </div>
-            <div class="g-actions">
-              <span class="g-btn dead">Call</span>
-              <span class="g-btn dead">Website</span>
-              <span class="g-btn dead">Enquire</span>
-            </div>
+      <section id="how">
+        <p class="sec-kicker">How it works</p>
+        <h2 class="sec">Three steps. Then you decide.</h2>
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">1</span>
+            <strong>You send the listing or site</strong>
+            <p>Google name or URL. Public data only. Usually same day on weekdays.</p>
           </div>
-          <div class="gmap-mock after-mock">
-            <div class="g-label">After</div>
-            <div class="g-head">
-              <div class="g-avatar" aria-hidden="true"></div>
-              <div>
-                <p class="g-name">Local trade business</p>
-                <p class="g-cat right">Category: Plumber</p>
-              </div>
-            </div>
-            <div class="g-map" aria-hidden="true">
-              <div class="g-pins">
-                <span class="g-pin"></span>
-                <span class="g-pin"></span>
-                <span class="g-pin"></span>
-                <span class="g-pin"></span>
-              </div>
-            </div>
-            <div class="g-actions">
-              <span class="g-btn live">Call</span>
-              <span class="g-btn live-ghost">Website</span>
-              <span class="g-btn live-ghost">Enquire</span>
-            </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <strong>I send one problem</strong>
+            <p>One thing losing you calls. No report pack. No sales call. I don’t chase.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <strong>You pay if it’s useful</strong>
+            <p><a href="listing-intake.html">$299 listing</a>. <a href="patch-intake.html">$149 patch list</a>. <a href="intake.html">$799 website</a>. $999 pack. Short intake.</p>
           </div>
         </div>
-        <p class="proof-cap">Public data only / example of the kind of gaps we fix.</p>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h2 class="sec">Pin the suburbs. Don’t draw a fat circle.</h2>
-      <div class="callout">
-        <div class="bad">
-          <div class="label">Weak signal</div>
-          <strong>Fat 50km blob</strong>
-          <p>A giant circle around the depot tells Google you’re everywhere and nowhere.</p>
+      <section id="products">
+        <p class="sec-kicker">Pricing</p>
+        <h2 class="sec">Simple pricing. On the page.</h2>
+        <p class="prose">Pick what fits. Pay once. You own the work. No quote theatre.</p>
+        <div class="products">
+          <article class="product start" id="sku-listing">
+            <span class="tag">Start here</span>
+            <h3>Make the listing usable</h3>
+            <p class="price">$299<small>once</small></p>
+            <p>Category, suburbs you drive, services, photos, working enquire links. You add me as Manager. No password.</p>
+            <ul>
+              <li>Right primary category + extras</li>
+              <li>Suburbs you drive, not a blob</li>
+              <li>Services with real descriptions</li>
+              <li>Photos, hours, working links</li>
+            </ul>
+            <a class="cta" href="listing-intake.html">Start listing $299</a>
+          </article>
+          <article class="product popular" id="pack-detail">
+            <span class="tag">Most Popular</span>
+            <h3>Website + listing pack</h3>
+            <p class="price">$999<small>once · save $99</small></p>
+            <p>New tradie site plus a fixed Google listing. One short intake, your photos, both done. You own them.</p>
+            <ul>
+              <li>Everything in the $799 website</li>
+              <li>Everything in the $299 listing</li>
+              <li>One short intake and photo handoff</li>
+              <li>You own both. No retainer</li>
+            </ul>
+            <a class="cta" href="intake.html?pack=999">Start pack $999</a>
+          </article>
+          <article class="product" id="sku-site">
+            <span class="tag">Site fix list</span>
+            <h3>Patch list, not a rebuild</h3>
+            <p class="price">$149<small>once</small></p>
+            <p>Ranked list of what’s stopping calls after they already picked you. You or your web person do the work.</p>
+            <ul>
+              <li>Call buttons, quote links, forms</li>
+              <li>First screen on a phone</li>
+              <li>What to change, in order</li>
+              <li>You or your web person fix it</li>
+            </ul>
+            <a class="cta" href="patch-intake.html">Start patch $149</a>
+          </article>
+          <article class="product" id="sku-website">
+            <span class="tag">New site</span>
+            <h3>Tradie website</h3>
+            <p class="price">$799<small>once</small></p>
+            <p>New site from scratch. Home, services, about, contact. Mobile. Tap-to-call. <strong>5 fields · about 3 min</strong>, then photos.</p>
+            <ul>
+              <li>Looks sharp on a phone</li>
+              <li>Enquiry form to your inbox</li>
+              <li>Home, services, about, contact</li>
+              <li>You own it. No monthly lock-in</li>
+            </ul>
+            <a class="cta" href="intake.html">Start website $799</a>
+          </article>
         </div>
-        <div class="good">
-          <div class="label">Stronger signal</div>
-          <strong>Pins for suburbs you drive</strong>
-          <p>List the suburbs you actually take jobs in. That matches how you work in Melbourne.</p>
+      </section>
+
+      <section class="compare" id="compare">
+        <p class="sec-kicker">Compare</p>
+        <h2 class="sec">Without this. With this.</h2>
+        <p class="prose">Same trade. Same suburb. Different listing and enquire path.</p>
+        <div class="compare-grid">
+          <div class="compare-card before">
+            <h3>Without the fix</h3>
+            <ul>
+              <li>Wrong category or a fat service blob</li>
+              <li>Dead call button or quote 404</li>
+              <li>Paying directories for tyre-kickers</li>
+              <li>Site that looks soft on a phone</li>
+            </ul>
+          </div>
+          <div class="compare-card after">
+            <h3>With Andy</h3>
+            <ul>
+              <li>Listing cleaned: category, suburbs, services, photos</li>
+              <li>Enquire path that works</li>
+              <li>You own the listing. Manager access. No password</li>
+              <li>Optional new site or a ranked $149 patch list</li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="sec">How it works</h2>
-      <div class="steps">
-        <div class="step"><strong>1. You send the listing or site</strong><p>Google name or URL. Public data only. Usually same day on weekdays.</p></div>
-        <div class="step"><strong>2. I send one problem</strong><p>One thing losing you calls. No report pack. No sales call. I don’t chase.</p></div>
-        <div class="step"><strong>3. You pay if it’s useful</strong><p><a href="listing-intake.html">$299 listing</a>. <a href="patch-intake.html">$149 patch list</a>. <a href="intake.html">$799 website</a>. $999 pack. Short intake.</p></div>
-      </div>
-    </section>
-
-    
-
-    <section id="products">
-      <h2 class="sec">Simple pricing. On the page.</h2>
-      <p class="prose">Pick what fits. Pay once. You own the work. No quote theatre.</p>
-      <div class="products">
-        <article class="product start" id="sku-listing">
-          <span class="tag">Start here</span>
-          <h3>Make the listing usable</h3>
-          <p class="price">$299<small>once</small></p>
-          <p>Category, suburbs you drive, services, photos, working enquire links. You add me as Manager. No password.</p>
-          <ul>
-            <li>Right primary category + extras</li>
-            <li>Suburbs you drive, not a blob</li>
-            <li>Services with real descriptions</li>
-            <li>Photos, hours, working links</li>
-          </ul>
-          <a class="cta" href="listing-intake.html">Start listing $299</a>
-        </article>
-        <article class="product" id="sku-site">
-          <span class="tag">Most after listing</span>
-          <h3>Patch list, not a rebuild</h3>
-          <p class="price">$149<small>once</small></p>
-          <p>Ranked list of what’s stopping calls after they already picked you. You or your web person do the work.</p>
-          <ul>
-            <li>Call buttons, quote links, forms</li>
-            <li>First screen on a phone</li>
-            <li>What to change, in order</li>
-            <li>You or your web person fix it</li>
-          </ul>
-          <a class="cta" href="patch-intake.html">Start patch $149</a>
-        </article>
-        <article class="product quiet" id="sku-website">
-          <span class="tag">New site</span>
-          <h3>Tradie website</h3>
-          <p class="price">$799<small>once</small></p>
-          <p>New site from scratch. Home, services, about, contact. Mobile. Tap-to-call. <strong>5 fields · about 3 min</strong>, then photos.</p>
-          <ul>
-            <li>Looks sharp on a phone</li>
-            <li>Enquiry form to your inbox</li>
-            <li>Home, services, about, contact</li>
-            <li>You own it. No monthly lock-in</li>
-          </ul>
-          <a class="cta" href="intake.html">Start website $799</a>
-        </article>
-        <article class="product quiet" id="pack-detail">
-          <span class="tag">Best money</span>
-          <h3>Website + listing pack</h3>
-          <p class="price">$999<small>once · save $99</small></p>
-          <p>New tradie site plus a fixed Google listing. One short intake, your photos, both done. You own them.</p>
-          <ul>
-            <li>Everything in the $799 website</li>
-            <li>Everything in the $299 listing</li>
-            <li>One short intake and photo handoff</li>
-            <li>You own both. No retainer</li>
-          </ul>
-          <a class="cta" href="intake.html?pack=999">Start pack $999</a>
-        </article>
-      </div>
-    </section>
-
-    
-<section class="compare" id="compare">
-      <h2 class="sec">Without this. With this.</h2>
-      <p class="prose">Same trade. Same suburb. Different listing and enquire path.</p>
-      <div class="compare-grid">
-        <div class="compare-card before">
-          <h3>Without the fix</h3>
-          <ul>
-            <li>Wrong category or a fat service blob</li>
-            <li>Dead call button or quote 404</li>
-            <li>Paying directories for tyre-kickers</li>
-            <li>Site that looks soft on a phone</li>
-          </ul>
+        <div class="willwont">
+          <div class="will">
+            <h3>I will</h3>
+            <ul>
+              <li>Fix or build out the Google listing</li>
+              <li>Make the enquire path work</li>
+              <li>Build a new tradie site from intake + photos</li>
+              <li>Tell you if it’s already fine</li>
+            </ul>
+          </div>
+          <div class="wont">
+            <h3>I won’t</h3>
+            <ul>
+              <li>Charge agency $1999 prices for the same job</li>
+              <li>Promise Google page one</li>
+              <li>Buy or fake reviews</li>
+              <li>Lock you into a retainer to own your site</li>
+            </ul>
+          </div>
         </div>
-        <div class="compare-card after">
-          <h3>With Andy</h3>
-          <ul>
-            <li>Listing cleaned: category, suburbs, services, photos</li>
-            <li>Enquire path that works</li>
-            <li>You own the listing. Manager access. No password</li>
-            <li>Optional new site or a ranked $149 patch list</li>
-          </ul>
+        <p class="own-line"><strong>You rent directory leads.</strong> You own the Google listing.</p>
+      </section>
+
+      <section id="faq">
+        <p class="sec-kicker">FAQ</p>
+        <h2 class="sec">Common questions</h2>
+        <div class="faq-list">
+          <details class="faq">
+            <summary>Do you need my Google password?</summary>
+            <p>No. You add me as Manager. You can remove me after.</p>
+          </details>
+          <details class="faq">
+            <summary>When do I pay?</summary>
+            <p>After intake. I send the next step same day on weekdays. You pay once when that looks useful. No quote theatre.</p>
+          </details>
+          <details class="faq">
+            <summary>What’s the $799 website?</summary>
+            <p>New Melb tradie site. Home, services, about, contact, mobile, tap-to-call. <a href="intake.html">Short intake</a>, then photos.</p>
+          </details>
+          <details class="faq">
+            <summary>What if it’s already fine?</summary>
+            <p>I say so. Public data only. No chase after.</p>
+          </details>
         </div>
-      </div>
-      <div class="willwont" style="margin-top:1rem">
-        <div class="will">
-          <h3>I will</h3>
-          <ul>
-            <li>Fix or build out the Google listing</li>
-            <li>Make the enquire path work</li>
-            <li>Build a new tradie site from intake + photos</li>
-            <li>Tell you if it’s already fine</li>
-          </ul>
+      </section>
+    </main>
+
+    <div class="closer-band" id="closer">
+      <div class="wrap-wide closer">
+        <div>
+          <h2>Ready when you are.</h2>
+          <p>Start with the Google listing. Or the site patch. Prices are on the page. No quote theatre.</p>
         </div>
-        <div class="wont">
-          <h3>I won’t</h3>
-          <ul>
-            <li>Charge agency $1999 prices for the same job</li>
-            <li>Promise Google page one</li>
-            <li>Buy or fake reviews</li>
-            <li>Lock you into a retainer to own your site</li>
-          </ul>
-        </div>
+        <a class="cta" href="listing-intake.html">Start listing $299</a>
       </div>
-      <p class="own-line"><strong>You rent directory leads.</strong> You own the Google listing.</p>
-    </section>
+    </div>
 
-<section id="faq">
-      <h2 class="sec">Common questions</h2>
-      <div class="faq-list">
-<div class="faq"><strong>Do you need my Google password?</strong><p>No. You add me as Manager. You can remove me after.</p></div>
-<div class="faq"><strong>When do I pay?</strong><p>After intake. I send the next step same day on weekdays. You pay once when that looks useful. No quote theatre.</p></div>
-<div class="faq"><strong>What’s the $799 website?</strong><p>New Melb tradie site. Home, services, about, contact, mobile, tap-to-call. <a href="intake.html">Short intake</a>, then photos.</p></div>
-<div class="faq"><strong>What if it’s already fine?</strong><p>I say so. Public data only. No chase after.</p></div>
-      </div>
-    </section>
+    <div class="wrap-wide after-closer">
+      <section class="capture" id="free-look" aria-labelledby="free-look-title">
+        <h2 id="free-look-title">Want a free look?</h2>
+        <p class="benefit">Not ready for the $299. Email me your Google name or site URL. I send one real problem. Usually same day on weekdays. If I already emailed you, just reply.</p>
+        <p class="row"><a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Get one free finding</a></p>
+      </section>
 
+      <section class="capture" id="checklist" aria-labelledby="capture-title">
+        <h2 id="capture-title">Free Melb Google listing checklist</h2>
+        <p class="benefit">One scannable checklist for your listing and enquire path. Useful whether you buy anything or not.</p>
+        <ul class="ticks">
+          <li>Category, suburbs, services, photos, links</li>
+          <li>Pin vs fat circle called out clearly</li>
+          <li>Enquire path checks before they bounce</li>
+        </ul>
+        <form class="capture-form" action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Andy Melb checklist">
+          <input type="hidden" name="_next" value="https://moonoce95.github.io/andy-melb/checklist.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="honeypot" for="email-bottom">Email</label>
+          <input id="email-bottom" type="email" name="email" required placeholder="Your email" autocomplete="email">
+          <button class="cta ghost" type="submit">Send the checklist</button>
+        </form>
+        <p class="fine">Goes to Andy. No newsletter spam. Checklist opens next.</p>
+      </section>
 
-<section class="closer" id="closer" aria-label="Start">
-      <div>
-        <h2>Ready when you are.</h2>
-        <p>Start with the Google listing. Or the site patch. Prices are on the page. No quote theatre.</p>
-      </div>
-      <a class="cta" href="listing-intake.html">Start listing $299</a>
-    </section>
-
-<section class="capture" id="free-look" aria-labelledby="free-look-title">
-      <h2 class="sec" id="free-look-title">Want a free look?</h2>
-      <p class="prose">Not ready for the $299. Email me your Google name or site URL. I send one real problem. Usually same day on weekdays. If I already emailed you, just reply.</p>
-      <p class="row"><a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Get one free finding</a></p>
-    </section>
-
-<section class="capture" id="checklist" aria-labelledby="capture-title">
-      <h2 id="capture-title">Free Melb Google listing checklist</h2>
-      <p class="benefit">One scannable checklist for your listing and enquire path. Useful whether you buy anything or not.</p>
-      <ul class="ticks">
-        <li>Category, suburbs, services, photos, links</li>
-        <li>Pin vs fat circle called out clearly</li>
-        <li>Enquire path checks before they bounce</li>
-      </ul>
-      <form class="capture-form" action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Andy Melb checklist">
-        <input type="hidden" name="_next" value="https://moonoce95.github.io/andy-melb/checklist.html">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <label class="honeypot" for="email-bottom">Email</label>
-        <input id="email-bottom" type="email" name="email" required placeholder="Your email" autocomplete="email">
-        <button class="cta ghost" type="submit">Send the checklist</button>
-      </form>
-      <p class="fine">Goes to Andy. No newsletter spam. Checklist opens next.</p>
-    </section>
-
-    <p class="row" style="margin-top:2rem">
-      <a class="cta" href="listing-intake.html">Start listing $299</a>
-      <a class="cta ghost" href="#products">See prices</a>
-    </p>
-
-    <footer>
-      <p class="sig">Andy</p>
-      <p>Melbourne. All trades.</p>
-      <p><a href="mailto:andy.ng199507@gmail.com">andy.ng199507@gmail.com</a></p>
-      <p style="margin-top:1rem;font-size:0.85rem">I don’t promise Google page one.</p>
-    </footer>
-  </main>
+      <footer>
+        <p class="sig">Andy</p>
+        <p>Melbourne. All trades.</p>
+        <p><a href="mailto:andy.ng199507@gmail.com">andy.ng199507@gmail.com</a></p>
+        <p style="margin-top:1rem;font-size:0.85rem">I don’t promise Google page one.</p>
+      </footer>
+    </div>
+  </div>
 
   <div class="thumbbar" aria-label="Quick action">
     <a class="cta" href="listing-intake.html">Start listing $299</a>
