@@ -65,7 +65,7 @@
     }
     .nav-cta:hover { background: var(--ember); }
 
-    .hero { padding: 3.25rem 0 1rem; }
+    /* hero layout in block below */
     h1 {
       font-family: Fraunces, Georgia, serif; font-weight: 650;
       font-size: clamp(2.35rem, 5.2vw, 3.55rem); line-height: 1.06;
@@ -211,7 +211,7 @@
       margin: 0.65rem 0 0; color: var(--mute); font-size: 0.88rem;
     }
 
-    .steps { display: grid; gap: 0.75rem; }
+    /* steps grid in layout block */
     @media (min-width: 48rem) { .steps { grid-template-columns: 1fr 1fr 1fr; } }
     .step {
       background: var(--chip); border: 1px solid var(--line); border-radius: 0.9rem;
@@ -220,9 +220,7 @@
     .step strong { display: block; font-family: Fraunces, Georgia, serif; margin-bottom: 0.3rem; }
     .step p { margin: 0; color: var(--mute); font-size: 0.92rem; }
 
-    .products {
-      display: grid; gap: 0.85rem; margin-top: 0.5rem;
-    }
+    /* products grid in layout block */
     @media (min-width: 40rem) { .products { grid-template-columns: 1fr 1fr; } }
     .product {
       background: var(--chip); border: 1px solid var(--line); border-radius: 1rem;
@@ -356,16 +354,31 @@
     </div>
   </div>
 
-  <main class="wrap">
+  <main class="wrap-wide">
     <div class="hero" id="free">
-      <h1>They google you before they call.</h1>
-      <p class="lede">I’m Andy. I help Melbourne tradies get more enquiries from Google and their site. Send your listing or URL. I send one real problem. You decide.</p>
-      <div class="trust"><strong>Public data only.</strong> If it’s already fine, I say so. No chase after.</div>
-      <div class="row">
-        <a class="cta" href="listing-intake.html">Start listing $299</a>
+      <div class="hero-copy">
+        <p class="eyebrow">Melbourne tradies · Google + site</p>
+        <h1>They google you before they call.</h1>
+        <p class="lede">I’m Andy. I help Melbourne tradies get more enquiries from Google and their site. You send the listing name or URL. I fix what stops the phone.</p>
+        <div class="trust"><strong>Public data only.</strong> If it’s already fine, I say so. No chase after.</div>
+        <div class="row">
+          <a class="cta" href="listing-intake.html">Start listing $299</a>
+        </div>
+        <p class="fud">No Google password. You add me as Manager.</p>
       </div>
-      <p class="fud">No Google password. You add me as Manager.</p>
-          </div>
+      <aside class="hero-panel" aria-label="Start here">
+        <p class="panel-kicker">Most start here</p>
+        <h2 class="panel-title">Google listing cleanup</h2>
+        <p class="panel-price">$299 <small>once</small></p>
+        <ul class="panel-ticks">
+          <li>Right category + suburbs you drive</li>
+          <li>Services, photos, working enquire links</li>
+          <li>Manager access. No password</li>
+        </ul>
+        <a class="cta" href="listing-intake.html">Start listing $299</a>
+        <p class="panel-note">Or scroll for the $149 patch and websites</p>
+      </aside>
+    </div>
 
     <section>
       <h2 class="sec">Who I help</h2>
@@ -383,7 +396,8 @@
     </section>
 
     <section>
-      <h2 class="sec">Why they pick the other name</h2>
+      <h2 class="sec">Sound familiar?</h2>
+      <p class="prose">They pick the other name on Google. Same trade. Same suburb. Your listing looks soft next to theirs.</p>
       <div class="grid-2">
         <div class="card"><strong>Wrong category</strong><p>Google thinks you’re a contractor, not a plumber or sparkie. The right jobs never see you.</p></div>
         <div class="card"><strong>Service area is a blob</strong><p>A fat circle is a weak signal everywhere. Suburbs you drive beat a giant radius.</p></div>
@@ -467,8 +481,8 @@
     
 
     <section id="products">
-      <h2 class="sec">What you can buy</h2>
-      <p class="prose">Simple. On the page. Pay once.</p>
+      <h2 class="sec">Pick what fits</h2>
+      <p class="prose">Prices on the page. Pay once. You own the work.</p>
       <div class="products">
         <article class="product start" id="sku-listing">
           <span class="tag">Start here</span>
