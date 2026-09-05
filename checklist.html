@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Melbourne Google listing checklist. Andy.</title>
+  <meta name="description" content="A scannable Melbourne Google listing and enquire-path checklist from Andy. Category, suburbs, services, photos, links.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://moonoce95.github.io/andy-melb/checklist.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23161310' width='32' height='32' rx='8'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23efe8db' font-size='16' font-family='Georgia'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=fraunces:560,650|outfit:400,500,650" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #efe8db;
+      --ink: #161310;
+      --mute: #5a5248;
+      --line: #d4cbb8;
+      --ember: #9e3b14;
+      --chip: #fff8ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Outfit, "Segoe UI", sans-serif;
+      font-size: 1.06rem;
+      line-height: 1.5;
+    }
+    .wrap { width: min(44rem, calc(100% - 2rem)); margin: 0 auto; padding: 1.2rem 0 3rem; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.2rem 0 1.2rem;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 1.6rem;
+    }
+    .mark { font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 1.15rem; }
+    .mark a { color: inherit; text-decoration: none; }
+    .back { color: var(--mute); font-size: 0.9rem; text-decoration: none; font-weight: 650; }
+    .back:hover { color: var(--ember); }
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650;
+      font-size: clamp(1.85rem, 5vw, 2.45rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.65rem;
+    }
+    .lede { color: var(--mute); margin: 0 0 1.4rem; }
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650;
+      font-size: 1.25rem;
+      margin: 1.6rem 0 0.65rem;
+    }
+    .block {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 0.85rem;
+      padding: 0.95rem 1.05rem;
+      margin: 0 0 0.65rem;
+    }
+    .block strong {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.05rem;
+      margin: 0 0 0.25rem;
+    }
+    .block p, .block li { color: var(--mute); font-size: 0.95rem; }
+    .block p { margin: 0; }
+    .block ul {
+      margin: 0.45rem 0 0;
+      padding: 0 0 0 1.15rem;
+    }
+    .block li { margin: 0.28rem 0; }
+    .check {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .check li {
+      position: relative;
+      padding: 0.7rem 0.85rem 0.7rem 2.35rem;
+      border-bottom: 1px solid var(--line);
+      color: var(--mute);
+      font-size: 0.95rem;
+    }
+    .check li:last-child { border-bottom: 0; }
+    .check li::before {
+      content: "";
+      position: absolute;
+      left: 0.75rem;
+      top: 0.9rem;
+      width: 0.95rem;
+      height: 0.95rem;
+      border: 2px solid var(--line);
+      border-radius: 0.25rem;
+      background: #fff;
+    }
+    .sheet {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 0.85rem;
+      overflow: hidden;
+      margin: 0.5rem 0 0;
+    }
+    .callout {
+      display: grid;
+      gap: 0.55rem;
+      margin: 0.75rem 0 0;
+    }
+    @media (min-width: 36rem) { .callout { grid-template-columns: 1fr 1fr; } }
+    .bad, .good {
+      border-radius: 0.75rem;
+      padding: 0.85rem 0.95rem;
+      border: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+    .bad { background: #f3ebe0; color: var(--mute); }
+    .good { background: var(--chip); border-color: color-mix(in srgb, var(--ember) 35%, var(--line)); color: var(--mute); }
+    .bad strong, .good strong {
+      display: block;
+      color: var(--ink);
+      font-family: Fraunces, Georgia, serif;
+      margin-bottom: 0.2rem;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.75rem 1.15rem;
+      background: var(--ember);
+      color: #fff8ee;
+      text-decoration: none;
+      font-weight: 650;
+      border-radius: 999px;
+      border: 2px solid var(--ember);
+    }
+    .cta:hover { filter: brightness(1.06); }
+    .cta.ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+    .cta.ghost:hover { background: var(--ink); color: #fff8ee; filter: none; }
+    .row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1.4rem; }
+    footer {
+      margin-top: 2.4rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--line);
+      color: var(--mute);
+      font-size: 0.95rem;
+    }
+    .sig {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 650;
+      color: var(--ink);
+      font-size: 1.1rem;
+      margin: 0 0 0.25rem;
+    }
+    footer a { color: var(--ink); font-weight: 650; text-decoration: none; }
+    footer a:hover { color: var(--ember); }
+    .note {
+      margin: 1rem 0 0;
+      font-size: 0.88rem;
+      color: var(--mute);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark"><a href="./">Andy</a></div>
+      <a class="back" href="./">Back home</a>
+    </header>
+
+    <h1>Melbourne Google listing checklist</h1>
+    <p class="lede">A scannable pass over your Google listing and enquire path. Tick what you already have. Fix what’s missing. Public stuff only. No page-one promise attached.</p>
+
+    <div class="block">
+      <strong>How to use this</strong>
+      <p>Walk it on your phone like a customer would. Search your trade + suburb. Open your listing. Try the call and website buttons. Note one thing you’d fix first.</p>
+    </div>
+
+    <h2>1. Basics that have to be true</h2>
+    <div class="sheet">
+      <ul class="check">
+        <li>Business name matches how customers know you (no keyword stuffing in the title)</li>
+        <li>Primary category is the job you actually want (sparkie, plumber, carpenter), not a vague “contractor”</li>
+        <li>Extra categories only if you really do that work</li>
+        <li>Phone number is correct and taps to dial on a phone</li>
+        <li>Website URL opens, and it’s yours</li>
+        <li>Hours are current (including Saturday if you take weekend jobs)</li>
+      </ul>
+    </div>
+
+    <h2>2. Service area: pins, not a fat circle</h2>
+    <div class="callout">
+      <div class="bad"><strong>Skip this</strong>A 40-50km blob around the depot. Weak signal in every suburb inside it.</div>
+      <div class="good"><strong>Do this</strong>List the Melbourne suburbs you actually drive to. Hide the home address if you’re mobile.</div>
+    </div>
+    <div class="sheet" style="margin-top:0.65rem">
+      <ul class="check">
+        <li>Service area lists real suburbs you cover, not a giant radius</li>
+        <li>If you’re a mobile tradie, address is hidden and area shows instead</li>
+        <li>You’re not claiming half of Melbourne “just in case”</li>
+      </ul>
+    </div>
+
+    <h2>3. Services (with real words under them)</h2>
+    <div class="sheet">
+      <ul class="check">
+        <li>Every service you quote is listed (not just three generic titles)</li>
+        <li>Each service has a short description in plain English</li>
+        <li>No empty “Switchboard” / “Lighting” titles with nothing underneath</li>
+      </ul>
+    </div>
+
+    <h2>4. Photos and proof you’re real</h2>
+    <div class="sheet">
+      <ul class="check">
+        <li>At least a handful of real job photos (phone photos are fine)</li>
+        <li>No stock van / stock handshake images as the main look</li>
+        <li>Logo and cover look finished, not default placeholders</li>
+        <li>Licence or credentials showing if you’ve got them</li>
+      </ul>
+    </div>
+
+    <h2>5. Enquire path (this is where jobs die)</h2>
+    <div class="sheet">
+      <ul class="check">
+        <li>Call button dials the right number on a phone</li>
+        <li>Website button opens a live page</li>
+        <li>If you have a quote or contact link, it does not 404</li>
+        <li>On the site, the first screen on a phone makes it obvious how to enquire</li>
+        <li>Forms don’t ask for nine fields before someone can send</li>
+      </ul>
+    </div>
+
+    <h2>6. Who sits above you (quick look)</h2>
+    <div class="sheet">
+      <ul class="check">
+        <li>You searched your main trade + one suburb you care about</li>
+        <li>You noted who appears above you in the map pack</li>
+        <li>You checked their category, photo count, and whether their call link works</li>
+        <li>You picked one gap on your listing you can close this week</li>
+      </ul>
+    </div>
+
+    <h2>7. Reviews (honest only)</h2>
+    <div class="sheet">
+      <ul class="check">
+        <li>You know how to ask a happy customer for a Google review after the job</li>
+        <li>You’re not buying reviews or swapping fake ones</li>
+        <li>Old leftover Q&amp;A on the listing has been cleaned if it’s still sitting there</li>
+      </ul>
+    </div>
+
+    <div class="block" style="margin-top:1.2rem">
+      <strong>If you don’t have a listing yet</strong>
+      <p>Claim it in Google Business Profile. Google may verify with a postcard to the business address, or sometimes phone or video. Finish verification before you polish every field. Same checklist applies once you’re in.</p>
+    </div>
+
+    <div class="block">
+      <strong>Want me to do the pass?</strong>
+      <p>Email your Google name or site URL. I send one free finding from public data (and say if it’s already fine). Listing fix is $299 once. Site patch list is $149 once. Not a rebuild.</p>
+    </div>
+
+    <p class="row">
+      <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a>
+      <a class="cta ghost" href="./">Back to Andy</a>
+    </p>
+
+    <p class="note">Filled in is not the same as showing up. This checklist gets the basics honest. Maps movement still takes time.</p>
+
+    <footer>
+      <p class="sig">Andy</p>
+      <p>Melbourne. Tradies and small businesses.</p>
+      <p><a href="mailto:andy.ng199507@gmail.com">andy.ng199507@gmail.com</a></p>
+      <p style="margin-top:1rem;font-size:0.85rem">I don’t promise Google page one.</p>
+    </footer>
+  </div>
+</body>
+</html>
