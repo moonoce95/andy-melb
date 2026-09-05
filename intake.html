@@ -99,6 +99,51 @@
     .next-steps li { margin: 0.35rem 0; }
     .sent-lede { color: var(--mute); margin: 0 0 0.85rem; }
     body.sent .price, body.sent .lede, body.sent .progress, body.sent .pack-note, body.sent .drop { display: none; }
+
+    .phone-proof {
+      display: grid; gap: 0.85rem; justify-items: center;
+      margin: 0 0 1.35rem; padding: 1rem 0.75rem 1.1rem;
+      background: var(--chip); border: 1px solid var(--line); border-radius: 1rem;
+    }
+    .phone-proof .cap {
+      margin: 0; color: var(--mute); font-size: 0.88rem; text-align: center; max-width: 22rem;
+    }
+    .phone {
+      width: 11.2rem; border: 2.5px solid var(--ink); border-radius: 1.35rem;
+      background: #0c1222; padding: 0.45rem 0.4rem 0.55rem;
+      box-shadow: 0 14px 28px color-mix(in srgb, var(--ink) 18%, transparent);
+    }
+    .phone .notch {
+      width: 2.6rem; height: 0.28rem; margin: 0.15rem auto 0.4rem;
+      background: #3a455c; border-radius: 999px;
+    }
+    .phone .screen {
+      background: #f7f1e6; border-radius: 0.85rem; padding: 0.55rem 0.5rem 0.65rem;
+      font-size: 0.62rem; line-height: 1.25; color: #0c1222;
+    }
+    .phone .brand {
+      font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 0.78rem;
+      letter-spacing: -0.02em; margin: 0 0 0.15rem;
+    }
+    .phone .sub { color: #5c4f42; margin: 0 0 0.45rem; font-size: 0.55rem; }
+    .phone .call {
+      display: block; text-align: center; font-weight: 650; font-size: 0.58rem;
+      background: #e04a1a; color: #fff8ee; border-radius: 999px;
+      padding: 0.38rem 0.5rem; margin: 0 0 0.45rem;
+    }
+    .phone .row {
+      display: flex; justify-content: space-between; gap: 0.3rem;
+      border-top: 1px solid #e6d7c0; padding: 0.28rem 0; color: #5c4f42;
+    }
+    .phone .row strong { color: #0c1222; font-weight: 650; }
+    .phone .pages {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem; margin-top: 0.4rem;
+    }
+    .phone .pages span {
+      background: #efe6d4; border-radius: 0.35rem; text-align: center;
+      padding: 0.28rem 0.2rem; font-weight: 650; font-size: 0.52rem; color: #0c1222;
+    }
+    body.sent .phone-proof { display: none; }
   </style>
 </head>
 <body>
@@ -113,6 +158,25 @@
     <p class="lede" id="lede">New Melb tradie site. Home, services, about, contact. Mobile. Tap-to-call. Photos after. No long call.</p>
     <p class="pack-note" id="pack-note" hidden>Pack selected: website + Google listing $999.</p>
     <div class="progress" aria-label="Form length">5 required · about 3 min · then photos</div>
+
+    <aside class="phone-proof" aria-label="Example phone layout">
+      <div class="phone" aria-hidden="true">
+        <div class="notch"></div>
+        <div class="screen">
+          <p class="brand">Your trade · Melb</p>
+          <p class="sub">Home · Services · About · Contact</p>
+          <span class="call">Tap to call</span>
+          <div class="row"><strong>Hot water</strong><span>Same day</span></div>
+          <div class="row"><strong>Blocked drains</strong><span>Local</span></div>
+          <div class="row"><strong>Switchboard</strong><span>Licensed</span></div>
+          <div class="pages">
+            <span>Home</span><span>Services</span>
+            <span>About</span><span>Enquire</span>
+          </div>
+        </div>
+      </div>
+      <p class="cap">What you get on a phone. Your name, photos, services. Schematic only. Not a live client site.</p>
+    </aside>
 
     <form id="intake-form" action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
       <input type="hidden" name="_subject" id="subject-field" value="Andy Melb website intake $799">
