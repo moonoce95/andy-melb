@@ -16,27 +16,35 @@
   <link href="https://fonts.bunny.net/css?family=fraunces:560,650|outfit:400,500,650" rel="stylesheet">
   <style>
     :root {
-      --paper: #efe8db;
-      --ink: #161310;
-      --mute: #5a5248;
-      --line: #d4cbb8;
-      --ember: #9e3b14;
-      --chip: #fff8ee;
-      --space: 3.5rem;
+      --paper: #f3ead8;
+      --ink: #1a120c;
+      --mute: #5c4f42;
+      --line: #d7c4a8;
+      --ember: #c2410c;
+      --ember-deep: #9a3412;
+      --chip: #fffaf2;
+      --leaf: #2f6b4f;
+      --sky: #2b5f7a;
+      --glow: #f0c27a;
+      --space: 3.75rem;
     }
     * { box-sizing: border-box; }
     html { color-scheme: light; scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
     body {
       margin: 0;
-      background: var(--paper);
+      background:
+        radial-gradient(900px 420px at 12% -8%, color-mix(in srgb, var(--glow) 55%, transparent), transparent 60%),
+        radial-gradient(700px 380px at 92% 8%, color-mix(in srgb, var(--ember) 14%, transparent), transparent 55%),
+        radial-gradient(600px 360px at 70% 100%, color-mix(in srgb, var(--leaf) 10%, transparent), transparent 50%),
+        var(--paper);
       color: var(--ink);
       font-family: Outfit, "Segoe UI", sans-serif;
-      font-size: 1.05rem;
-      line-height: 1.5;
+      font-size: 1.12rem;
+      line-height: 1.55;
       padding-bottom: 5rem;
     }
-    .wrap { width: min(44rem, calc(100% - 1.75rem)); margin: 0 auto; }
-    .wrap-wide { width: min(56rem, calc(100% - 1.75rem)); margin: 0 auto; }
+    .wrap { width: min(48rem, calc(100% - 2rem)); margin: 0 auto; }
+    .wrap-wide { width: min(64rem, calc(100% - 2rem)); margin: 0 auto; }
 
     .topbar {
       position: sticky; top: 0; z-index: 40;
@@ -57,13 +65,13 @@
     }
     .nav-cta:hover { background: var(--ember); }
 
-    .hero { padding: 3rem 0 0.75rem; }
+    .hero { padding: 3.25rem 0 1rem; }
     h1 {
       font-family: Fraunces, Georgia, serif; font-weight: 650;
-      font-size: clamp(2.1rem, 6vw, 3rem); line-height: 1.08;
-      letter-spacing: -0.03em; margin: 0 0 1rem; max-width: 18ch;
+      font-size: clamp(2.35rem, 5.2vw, 3.55rem); line-height: 1.06;
+      letter-spacing: -0.03em; margin: 0 0 1.1rem; max-width: 16ch;
     }
-    .lede { color: var(--mute); font-size: 1.08rem; margin: 0 0 1.25rem; max-width: 36rem; }
+    .lede { color: var(--mute); font-size: 1.18rem; margin: 0 0 1.35rem; max-width: 38rem; }
     .trust {
       background: var(--chip); border: 1px solid var(--line); border-radius: 0.85rem;
       padding: 0.9rem 1rem; margin: 0 0 1.35rem; font-size: 0.95rem; max-width: 36rem;
@@ -73,12 +81,14 @@
 
     .cta {
       display: inline-flex; align-items: center; justify-content: center;
-      min-height: 48px; padding: 0.75rem 1.2rem;
-      background: var(--ember); color: #fff8ee; text-decoration: none;
-      font-weight: 650; border-radius: 999px; border: 2px solid var(--ember);
-      cursor: pointer; font-family: inherit; font-size: 1rem;
+      min-height: 52px; padding: 0.8rem 1.35rem;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--ember) 92%, #fff), var(--ember-deep));
+      color: #fff8ee; text-decoration: none;
+      font-weight: 700; border-radius: 999px; border: 2px solid var(--ember-deep);
+      cursor: pointer; font-family: inherit; font-size: 1.05rem;
+      box-shadow: 0 10px 24px color-mix(in srgb, var(--ember) 28%, transparent);
     }
-    .cta:hover { filter: brightness(1.06); }
+    .cta:hover { filter: brightness(1.05); transform: translateY(-1px); }
     .cta:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
     .cta.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
     .cta.ghost:hover { background: var(--ink); color: #fff8ee; filter: none; }
@@ -95,8 +105,12 @@
     .trades { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 0.5rem; }
     .trades span {
       background: var(--chip); border: 1px solid var(--line); border-radius: 999px;
-      padding: 0.45rem 0.95rem; font-size: 0.88rem; font-weight: 650;
+      padding: 0.5rem 1rem; font-size: 0.95rem; font-weight: 650;
+      box-shadow: 0 1px 0 color-mix(in srgb, #fff 70%, transparent);
     }
+    .trades span:nth-child(3n) { border-color: color-mix(in srgb, var(--leaf) 35%, var(--line)); }
+    .trades span:nth-child(3n+1) { border-color: color-mix(in srgb, var(--ember) 28%, var(--line)); }
+    .trades span:nth-child(3n+2) { border-color: color-mix(in srgb, var(--sky) 30%, var(--line)); }
 
     .callout {
       display: grid; gap: 0.75rem; margin-top: 0.35rem;
@@ -313,7 +327,25 @@
     }
     .modal h2 { font-family: Fraunces, Georgia, serif; font-size: 1.35rem; margin: 0 0 0.4rem; }
     .modal .benefit { color: var(--mute); margin: 0 0 0.85rem; font-size: 0.95rem; }
-      .fud{margin:.55rem 0 0;font-size:.92rem;color:var(--muted,#6b5e4f);max-width:34rem}
+      .fud{margin:.65rem 0 0;font-size:1rem;color:var(--mute);max-width:36rem;font-weight:600}
+  
+    @media (min-width: 48rem) {
+      body { font-size: 1.2rem; }
+      .wrap { width: min(54rem, calc(100% - 3rem)); }
+      .wrap-wide { width: min(72rem, calc(100% - 3rem)); }
+      .hero { padding: 4.25rem 0 1.5rem; }
+      h1 { font-size: clamp(3rem, 4.2vw, 3.85rem); max-width: 15ch; }
+      .lede { font-size: 1.28rem; max-width: 40rem; }
+      h2.sec { font-size: clamp(1.7rem, 2.4vw, 2.05rem); }
+      .product, .card, .trust, .gmap-mock {
+        box-shadow: 0 12px 28px color-mix(in srgb, var(--ink) 6%, transparent);
+      }
+      .product.start {
+        border-color: color-mix(in srgb, var(--ember) 55%, var(--line));
+        box-shadow: 0 16px 36px color-mix(in srgb, var(--ember) 18%, transparent);
+      }
+    }
+
   </style>
 </head>
 <body>
