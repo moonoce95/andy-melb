@@ -81,6 +81,7 @@
       <input id="manager" name="manager" type="email" required placeholder="you@business.com.au">
       <p class="hint">That’s the email Google will use when you add me as Manager. Not your login.</p>
       <button class="cta form-cta" type="submit">Send listing $299</button>
+      <p class="hint">I’ll email Manager invite steps same day on weekdays. No password.</p>
     </form>
   </div>
   <div class="sticky-cta" aria-label="Submit">
@@ -88,7 +89,12 @@
   </div>
   <script>
     if (location.search.indexOf('sent=1') !== -1) {
-      document.querySelector('h1').textContent = 'Got it. I’ll reply shortly.';
+      var h1 = document.querySelector('h1');
+      h1.textContent = 'Got it.';
+      var note = document.createElement('p');
+      note.className = 'hint';
+      note.textContent = 'I’ll email Manager invite steps same day on weekdays. No password.';
+      h1.insertAdjacentElement('afterend', note);
       var sticky = document.querySelector('.sticky-cta');
       if (sticky) sticky.style.display = 'none';
       document.body.style.paddingBottom = '0';
