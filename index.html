@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Andy in Melbourne. More calls from Google, SEEK, and your site.</title>
-  <meta name="description" content="I help Greater Melbourne tradies and local service businesses get more enquiries. I find one real problem on your Google listing, SEEK ad, or website. Then you decide if you want the rest.">
+  <meta name="description" content="I’m Andy. I help Greater Melbourne tradies and local service owners get more enquiries. One real problem on your Google listing, SEEK ad, or website. Then you decide.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://moonoce95.github.io/andy-melb/">
   <meta property="og:title" content="Andy in Melbourne. More people calling.">
-  <meta property="og:description" content="Google listing, SEEK ads, website enquiry fixes for Greater Melbourne local businesses.">
+  <meta property="og:description" content="Google listing, SEEK ads, and website enquiry fixes for Greater Melbourne. Prices on the page. New, no reviews yet.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moonoce95.github.io/andy-melb/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23161310' width='32' height='32' rx='8'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23efe8db' font-size='16' font-family='Georgia'%3EA%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=fraunces:560,650|outfit:400,500,650" rel="stylesheet">
   <style>
@@ -22,6 +24,7 @@
       --chip: #fff8ee;
     }
     * { box-sizing: border-box; }
+    html { color-scheme: light; }
     body {
       margin: 0;
       background: var(--paper);
@@ -42,13 +45,22 @@
     h1 {
       font-family: Fraunces, Georgia, serif;
       font-weight: 650;
-      font-size: clamp(2.2rem, 8.6vw, 3.55rem);
+      font-size: clamp(2.15rem, 8.4vw, 3.4rem);
       line-height: 1.04;
       letter-spacing: -0.03em;
-      margin: 16vh 0 0.9rem;
+      margin: 12vh 0 0.85rem;
     }
-    .lede { color: var(--mute); font-size: 1.12rem; margin: 0 0 1.15rem; max-width: 32rem; }
-    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.6rem; }
+    .lede { color: var(--mute); font-size: 1.12rem; margin: 0 0 1rem; max-width: 32rem; }
+    .trust {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      padding: 0.75rem 0.95rem;
+      margin: 0 0 1.15rem;
+      color: var(--ink);
+      font-size: 0.98rem;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.5rem; }
     .chips span {
       background: var(--chip);
       border: 1px solid var(--line);
@@ -76,14 +88,14 @@
       font-family: Fraunces, Georgia, serif;
       font-weight: 650;
       font-size: 1.55rem;
-      margin: 3.2rem 0 0.85rem;
+      margin: 3.1rem 0 0.85rem;
     }
-    .how, article {
+    .how, article, .found {
       padding: 1.05rem 0;
       border-top: 1px solid var(--line);
     }
-    .how:last-of-type, article:last-of-type { border-bottom: 1px solid var(--line); }
-    .how strong, article h3 {
+    .how:last-of-type, article:last-of-type, .found:last-of-type { border-bottom: 1px solid var(--line); }
+    .how strong, article h3, .found strong {
       display: block;
       font-family: Fraunces, Georgia, serif;
       font-size: 1.18rem;
@@ -91,11 +103,20 @@
       margin: 0 0 0.3rem;
     }
     article h3 { font-size: 1.28rem; }
-    article p, .how p, .obj p { margin: 0; color: var(--mute); }
+    .price {
+      display: inline-block;
+      margin: 0.45rem 0 0.35rem;
+      font-weight: 650;
+      color: var(--ember);
+    }
+    article p, .how p, .obj p, .found p { margin: 0; color: var(--mute); }
     .obj { margin: 1.4rem 0 0; }
     .obj p + p { margin-top: 0.7rem; }
     footer { padding: 2.4rem 0 3.2rem; color: var(--mute); font-size: 0.95rem; }
     footer a { color: var(--ink); font-weight: 650; }
+    @media (max-width: 40rem) {
+      h1 { margin-top: 8vh; }
+    }
   </style>
 </head>
 <body>
@@ -106,32 +127,42 @@
     </header>
 
     <h1>Your phone should ring more. I find why it doesn’t.</h1>
-    <p class="lede">I’m Andy. I help Greater Melbourne tradies and local service businesses get more enquiries from Google, SEEK, and their website. One real problem first. You choose if you want the rest.</p>
+    <p class="lede">I’m Andy. I help Greater Melbourne tradies and local service owners get more enquiries from Google, SEEK, and their website. One real problem first. You choose if you want the rest.</p>
+    <p class="trust">New. No reviews yet. I’d rather show you a real finding than a fake star.</p>
     <div class="chips">
-      <span>Google listing</span>
-      <span>SEEK ads</span>
-      <span>Website enquiries</span>
+      <span>Google listing $299</span>
+      <span>SEEK pack $199</span>
+      <span>Site fix list $149</span>
     </div>
     <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine">Email me. Tell me which one.</a>
-    <p class="after">If I already emailed you, just reply. I don’t ask for passwords.</p>
+    <p class="after">If I already emailed you, just reply. I don’t ask for passwords. If a finding is wrong, you don’t pay.</p>
 
     <h2>How it works</h2>
     <div class="how"><strong>1. I look.</strong><p>Your Google listing, one SEEK ad, or your public website. Whatever you point me at.</p></div>
     <div class="how"><strong>2. I show you one thing that’s costing you calls.</strong><p>Plain English. Not a 12 page report. Not a sales call.</p></div>
-    <div class="how"><strong>3. If it’s useful, you buy the pack.</strong><p>Fix list, ad pack, or listing setup. Price is on this page. No surprise retainers unless you ask.</p></div>
+    <div class="how"><strong>3. If it’s useful, you buy the pack.</strong><p>Fix list, ad pack, or listing tidy. Price is on this page. You decide.</p></div>
+
+    <h2>Things I already spotted on Melb pages</h2>
+    <div class="found"><strong>Trust counters stuck at 0</strong><p>A dentist homepage in Melbourne showed “happy patients” as zero. Looks unfinished. People bounce.</p></div>
+    <div class="found"><strong>Reviews split across two names</strong><p>An electrician had reviews sitting on more than one Google listing. Searchers pick the louder one.</p></div>
+    <div class="found"><strong>Quote page 404s</strong><p>A plumber’s “get a quote” link opened a missing page. That’s a call that never starts.</p></div>
+    <div class="found"><strong>Call button that doesn’t dial</strong><p>A PT site had a call button that looked fine and did nothing on a phone.</p></div>
 
     <h2>What you can buy</h2>
     <article>
       <h3>Google listing</h3>
-      <p>Best for tradies, especially electricians. I spot one gap for free. Setup is about $300 to $600. $150 to $300 a month if you want me to keep it tidy. No ranking promises. You add a Manager email. I never want your login.</p>
+      <p class="price">$299 to tidy it. $199 a month if you want me to keep it.</p>
+      <p>Best for tradies, especially Melb sparkies. I spot one gap for free. No ranking promises. You add a Manager email. I never want your login.</p>
     </article>
     <article>
       <h3>SEEK ads</h3>
-      <p>Good people skip thin ads. I rewrite one for free so you can paste it in. A pack of 4 is about $99 to $199.</p>
+      <p class="price">$199 for a pack of 4.</p>
+      <p>Good people skip thin ads. I rewrite one for free so you can paste it in. Then a pack if you want more.</p>
     </article>
     <article>
       <h3>Website enquiries</h3>
-      <p>Broken quote pages, dead call buttons, forms that ask the wrong thing. I send one finding for free. A short fix list is $149. I don’t rebuild your site. I don’t sell you SEO for 12 months.</p>
+      <p class="price">$149 for a short fix list.</p>
+      <p>Broken quote pages, dead call buttons, forms that ask the wrong thing. I send one finding for free. I don’t rebuild your site. I don’t sell you 12 months of SEO.</p>
     </article>
 
     <div class="obj">
@@ -147,7 +178,7 @@
     <footer>
       <p>Andy. Greater Melbourne, VIC. I reply myself, usually same day on weekdays.</p>
       <p><a href="mailto:andy.ng199507@gmail.com">andy.ng199507@gmail.com</a></p>
-      <p style="margin-top:1rem;font-size:0.85rem">No fake reviews on this page. If we work together I’ll ask you to add me as a Manager on Google, or you send the SEEK link. That’s it.</p>
+      <p style="margin-top:1rem;font-size:0.85rem">No made up reviews on this page. When someone pays and it’s useful, I’ll ask them for two lines and put those up with their name.</p>
     </footer>
   </div>
 </body>
