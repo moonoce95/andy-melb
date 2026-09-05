@@ -403,6 +403,48 @@
       .panel-title { font-size: 1.65rem; }
     }
 
+  
+    /* M4T pricing-card rhythm on our cream */
+    .product .price {
+      font-family: Fraunces, Georgia, serif; font-weight: 650;
+      font-size: clamp(1.85rem, 3vw, 2.35rem); color: var(--ember);
+      margin: 0.15rem 0 0.35rem; line-height: 1;
+    }
+    .product .price small {
+      font-size: 0.95rem; color: var(--mute); font-family: Outfit, sans-serif; font-weight: 600;
+      margin-left: 0.25rem;
+    }
+    .product h3 {
+      font-family: Fraunces, Georgia, serif; font-weight: 650;
+      font-size: 1.35rem; margin: 0.15rem 0; line-height: 1.2;
+    }
+    .product .tag {
+      display: inline-flex; align-self: flex-start;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--ember);
+      background: color-mix(in srgb, var(--ember) 12%, var(--chip));
+      border: 1px solid color-mix(in srgb, var(--ember) 28%, var(--line));
+      border-radius: 999px; padding: 0.28rem 0.65rem; margin-bottom: 0.25rem;
+    }
+    .product ul { margin: 0.35rem 0 0.75rem; padding-left: 1.1rem; color: var(--mute); flex: 1; }
+    .product ul li { margin: 0.28rem 0; }
+    .product .cta { margin-top: auto; width: 100%; justify-content: center; }
+    .closer {
+      margin: 2.5rem 0 0.5rem; padding: 1.75rem 1.4rem;
+      background: var(--ink); color: #fff8ee; border-radius: 1.15rem;
+      display: grid; gap: 0.85rem;
+    }
+    .closer h2 {
+      font-family: Fraunces, Georgia, serif; font-weight: 650;
+      font-size: clamp(1.6rem, 3vw, 2.1rem); margin: 0; line-height: 1.15; color: #fff8ee;
+    }
+    .closer p { margin: 0; color: color-mix(in srgb, #fff8ee 78%, transparent); max-width: 36rem; }
+    .closer .cta { background: var(--ember); border-color: var(--ember-deep, #9a3412); width: fit-content; }
+    @media (min-width: 48rem) {
+      .closer { padding: 2.25rem 2rem; grid-template-columns: 1.4fr 0.6fr; align-items: center; }
+      .closer .cta { justify-self: end; width: auto; }
+    }
+
   </style>
 </head>
 <body>
@@ -540,8 +582,8 @@
     
 
     <section id="products">
-      <h2 class="sec">Pick what fits</h2>
-      <p class="prose">Prices on the page. Pay once. You own the work.</p>
+      <h2 class="sec">Simple pricing. On the page.</h2>
+      <p class="prose">Pick what fits. Pay once. You own the work. No quote theatre.</p>
       <div class="products">
         <article class="product start" id="sku-listing">
           <span class="tag">Start here</span>
@@ -633,7 +675,16 @@
 
         
 
-        <section class="capture" id="free-look" aria-labelledby="free-look-title">
+        
+    <section class="closer" id="closer" aria-label="Start">
+      <div>
+        <h2>Ready when you are.</h2>
+        <p>Start with the Google listing. Or the site patch. Prices are on the page. No quote theatre.</p>
+      </div>
+      <a class="cta" href="listing-intake.html">Start listing $299</a>
+    </section>
+
+<section class="capture" id="free-look" aria-labelledby="free-look-title">
       <h2 class="sec" id="free-look-title">Want a free look first?</h2>
       <p class="prose">Not ready for the $299. Email me your Google name or site URL. I send one real problem. Usually same day on weekdays. If I already emailed you, just reply.</p>
       <p class="row"><a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Get one free finding</a></p>
