@@ -53,7 +53,8 @@
     </header>
 
     <h1>Website intake. Five minutes.</h1>
-    <p class="lede">For the $799 Melb tradie site. Answer these. Then send photos and your logo. No long call. No discovery theatre.</p>
+    <p class="lede">For the $799 Melb tradie site, or the <strong>$999 website + Google listing pack</strong>. Answer these. Then send photos and your logo. No long call.</p>
+    <p class="hint" id="pack-note" hidden style="color:#9e3b14;font-weight:650;margin:0 0 1rem">Pack selected: website + Google listing $999.</p>
 
     <div class="steps">
       <div><strong>1. This form</strong>Business basics. Suburbs. What you want on the site.</div>
@@ -66,6 +67,7 @@
       <input type="hidden" name="_next" value="https://moonoce95.github.io/andy-melb/intake.html?sent=1">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="offer" id="offer-field" value="website-799">
       <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <label for="name">Your name</label>
@@ -115,9 +117,17 @@
     </div>
   </div>
   <script>
-    if (location.search.indexOf('sent=1') !== -1) {
+    if (location.search.indexOf('pack=999') !== -1) {
+      var o = document.getElementById('offer-field');
+      if (o) o.value = 'website-listing-999';
+      var n = document.getElementById('pack-note');
+      if (n) n.hidden = false;
       var h = document.querySelector('h1');
-      if (h) h.textContent = 'Got it. Send photos if you haven’t.';
+      if (h) h.textContent = 'Pack intake. Five minutes.';
+    }
+    if (location.search.indexOf('sent=1') !== -1) {
+      var h2 = document.querySelector('h1');
+      if (h2) h2.textContent = 'Got it. Send photos if you haven’t.';
     }
   </script>
 </body>
