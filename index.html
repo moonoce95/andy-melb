@@ -80,6 +80,20 @@
       padding: 2.5rem 0 0.5rem;
     }
     .hero-copy { min-width: 0; }
+    /* Mobile: primary CTA on first screen (copy stack buries panel CTA) */
+    .hero-fold-cta {
+      display: none;
+      width: 100%;
+      margin: 0 0 1rem;
+      text-align: center;
+    }
+    @media (max-width: 47.99rem) {
+      .hero-fold-cta { display: inline-flex; }
+      .listing-proof { padding-bottom: 1.1rem; }
+      .listing-proof-cap { margin-bottom: 0.45rem; }
+      .proof-pair { gap: 0.55rem; }
+      .gmap-mock { padding: 0.7rem 0.75rem 0.8rem; }
+    }
     .eyebrow {
       margin: 0 0 0.65rem; font-size: 0.82rem; font-weight: 700;
       letter-spacing: 0.06em; text-transform: uppercase; color: #f0a070;
@@ -486,6 +500,7 @@
       <div class="hero-copy">
         <p class="eyebrow">Melbourne tradies · Google + site</p>
         <h1>They google you before they call.</h1>
+        <a class="cta hero-fold-cta" href="listing-intake.html">Start listing $299</a>
         <p class="lede">I’m Andy. I help Melbourne tradies get more enquiries from Google and their site. You send the listing name or URL. I fix what stops the phone.</p>
         <div class="trust"><strong>Public data only.</strong> If it’s already fine, I say so. No chase after.</div>
         <p class="fud">No Google password. You add me as Manager.</p>
@@ -642,7 +657,7 @@
             <a class="cta" href="intake.html">Start website $799</a>
           </article>
 
-        <article class="product" id="pack-detail">
+        <article class="product popular" id="pack-detail">
             <span class="tag">Best money</span>
             <h3>Website + listing pack</h3>
             <p class="price">$999<small>once · save $99</small></p>
