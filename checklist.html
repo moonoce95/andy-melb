@@ -170,6 +170,52 @@
       font-size: 0.88rem;
       color: var(--mute);
     }
+    body { padding-bottom: 5.25rem; }
+    .buy {
+      margin: 1.2rem 0 0;
+      padding: 1rem 1.05rem;
+      background: var(--chip);
+      border: 1px solid color-mix(in srgb, var(--ember) 35%, var(--line));
+      border-radius: 0.85rem;
+    }
+    .buy strong {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.08rem;
+      margin: 0 0 0.35rem;
+    }
+    .buy p { margin: 0 0 0.85rem; color: var(--mute); font-size: 0.95rem; }
+    .buy .links { display: grid; gap: 0.45rem; margin: 0 0 0.75rem; }
+    .buy .links a {
+      display: block;
+      color: var(--ink);
+      font-weight: 650;
+      text-decoration: none;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 0.65rem;
+      background: #fff;
+    }
+    .buy .links a:hover { border-color: var(--ember); color: var(--ember); }
+    .buy .links a span {
+      display: block;
+      color: var(--mute);
+      font-weight: 500;
+      font-size: 0.85rem;
+      margin-top: 0.15rem;
+    }
+    .sticky-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+      padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
+      background: color-mix(in srgb, var(--paper) 94%, transparent);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--line);
+    }
+    .sticky-cta .cta { width: 100%; justify-content: center; }
+    @media (min-width: 48rem) {
+      body { padding-bottom: 0; }
+      .sticky-cta { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -266,15 +312,18 @@
       <p>Claim it in Google Business Profile. Google may verify with a postcard to the business address, or sometimes phone or video. Finish verification before you polish every field. Same checklist applies once you’re in.</p>
     </div>
 
-    <div class="block">
+    <div class="buy">
       <strong>Want me to do the pass?</strong>
-      <p>Email your Google name or site URL. I send one free finding from public data (and say if it’s already fine). Listing fix is $299 once. Site patch list is $149 once. Not a rebuild.</p>
+      <p>If the checklist shows gaps, start the listing. Or email me your Google name for one free finding first. Public data only. I say if it’s already fine.</p>
+      <div class="links">
+        <a href="listing-intake.html">Start listing $299<span>Four fields. Category, suburbs, services, working links.</span></a>
+        <a href="patch-intake.html">Site patch $149<span>Ranked fix list if the enquire path is broken.</span></a>
+      </div>
+      <p class="row" style="margin:0">
+        <a class="cta" href="listing-intake.html">Start listing $299</a>
+        <a class="cta ghost" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email. One free finding.</a>
+      </p>
     </div>
-
-    <p class="row">
-      <a class="cta" href="mailto:andy.ng199507@gmail.com?subject=Have%20a%20look%20at%20mine&amp;body=Google%20name%20or%20site%20URL%3A%0A">Email me. One free finding.</a>
-      <a class="cta ghost" href="./">Back to Andy</a>
-    </p>
 
     <p class="note">Filled in is not the same as showing up. This checklist gets the basics honest. Maps movement still takes time.</p>
 
@@ -284,6 +333,9 @@
       <p><a href="mailto:andy.ng199507@gmail.com">andy.ng199507@gmail.com</a></p>
       <p style="margin-top:1rem;font-size:0.85rem">I don’t promise Google page one.</p>
     </footer>
+  </div>
+  <div class="sticky-cta" aria-label="Quick action">
+    <a class="cta" href="listing-intake.html">Start listing $299</a>
   </div>
 </body>
 </html>
