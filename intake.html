@@ -221,6 +221,17 @@
       <textarea id="suburbs" name="suburbs" required placeholder="Brunswick, Coburg, Preston…"></textarea>
       <p class="hint">Not a fat 50km circle. The places you drive.</p>
 
+
+      <div id="pack-fields" hidden>
+        <label for="gbp">Google listing name or Maps link</label>
+        <input id="gbp" name="gbp" placeholder="Maps link or exact name">
+        <p class="hint">Public listing only. Needed for the listing half of the pack.</p>
+
+        <label for="manager">Email for Manager invite</label>
+        <input id="manager" name="manager" type="email" placeholder="you@business.com.au">
+        <p class="hint">That’s the email Google will use when you add me as Manager. Not your login.</p>
+      </div>
+
       <details class="more">
         <summary>More if you’ve got it (optional)</summary>
         <label for="name">Your name</label>
@@ -272,11 +283,19 @@
         var n = document.getElementById('pack-note');
         if (n) n.hidden = false;
         var h = document.getElementById('title');
-        if (h) h.textContent = 'Pack. Five fields.';
+        if (h) h.textContent = 'Pack. Short form.';
         var p = document.getElementById('price-line');
         if (p) p.textContent = '$999 once · save $99';
         var l = document.getElementById('lede');
         if (l) l.textContent = 'Website + Google listing together. Same short form. Photos after. No long call.';
+        var prog = document.querySelector('.progress');
+        if (prog) prog.textContent = '7 required · about 3 min · then photos';
+        var pf = document.getElementById('pack-fields');
+        if (pf) pf.hidden = false;
+        var gbp = document.getElementById('gbp');
+        var mgr = document.getElementById('manager');
+        if (gbp) gbp.required = true;
+        if (mgr) mgr.required = true;
         var b1 = document.getElementById('submit-btn');
         var b2 = document.getElementById('sticky-btn');
         if (b1) b1.textContent = 'Send pack $999';
@@ -299,6 +318,19 @@
         : 'New Melb tradie site.';
       var box = document.createElement('div');
       box.className = 'next-steps';
+      var steps = isPack
+        ? ('<ol>'
+          + '<li>I reply same day on weekdays with next steps + pay.</li>'
+          + '<li>I email Manager invite steps. You add me as Manager. No Google password.</li>'
+          + '<li>Send logo + 6–15 job photos when you can (after is fine).</li>'
+          + '<li>I build the site and clean the listing. You pay $999 once. You own both.</li>'
+          + '</ol>')
+        : ('<ol>'
+          + '<li>I reply same day on weekdays with next steps + pay.</li>'
+          + '<li>Send logo + 6–15 job photos when you can (after is fine).</li>'
+          + '<li>I build home, services, about, contact. Mobile. Tap-to-call.</li>'
+          + '<li>You pay $799 once. You own it. No monthly lock-in.</li>'
+          + '</ol>');
       var also = isPack
         ? ('<div class="also-useful">'
           + '<strong>While you wait</strong>'
@@ -315,12 +347,7 @@
           + '</div></div>');
       box.innerHTML = '<p class="sent-lede">' + what + ' Intake is in. Here’s what happens next.</p>'
         + '<strong>Next steps</strong>'
-        + '<ol>'
-        + '<li>I reply same day on weekdays with next steps + pay.</li>'
-        + '<li>Send logo + 6–15 job photos when you can (after is fine).</li>'
-        + '<li>I build home, services, about, contact. Mobile. Tap-to-call.</li>'
-        + '<li>You pay ' + price + ' once. You own it. No monthly lock-in.</li>'
-        + '</ol>'
+        + steps
         + also;
       if (h2) h2.insertAdjacentElement('afterend', box);
     })();
