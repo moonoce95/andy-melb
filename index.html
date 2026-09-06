@@ -412,6 +412,65 @@
       .closer .cta { justify-self: end; }
       .panel-title { font-size: 1.65rem; }
     }
+  
+    .listing-proof {
+      width: min(74rem, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 0 0 1.75rem;
+    }
+    .listing-proof-cap {
+      margin: 0 0 0.65rem;
+      font-size: 0.82rem;
+      color: color-mix(in srgb, #fff 55%, transparent);
+      font-weight: 600;
+    }
+    .proof-pair {
+      display: grid;
+      gap: 0.75rem;
+    }
+    @media (min-width: 40rem) {
+      .proof-pair { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    }
+    .gmap-mock {
+      background: var(--chip);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      padding: 0.9rem 0.95rem 1rem;
+    }
+    .gmap-mock.after-mock {
+      border-color: color-mix(in srgb, var(--ember) 40%, var(--line));
+      box-shadow: 0 12px 28px color-mix(in srgb, var(--ember) 18%, transparent);
+    }
+    .g-label {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.04em; color: var(--mute); margin-bottom: 0.5rem;
+    }
+    .g-head { display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.55rem; }
+    .g-avatar {
+      width: 2.4rem; height: 2.4rem; border-radius: 0.45rem; flex-shrink: 0;
+      background: color-mix(in srgb, var(--line) 70%, var(--mute));
+    }
+    .after-mock .g-avatar { background: color-mix(in srgb, var(--ember) 28%, var(--line)); }
+    .g-name {
+      font-family: Fraunces, Georgia, serif; font-weight: 650; font-size: 1.02rem;
+      margin: 0 0 0.15rem; line-height: 1.2; color: var(--ink);
+    }
+    .g-cat { margin: 0; font-size: 0.82rem; color: var(--mute); }
+    .g-cat.wrong { color: #8a4a2a; }
+    .g-cat.right { color: var(--ember); font-weight: 650; }
+    .g-meta { margin: 0 0 0.55rem; font-size: 0.85rem; color: var(--mute); }
+    .g-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .g-btn {
+      font-size: 0.78rem; font-weight: 650; padding: 0.38rem 0.7rem;
+      border-radius: 999px; border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--ember) 12%, var(--chip)); color: var(--ink);
+    }
+    .g-btn.dead {
+      opacity: 0.45; text-decoration: line-through;
+      background: var(--chip);
+    }
+
   </style>
 </head>
 <body>
@@ -444,6 +503,37 @@
         <p class="panel-note">Also: site patch $149 · website $799 · pack $999</p>
       </aside>
     </div>
+
+    <div class="listing-proof" aria-label="Listing before and after schematic">
+      <p class="listing-proof-cap">Public data schematic. Not a real client. No reviews invented.</p>
+      <div class="proof-pair">
+        <div class="gmap-mock">
+          <div class="g-label">Before</div>
+          <div class="g-head">
+            <div class="g-avatar" aria-hidden="true"></div>
+            <div>
+              <p class="g-name">Local trade business</p>
+              <p class="g-cat wrong">Category: General contractor</p>
+            </div>
+          </div>
+          <p class="g-meta">Posts: none in 90 days</p>
+          <div class="g-actions"><span class="g-btn dead">Call</span><span class="g-btn dead">Website</span></div>
+        </div>
+        <div class="gmap-mock after-mock">
+          <div class="g-label">After</div>
+          <div class="g-head">
+            <div class="g-avatar" aria-hidden="true"></div>
+            <div>
+              <p class="g-name">Local trade business</p>
+              <p class="g-cat right">Category: Plumber · services listed</p>
+            </div>
+          </div>
+          <p class="g-meta">Posts: weekly · suburbs pinned</p>
+          <div class="g-actions"><span class="g-btn">Call</span><span class="g-btn">Website</span></div>
+        </div>
+      </div>
+    </div>
+
   </header>
 
   <div class="page-body">
