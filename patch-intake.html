@@ -134,6 +134,14 @@
   </div>
   <script>
     (function () {
+      var params = new URLSearchParams(location.search);
+      var trade = params.get('trade');
+      if (trade) {
+        var el = document.getElementById('trade');
+        if (el) el.value = decodeURIComponent(trade).trim();
+      }
+    })();
+    (function () {
       if (location.search.indexOf('sent=1') === -1) return;
       document.body.classList.add('sent');
       var h1 = document.querySelector('h1');

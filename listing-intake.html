@@ -99,6 +99,22 @@
     .also-useful a:hover { border-color: var(--ember); color: var(--ember); }
     .also-useful a span { display: block; color: var(--mute); font-weight: 500; font-size: 0.85rem; margin-top: 0.15rem; }
 
+    .trade-chips {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin: 0 0 0.35rem;
+    }
+    .trade-chips button {
+      background: var(--chip); border: 1px solid var(--line); border-radius: 999px;
+      padding: 0.35rem 0.75rem; font: inherit; font-size: 0.85rem; font-weight: 650;
+      color: var(--mute); cursor: pointer;
+    }
+    .trade-chips button:hover,
+    .trade-chips button.is-on {
+      border-color: var(--ember); color: var(--ember);
+      background: color-mix(in srgb, var(--ember) 10%, var(--chip));
+    }
+    body.sent .trade-chips { display: none; }
+
   </style>
 </head>
 <body>
@@ -111,6 +127,14 @@
     <p class="price">$299 once</p>
     <p class="lede">I fix categories, suburbs you drive, services, photos nudge, working links. You add me as Manager. No password.</p>
     <div class="progress" aria-label="Form length">4 fields · about 2 min</div>
+    <div class="trade-chips" id="trade-chips" aria-label="Quick trade">
+      <button type="button" data-trade="Plumber">Plumber</button>
+      <button type="button" data-trade="Electrician">Electrician</button>
+      <button type="button" data-trade="Painter">Painter</button>
+      <button type="button" data-trade="Carpenter">Carpenter</button>
+      <button type="button" data-trade="Builder">Builder</button>
+      <button type="button" data-trade="Other">Other</button>
+    </div>
     <form id="intake-form" action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="Andy Melb listing intake $299">
       <input type="hidden" name="_next" value="https://moonoce95.github.io/andy-melb/listing-intake.html?sent=1">
@@ -133,6 +157,30 @@
     <button class="cta" type="submit" form="intake-form">Send listing $299</button>
   </div>
   <script>
+    (function () {
+      var params = new URLSearchParams(location.search);
+      var trade = params.get('trade');
+      var tradeEl = document.getElementById('trade');
+      if (trade && tradeEl) tradeEl.value = decodeURIComponent(trade).trim();
+      var chips = document.getElementById('trade-chips');
+      if (chips && tradeEl) {
+        chips.addEventListener('click', function (e) {
+          var btn = e.target.closest('button[data-trade]');
+          if (!btn) return;
+          var v = btn.getAttribute('data-trade') || '';
+          tradeEl.value = v === 'Other' ? '' : v;
+          Array.prototype.forEach.call(chips.querySelectorAll('button'), function (b) {
+            b.classList.toggle('is-on', b === btn);
+          });
+          if (v === 'Other') tradeEl.focus();
+        });
+        if (tradeEl.value) {
+          Array.prototype.forEach.call(chips.querySelectorAll('button'), function (b) {
+            b.classList.toggle('is-on', b.getAttribute('data-trade') === tradeEl.value);
+          });
+        }
+      }
+    })();
     (function () {
       if (location.search.indexOf('sent=1') === -1) return;
       document.body.classList.add('sent');

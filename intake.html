@@ -274,6 +274,12 @@
 
   <script>
     (function () {
+      var params = new URLSearchParams(location.search);
+      var tradeQ = params.get('trade');
+      if (tradeQ) {
+        var tradeEl = document.getElementById('trade');
+        if (tradeEl) tradeEl.value = decodeURIComponent(tradeQ).trim();
+      }
       var isPack = location.search.indexOf('pack=999') !== -1;
       if (isPack) {
         var o = document.getElementById('offer-field');

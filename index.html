@@ -176,10 +176,12 @@
     }
 
     .trades { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 0.85rem 0 0; }
-    .trades span {
+    .trades span, .trades a {
       background: var(--chip); border: 1px solid var(--line); border-radius: 999px;
       padding: 0.4rem 0.85rem; font-size: 0.88rem; font-weight: 650; color: var(--mute);
+      text-decoration: none;
     }
+    .trades a:hover { border-color: var(--ember); color: var(--ember); }
 
     .grid-2, .grid-3 { display: grid; gap: 0.85rem; }
     @media (min-width: 36rem) { .grid-2 { grid-template-columns: 1fr 1fr; } }
@@ -503,6 +505,7 @@
         <p class="lede">I’m Andy. I help Melbourne tradies get more enquiries from Google and their site. You send the listing name or URL. I fix what stops the phone.</p>
         <div class="trust"><strong>Public data only.</strong> If it’s already fine, I say so. No chase after.</div>
         <p class="fud">No Google password. You add me as Manager.</p>
+        <a class="cta hero-fold-cta" href="listing-intake.html">Start listing $299</a>
       </div>
       <aside class="hero-panel" aria-label="Start here pricing">
         <p class="panel-kicker">Start here</p>
@@ -533,14 +536,14 @@
           <div class="card"><strong>They can’t enquire</strong><p>Call button dead. Quote page 404. They already chose you and then left.</p></div>
         </div>
         <div class="trades" aria-label="Trades">
-          <span>Plumbers</span>
-          <span>Electricians</span>
-          <span>Painters</span>
-          <span>Landscapers</span>
-          <span>Roofers</span>
-          <span>Carpenters</span>
-          <span>Builders</span>
-          <span>More trades</span>
+          <a href="listing-intake.html?trade=Plumber">Plumbers</a>
+          <a href="listing-intake.html?trade=Electrician">Electricians</a>
+          <a href="listing-intake.html?trade=Painter">Painters</a>
+          <a href="listing-intake.html?trade=Landscaper">Landscapers</a>
+          <a href="listing-intake.html?trade=Roofer">Roofers</a>
+          <a href="listing-intake.html?trade=Carpenter">Carpenters</a>
+          <a href="listing-intake.html?trade=Builder">Builders</a>
+          <a href="listing-intake.html">More trades</a>
         </div>
       </section>
 
