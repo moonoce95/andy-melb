@@ -163,6 +163,23 @@
       padding: 0.28rem 0.2rem; font-weight: 650; font-size: 0.52rem; color: #0c1222;
     }
     body.sent .phone-proof { display: none; }
+
+    .suburb-chips {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin: 0 0 0.35rem;
+    }
+    .suburb-chips button {
+      background: var(--chip); border: 1px solid var(--line); border-radius: 999px;
+      padding: 0.35rem 0.75rem; font: inherit; font-size: 0.85rem; font-weight: 650;
+      color: var(--mute); cursor: pointer;
+    }
+    .suburb-chips button:hover,
+    .suburb-chips button.is-on {
+      border-color: var(--ember); color: var(--ember);
+      background: color-mix(in srgb, var(--ember) 10%, var(--chip));
+    }
+    body.sent .suburb-chips { display: none; }
+
   </style>
 </head>
 <body>
@@ -218,6 +235,17 @@
       <input id="email" name="email" type="email" required autocomplete="email">
 
       <label for="suburbs">Suburbs you actually cover</label>
+    <div class="suburb-chips" id="suburb-chips" aria-label="Quick suburbs">
+      <button type="button" data-suburb="Brunswick">Brunswick</button>
+      <button type="button" data-suburb="Richmond">Richmond</button>
+      <button type="button" data-suburb="Footscray">Footscray</button>
+      <button type="button" data-suburb="Preston">Preston</button>
+      <button type="button" data-suburb="Coburg">Coburg</button>
+      <button type="button" data-suburb="Sunshine">Sunshine</button>
+      <button type="button" data-suburb="Box Hill">Box Hill</button>
+      <button type="button" data-suburb="Dandenong">Dandenong</button>
+      <button type="button" data-suburb="Frankston">Frankston</button>
+    </div>
       <textarea id="suburbs" name="suburbs" required placeholder="Brunswick, Coburg, Preston…"></textarea>
       <p class="hint">Not a fat 50km circle. The places you drive.</p>
 
@@ -273,6 +301,27 @@
   </div>
 
   <script>
+    
+    (function () {
+      var suburbEl = document.getElementById('suburbs');
+      var chips = document.getElementById('suburb-chips');
+      if (!chips || !suburbEl) return;
+      chips.addEventListener('click', function (e) {
+        var btn = e.target.closest('button[data-suburb]');
+        if (!btn) return;
+        var v = btn.getAttribute('data-suburb') || '';
+        if (!v) return;
+        var cur = (suburbEl.value || '').trim();
+        var parts = cur ? cur.split(/,\s*/) : [];
+        var lower = parts.map(function (p) { return p.toLowerCase(); });
+        if (lower.indexOf(v.toLowerCase()) === -1) {
+          parts.push(v);
+          suburbEl.value = parts.join(', ');
+        }
+        btn.classList.add('is-on');
+      });
+    })();
+
     (function () {
       var params = new URLSearchParams(location.search);
       var tradeQ = params.get('trade');

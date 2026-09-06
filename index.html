@@ -487,6 +487,15 @@
       background: var(--chip);
     }
 
+
+    .closer-ctas { display:flex; flex-wrap:wrap; gap:0.65rem; align-items:center; }
+    .cta-ghost {
+      background: transparent !important; color: var(--ink) !important;
+      border: 1px solid var(--line) !important;
+      box-shadow: none !important;
+    }
+    .cta-ghost:hover { border-color: var(--ember) !important; color: var(--ember) !important; }
+
   </style>
 </head>
 <body>
@@ -729,7 +738,10 @@
           <h2>Ready when you are.</h2>
           <p>Start with the Google listing. Or the site patch. Prices are on the page. No quote theatre.</p>
         </div>
-        <a class="cta" href="listing-intake.html">Start listing $299</a>
+        <div class="closer-ctas">
+          <a class="cta" href="listing-intake.html">Start listing $299</a>
+          <a class="cta cta-ghost" href="patch-intake.html">Get patch list $149</a>
+        </div>
       </div>
     </div>
 

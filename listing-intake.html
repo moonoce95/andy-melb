@@ -115,6 +115,22 @@
     }
     body.sent .trade-chips { display: none; }
 
+    .suburb-chips {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin: 0 0 0.35rem;
+    }
+    .suburb-chips button {
+      background: var(--chip); border: 1px solid var(--line); border-radius: 999px;
+      padding: 0.35rem 0.75rem; font: inherit; font-size: 0.85rem; font-weight: 650;
+      color: var(--mute); cursor: pointer;
+    }
+    .suburb-chips button:hover,
+    .suburb-chips button.is-on {
+      border-color: var(--ember); color: var(--ember);
+      background: color-mix(in srgb, var(--ember) 10%, var(--chip));
+    }
+    body.sent .suburb-chips { display: none; }
+
   </style>
 </head>
 <body>
@@ -143,6 +159,18 @@
       <label for="trade">Trade</label>
       <input id="trade" name="trade" required placeholder="Plumber, electrician, painter…">
       <label for="suburb">Main suburb</label>
+    <div class="suburb-chips" id="suburb-chips" aria-label="Quick suburb">
+      <button type="button" data-suburb="Brunswick">Brunswick</button>
+      <button type="button" data-suburb="Richmond">Richmond</button>
+      <button type="button" data-suburb="Footscray">Footscray</button>
+      <button type="button" data-suburb="Preston">Preston</button>
+      <button type="button" data-suburb="Coburg">Coburg</button>
+      <button type="button" data-suburb="Sunshine">Sunshine</button>
+      <button type="button" data-suburb="Box Hill">Box Hill</button>
+      <button type="button" data-suburb="Dandenong">Dandenong</button>
+      <button type="button" data-suburb="Frankston">Frankston</button>
+      <button type="button" data-suburb="Other">Other</button>
+    </div>
       <input id="suburb" name="suburb" required placeholder="Brunswick">
       <label for="gbp">Google listing link or business name</label>
       <input id="gbp" name="gbp" required placeholder="Maps link or exact name">
@@ -150,7 +178,7 @@
       <input id="manager" name="manager" type="email" required placeholder="you@business.com.au">
       <p class="hint">That’s the email Google will use when you add me as Manager. Not your login.</p>
       <button class="cta form-cta" type="submit">Send listing $299</button>
-      <p class="hint">I’ll email Manager invite steps same day on weekdays. No password.</p>
+      <p class="hint">Pay after you see the plan. Not before. Manager steps same day on weekdays. No password.</p>
     </form>
   </div>
   <div class="sticky-cta" aria-label="Submit">
@@ -181,6 +209,23 @@
         }
       }
     })();
+
+    (function () {
+      var suburbEl = document.getElementById('suburb');
+      var chips = document.getElementById('suburb-chips');
+      if (!chips || !suburbEl) return;
+      chips.addEventListener('click', function (e) {
+        var btn = e.target.closest('button[data-suburb]');
+        if (!btn) return;
+        var v = btn.getAttribute('data-suburb') || '';
+        suburbEl.value = v === 'Other' ? '' : v;
+        Array.prototype.forEach.call(chips.querySelectorAll('button'), function (b) {
+          b.classList.toggle('is-on', b === btn);
+        });
+        if (v === 'Other') suburbEl.focus();
+      });
+    })();
+
     (function () {
       if (location.search.indexOf('sent=1') === -1) return;
       document.body.classList.add('sent');

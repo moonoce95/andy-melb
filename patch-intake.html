@@ -99,6 +99,39 @@
     .also-useful a:hover { border-color: var(--ember); color: var(--ember); }
     .also-useful a span { display: block; color: var(--mute); font-weight: 500; font-size: 0.85rem; margin-top: 0.15rem; }
 
+
+    .trade-chips {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin: 0 0 0.35rem;
+    }
+    .trade-chips button {
+      background: var(--chip); border: 1px solid var(--line); border-radius: 999px;
+      padding: 0.35rem 0.75rem; font: inherit; font-size: 0.85rem; font-weight: 650;
+      color: var(--mute); cursor: pointer;
+    }
+    .trade-chips button:hover,
+    .trade-chips button.is-on {
+      border-color: var(--ember); color: var(--ember);
+      background: color-mix(in srgb, var(--ember) 10%, var(--chip));
+    }
+    body.sent .trade-chips { display: none; }
+
+    .suburb-chips {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin: 0 0 0.35rem;
+    }
+    .suburb-chips button {
+      background: var(--chip); border: 1px solid var(--line); border-radius: 999px;
+      padding: 0.35rem 0.75rem; font: inherit; font-size: 0.85rem; font-weight: 650;
+      color: var(--mute); cursor: pointer;
+    }
+    .suburb-chips button:hover,
+    .suburb-chips button.is-on {
+      border-color: var(--ember); color: var(--ember);
+      background: color-mix(in srgb, var(--ember) 10%, var(--chip));
+    }
+    body.sent .suburb-chips { display: none; }
+
   </style>
 </head>
 <body>
@@ -111,6 +144,14 @@
     <p class="price">$149 once</p>
     <p class="lede">I look at the public site. You get a ranked list of what’s stopping calls after they already picked you. You or your web person do the work. Not a rebuild.</p>
     <div class="progress" aria-label="Form length">4 fields · about 2 min</div>
+    <div class="trade-chips" id="trade-chips" aria-label="Quick trade">
+      <button type="button" data-trade="Plumber">Plumber</button>
+      <button type="button" data-trade="Electrician">Electrician</button>
+      <button type="button" data-trade="Painter">Painter</button>
+      <button type="button" data-trade="Carpenter">Carpenter</button>
+      <button type="button" data-trade="Builder">Builder</button>
+      <button type="button" data-trade="Other">Other</button>
+    </div>
     <form id="intake-form" action="https://formsubmit.co/andy.ng199507@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="Andy Melb site patch intake $149">
       <input type="hidden" name="_next" value="https://moonoce95.github.io/andy-melb/patch-intake.html?sent=1">
@@ -121,26 +162,72 @@
       <label for="site">Site URL</label>
       <input id="site" name="site" type="url" required placeholder="https://yoursite.com.au">
       <label for="suburb">Main suburb</label>
+    <div class="suburb-chips" id="suburb-chips" aria-label="Quick suburb">
+      <button type="button" data-suburb="Brunswick">Brunswick</button>
+      <button type="button" data-suburb="Richmond">Richmond</button>
+      <button type="button" data-suburb="Footscray">Footscray</button>
+      <button type="button" data-suburb="Preston">Preston</button>
+      <button type="button" data-suburb="Coburg">Coburg</button>
+      <button type="button" data-suburb="Sunshine">Sunshine</button>
+      <button type="button" data-suburb="Box Hill">Box Hill</button>
+      <button type="button" data-suburb="Dandenong">Dandenong</button>
+      <button type="button" data-suburb="Frankston">Frankston</button>
+      <button type="button" data-suburb="Other">Other</button>
+    </div>
       <input id="suburb" name="suburb" required placeholder="Brunswick">
       <label for="email">Email for the list</label>
       <input id="email" name="email" type="email" required placeholder="you@business.com.au">
       <p class="hint">I reply with pay + the next step. Public pages only.</p>
       <button class="cta form-cta" type="submit">Send patch list $149</button>
-      <p class="hint">I’ll send the ranked list same day on weekdays.</p>
+      <p class="hint">Pay after you see the list. Not before. Same day on weekdays.</p>
     </form>
   </div>
   <div class="sticky-cta" aria-label="Submit">
     <button class="cta" type="submit" form="intake-form">Send patch list $149</button>
   </div>
   <script>
+
     (function () {
       var params = new URLSearchParams(location.search);
       var trade = params.get('trade');
-      if (trade) {
-        var el = document.getElementById('trade');
-        if (el) el.value = decodeURIComponent(trade).trim();
+      var tradeEl = document.getElementById('trade');
+      if (trade && tradeEl) tradeEl.value = decodeURIComponent(trade).trim();
+      var chips = document.getElementById('trade-chips');
+      if (chips && tradeEl) {
+        chips.addEventListener('click', function (e) {
+          var btn = e.target.closest('button[data-trade]');
+          if (!btn) return;
+          var v = btn.getAttribute('data-trade') || '';
+          tradeEl.value = v === 'Other' ? '' : v;
+          Array.prototype.forEach.call(chips.querySelectorAll('button'), function (b) {
+            b.classList.toggle('is-on', b === btn);
+          });
+          if (v === 'Other') tradeEl.focus();
+        });
+        if (tradeEl.value) {
+          Array.prototype.forEach.call(chips.querySelectorAll('button'), function (b) {
+            b.classList.toggle('is-on', b.getAttribute('data-trade') === tradeEl.value);
+          });
+        }
       }
     })();
+
+    (function () {
+      var suburbEl = document.getElementById('suburb');
+      var chips = document.getElementById('suburb-chips');
+      if (!chips || !suburbEl) return;
+      chips.addEventListener('click', function (e) {
+        var btn = e.target.closest('button[data-suburb]');
+        if (!btn) return;
+        var v = btn.getAttribute('data-suburb') || '';
+        suburbEl.value = v === 'Other' ? '' : v;
+        Array.prototype.forEach.call(chips.querySelectorAll('button'), function (b) {
+          b.classList.toggle('is-on', b === btn);
+        });
+        if (v === 'Other') suburbEl.focus();
+      });
+    })();
+
     (function () {
       if (location.search.indexOf('sent=1') === -1) return;
       document.body.classList.add('sent');
