@@ -100,6 +100,25 @@
     .sent-lede { color: var(--mute); margin: 0 0 0.85rem; }
     body.sent .price, body.sent .lede, body.sent .progress, body.sent .pack-note, body.sent .drop { display: none; }
 
+    .also-useful {
+      margin: 1.1rem 0 0; padding: 1rem 1.05rem;
+      background: #fff; border: 1px solid var(--line);
+      border-radius: 0.85rem;
+    }
+    .also-useful strong {
+      display: block; font-family: Fraunces, Georgia, serif; font-size: 1.05rem; margin: 0 0 0.45rem;
+    }
+    .also-useful p { margin: 0 0 0.65rem; color: var(--mute); font-size: 0.95rem; }
+    .also-useful .links { display: grid; gap: 0.45rem; }
+    .also-useful a {
+      display: block; color: var(--ink); font-weight: 650; text-decoration: none;
+      padding: 0.55rem 0.75rem; border: 1px solid var(--line); border-radius: 0.65rem;
+      background: var(--chip);
+    }
+    .also-useful a:hover { border-color: var(--ember); color: var(--ember); }
+    .also-useful a span { display: block; color: var(--mute); font-weight: 500; font-size: 0.85rem; margin-top: 0.15rem; }
+
+
     .phone-proof {
       display: grid; gap: 0.85rem; justify-items: center;
       margin: 0 0 1.35rem; padding: 1rem 0.75rem 1.1rem;
@@ -280,6 +299,20 @@
         : 'New Melb tradie site.';
       var box = document.createElement('div');
       box.className = 'next-steps';
+      var also = isPack
+        ? ('<div class="also-useful">'
+          + '<strong>While you wait</strong>'
+          + '<p>Pack covers site + listing. Send photos when you can.</p>'
+          + '<div class="links">'
+          + '<a href="./">Back to offers<span>Prices stay on the page.</span></a>'
+          + '</div></div>')
+        : ('<div class="also-useful">'
+          + '<strong>Also common with a new site</strong>'
+          + '<p>Only if you need it. No pressure.</p>'
+          + '<div class="links">'
+          + '<a href="listing-intake.html">Google listing $299<span>Clean the Maps listing while the site builds.</span></a>'
+          + '<a href="intake.html?pack=999">Upgrade to pack $999<span>Site + listing together. Save $99.</span></a>'
+          + '</div></div>');
       box.innerHTML = '<p class="sent-lede">' + what + ' Intake is in. Here’s what happens next.</p>'
         + '<strong>Next steps</strong>'
         + '<ol>'
@@ -287,7 +320,8 @@
         + '<li>Send logo + 6–15 job photos when you can (after is fine).</li>'
         + '<li>I build home, services, about, contact. Mobile. Tap-to-call.</li>'
         + '<li>You pay ' + price + ' once. You own it. No monthly lock-in.</li>'
-        + '</ol>';
+        + '</ol>'
+        + also;
       if (h2) h2.insertAdjacentElement('afterend', box);
     })();
   </script>
